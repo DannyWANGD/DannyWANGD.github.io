@@ -12,14 +12,20 @@ const Publications: React.FC = () => {
         <div>
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Publications</h1>
           <p className="text-gray-600 max-w-2xl">
-            A collection of my research papers and academic contributions.
+            A bright future awaits you, stay tuned!
           </p>
         </div>
 
         <div className="grid gap-6">
-          {publicationsData.map((pub) => (
-            <PublicationCard key={pub.id} publication={pub} />
-          ))}
+          {publicationsData.length > 0 ? (
+            publicationsData.map((pub) => (
+              <PublicationCard key={pub.id} publication={pub} />
+            ))
+          ) : (
+            <div className="p-8 text-center bg-gray-50 rounded-lg border border-dashed border-gray-200">
+              <p className="text-gray-500">Coming soon... Stay tuned for updates!</p>
+            </div>
+          )}
         </div>
       </div>
 

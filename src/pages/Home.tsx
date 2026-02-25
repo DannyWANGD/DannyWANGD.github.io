@@ -37,22 +37,24 @@ const Home: React.FC = () => {
       </section>
 
       {/* Selected Publications */}
-      <section>
-        <div className="flex justify-between items-end mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 border-b-4 border-primary/20 pb-1 inline-block">
-            Selected Publications
-          </h2>
-          <Link to="/publications" className="text-sm font-medium text-primary hover:underline flex items-center gap-1">
-            View All <ArrowRight size={16} />
-          </Link>
-        </div>
-        
-        <div className="grid gap-6">
-          {recentPublications.map((pub) => (
-            <PublicationCard key={pub.id} publication={pub} />
-          ))}
-        </div>
-      </section>
+      {recentPublications.length > 0 && (
+        <section>
+          <div className="flex justify-between items-end mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 border-b-4 border-primary/20 pb-1 inline-block">
+              Selected Publications
+            </h2>
+            <Link to="/publications" className="text-sm font-medium text-primary hover:underline flex items-center gap-1">
+              View All <ArrowRight size={16} />
+            </Link>
+          </div>
+          
+          <div className="grid gap-6">
+            {recentPublications.map((pub) => (
+              <PublicationCard key={pub.id} publication={pub} />
+            ))}
+          </div>
+        </section>
+      )}
       
       {/* Education */}
       <section>
