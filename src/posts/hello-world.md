@@ -1,6 +1,6 @@
 ---
 title: "Hello World: My First Blog Post"
-date: "2026-02-25"
+date: "2026-02-06"
 category: "General"
 tags: ["Personal"]
 ---

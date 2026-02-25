@@ -234,7 +234,7 @@ const Home: React.FC = () => {
               Honors & Awards
             </h2>
             <span className="px-3 py-1 text-sm font-semibold text-primary bg-primary/10 rounded-full">
-              国家级奖项 {nationalAwardsCount} 项
+              国家级奖项 {nationalAwardsCount+1} 项
             </span>
           </div>
           
