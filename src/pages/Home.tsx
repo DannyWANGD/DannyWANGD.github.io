@@ -1,17 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import profileData from '../data/profile.json';
 import publicationsData from '../data/publications.json';
 import awardsData from '../data/awards.json';
 import SocialLinks from '../components/SocialLinks';
 import PublicationCard from '../components/PublicationCard';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, Trophy, Brain, Award, Calendar } from 'lucide-react';
+import { 
+  ArrowRight, 
+  Users, 
+  Trophy, 
+  Brain, 
+  Award, 
+  Calendar,
+  ChevronDown, 
+  ChevronUp,
+  Cpu,
+  Code,
+  Wrench,
+  Camera,
+  BookOpen,
+  PenTool,
+  Mail,
+  MessageSquare,
+  MapPin
+} from 'lucide-react';
 
 const Home: React.FC = () => {
   const recentPublications = publicationsData.slice(0, 3);
+  const [showChinese, setShowChinese] = useState(false);
   
   // Calculate national awards count
   const nationalAwardsCount = awardsData.filter(award => award.description.includes('国家级') || award.description.includes('National')).length;
+
+  const interests = [
+    "Embodied AI",
+    "Robot Manipulation",
+    "Model-based RL",
+    "Generative Models"
+  ];
+
+  const hobbies = [
+    { name: "Calligraphy", icon: <PenTool size={14} /> },
+    { name: "Reading", icon: <BookOpen size={14} /> },
+    { name: "Soccer", icon: "⚽" },
+    { name: "Poetry", icon: "📜" },
+    { name: "Photography", icon: <Camera size={14} /> },
+    { name: "Ball Games", icon: "🏓" }
+  ];
 
   return (
     <div className="space-y-12 animate-in fade-in duration-500">
@@ -55,6 +90,143 @@ const Home: React.FC = () => {
             Teli College (Li Zexiang Innovation Class). 
             Passionate about building intelligent robots that can perceive and interact with the world.
           </p>
+        </div>
+      </section>
+
+      {/* Biography Section */}
+      <section className="space-y-6">
+        <div className="prose prose-lg prose-slate max-w-none text-gray-600">
+          <p>
+            I am currently an undergraduate student (Class of 2028) majoring in <strong>Robotics Engineering</strong> at the prestigious <strong>Li Zexiang Innovation and Entrepreneurship Class</strong>, Teli College, Beijing Institute of Technology. I serve as the monitor of Class 2453.
+          </p>
+          <p>
+            My academic journey is driven by a passion for innovation and excellence. I have maintained the <strong>top ranking (1st)</strong> in my major comprehensive evaluation. I have been honored as a University-level Excellent Student and College-level Excellent League Member, and have received both First-class and Second-class University Scholarships.
+          </p>
+          <p>
+            In research, I actively lead cutting-edge projects. I serve as the team captain for two National Innovation Projects: <em>"Physics-Informed Reinforcement Learning Algorithms"</em> and <em>"Quantum-Classical Hybrid Algorithms"</em>. My team has achieved significant recognition, winning <strong>six national-level awards</strong>.
+          </p>
+          <p>
+            Beyond research, I am the leader of the <strong>Robocon</strong> National University Robotics Competition (Volleyball Track). I possess strong skills in programming, hardware engineering, and project management. I am deeply enthusiastic about Robotics, Embodied AI, and contributing to the open-source community.
+          </p>
+        </div>
+
+        {/* Chinese Version (Collapsible) */}
+        <div className="border border-gray-200 rounded-xl overflow-hidden">
+          <button 
+            onClick={() => setShowChinese(!showChinese)}
+            className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left"
+          >
+            <span className="font-semibold text-gray-900 flex items-center gap-2">
+              🇨🇳 Chinese Version (中文简介)
+            </span>
+            {showChinese ? <ChevronUp size={20} className="text-gray-500" /> : <ChevronDown size={20} className="text-gray-500" />}
+          </button>
+          
+          {showChinese && (
+            <div className="p-6 bg-white prose prose-slate max-w-none border-t border-gray-200">
+              <h3 className="text-lg font-bold text-gray-900 mt-0">个人简介</h3>
+              <p>
+                北京理工大学特立书院机器人工程（李泽湘双创班）专业 24 级在读本科生，现任 2453 班班长。善于沟通协调，组织开展诸 多班级活动，曾获评校级优秀学生、院级优秀团员，校级一、二等奖学金等荣誉。综合成绩专业第一。
+              </p>
+              <p>
+                作为队长主持 “基于物理信息引导的强化学习算法……” 与 “量子-经典混合算法探究……” 两项大创项目，共获得第十九届“挑战杯”全国大学生课外学术科技作品竞赛“人工智能+”挑战赛国家级二等奖、全国大学生数学建模大赛国家级二等奖、CIC “悟空杯” 量子计算大赛(量子创新赛道)国家级一等奖等六项国家级奖项。
+              </p>
+              <p>
+                目前作为 Robocon 全国大学生机器人大赛排球赛道的负责人，具有较强的编程能力、硬件能力、以及工程项目管理能力。我热衷于机器人技术、具身人工智能以及为开源社区做贡献。
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Info Grid Section */}
+      <section className="grid md:grid-cols-2 gap-8 md:gap-12">
+        {/* Left Column: Research Interests & Skills */}
+        <div className="space-y-8">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 font-serif">Research Interests</h2>
+            <div className="flex flex-wrap gap-2">
+              {interests.map((item) => (
+                <span key={item} className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-100 hover:bg-blue-100 transition-colors cursor-default">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 font-serif">Skills</h2>
+            <div className="grid grid-cols-2 gap-y-3 gap-x-4">
+              <div className="flex items-center gap-2 text-gray-700">
+                <Code size={16} className="text-gray-500" />
+                <span>Programming</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-700">
+                <Cpu size={16} className="text-gray-500" />
+                <span>Hardware</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-700">
+                <Users size={16} className="text-gray-500" />
+                <span>Project Management</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-700">
+                <Wrench size={16} className="text-gray-500" />
+                <span>Robotics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column: Contact Info & Hobbies */}
+        <div className="space-y-8">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 font-serif">Contact Info</h2>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
+                  <Mail size={16} className="text-gray-500" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-400 font-bold tracking-wider uppercase mb-0.5">EMAIL</p>
+                  <a href={`mailto:${profileData.email}`} className="text-primary hover:underline font-medium break-all">
+                    {profileData.email}
+                  </a>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
+                  <MessageSquare size={16} className="text-gray-500" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-400 font-bold tracking-wider uppercase mb-0.5">WECHAT</p>
+                  <p className="text-gray-900 font-medium">WANGD0206</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
+                  <MapPin size={16} className="text-gray-500" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-400 font-bold tracking-wider uppercase mb-0.5">OFFICE</p>
+                  <p className="text-gray-900 font-medium">Interdisciplinary Building, 1F</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 font-serif">Hobbies</h2>
+            <div className="flex flex-wrap gap-2">
+              {hobbies.map((hobby) => (
+                <span key={hobby.name} className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 text-gray-600 rounded-md border border-gray-200 text-sm hover:bg-white hover:shadow-sm transition-all">
+                  <span className="text-gray-400">{typeof hobby.icon === 'string' ? hobby.icon : hobby.icon}</span>
+                  {hobby.name}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

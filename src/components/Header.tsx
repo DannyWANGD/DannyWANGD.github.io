@@ -10,7 +10,6 @@ const Header: React.FC = () => {
     { name: 'Home', path: '/' },
     { name: 'Publications', path: '/publications' },
     { name: 'Blog', path: '/blog' },
-    { name: 'About', path: '/about' },
   ];
 
   const isActive = (path: string) => {

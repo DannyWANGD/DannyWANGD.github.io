@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import Publications from './pages/Publications';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
-import About from './pages/About';
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
             <Route path="/publications" element={<Publications />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/about" element={<About />} />
           </Routes>
         </main>
         <Footer />
