@@ -72,7 +72,7 @@ const Home: React.FC = () => {
                   {award.description && (
                     <>
                       <span className="hidden sm:inline text-gray-300">•</span>
-                      <span className={`font-semibold ${award.description.includes('一等奖') || award.description.includes('Winner') ? 'text-amber-600' : 'text-primary'}`}>
+                      <span className="font-bold text-amber-600">
                         {award.description}
                       </span>
                     </>
