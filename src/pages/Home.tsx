@@ -157,66 +157,66 @@ const Home: React.FC = () => {
         {/* Info Grid Section */}
         <section className="grid md:grid-cols-3 gap-6">
         {/* Contact Info */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-          <h2 className="text-lg font-bold text-gray-900 mb-4 font-serif flex items-center gap-2">
+        <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
+          <h2 className="text-lg font-bold text-gray-900 mb-3 font-serif flex items-center gap-2">
             <Mail size={18} className="text-primary" />
             Contact Info
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-2">
             <div className="group">
-              <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase mb-1">EMAIL</p>
-              <a href={`mailto:${profileData.email}`} className="text-gray-700 hover:text-primary hover:underline font-medium break-all transition-colors flex items-center gap-2">
+              <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase mb-0.5">EMAIL</p>
+              <a href={`mailto:${profileData.email}`} className="text-gray-700 hover:text-primary hover:underline font-medium break-all transition-colors flex items-center gap-2 text-sm">
                 {profileData.email}
               </a>
             </div>
             
             <div className="group">
-              <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase mb-1">WECHAT</p>
-              <p className="text-gray-700 font-medium">WANGD0206</p>
+              <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase mb-0.5">WECHAT</p>
+              <p className="text-gray-700 font-medium text-sm">WANGD0206</p>
             </div>
 
             <div className="group">
-              <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase mb-1">OFFICE</p>
-              <p className="text-gray-700 font-medium">Interdisciplinary Building, 1F</p>
+              <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase mb-0.5">OFFICE</p>
+              <p className="text-gray-700 font-medium text-sm">Interdisciplinary Building, 1F</p>
             </div>
           </div>
         </div>
 
         {/* Skills */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-          <h2 className="text-lg font-bold text-gray-900 mb-4 font-serif flex items-center gap-2">
+        <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
+          <h2 className="text-lg font-bold text-gray-900 mb-3 font-serif flex items-center gap-2">
             <Code size={18} className="text-primary" />
             Skills
           </h2>
-          <div className="space-y-3">
-            <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <span className="text-sm font-medium text-gray-700">Programming</span>
+          <div className="space-y-2">
+            <div className="flex items-center justify-between p-1.5 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+              <span className="text-xs font-medium text-gray-700">Programming</span>
               <Code size={14} className="text-gray-400" />
             </div>
-            <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <span className="text-sm font-medium text-gray-700">Hardware</span>
+            <div className="flex items-center justify-between p-1.5 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+              <span className="text-xs font-medium text-gray-700">Hardware</span>
               <Cpu size={14} className="text-gray-400" />
             </div>
-            <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <span className="text-sm font-medium text-gray-700">Project Mgmt</span>
+            <div className="flex items-center justify-between p-1.5 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+              <span className="text-xs font-medium text-gray-700">Project Mgmt</span>
               <Users size={14} className="text-gray-400" />
             </div>
-            <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <span className="text-sm font-medium text-gray-700">Robotics</span>
+            <div className="flex items-center justify-between p-1.5 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+              <span className="text-xs font-medium text-gray-700">Robotics</span>
               <Wrench size={14} className="text-gray-400" />
             </div>
           </div>
         </div>
 
         {/* Hobbies */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-          <h2 className="text-lg font-bold text-gray-900 mb-4 font-serif flex items-center gap-2">
+        <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
+          <h2 className="text-lg font-bold text-gray-900 mb-3 font-serif flex items-center gap-2">
             <Camera size={18} className="text-primary" />
             Hobbies
           </h2>
           <div className="flex flex-wrap gap-2">
             {hobbies.map((hobby) => (
-              <span key={hobby.name} className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 text-gray-600 rounded-lg border border-gray-100 text-xs font-medium hover:bg-white hover:shadow-sm hover:border-primary/20 hover:text-primary transition-all cursor-default">
+              <span key={hobby.name} className="flex items-center gap-1.5 px-2.5 py-1 bg-gray-50 text-gray-600 rounded-lg border border-gray-100 text-xs font-medium hover:bg-white hover:shadow-sm hover:border-primary/20 hover:text-primary transition-all cursor-default">
                 <span className="scale-90 opacity-70">{typeof hobby.icon === 'string' ? hobby.icon : hobby.icon}</span>
                 {hobby.name}
               </span>
