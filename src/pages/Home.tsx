@@ -48,40 +48,29 @@ const Home: React.FC = () => {
               共 {awardsData.length} 项
             </span>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {awardsData.map((award) => (
-              <div 
-                key={award.id} 
-                className="group relative overflow-hidden p-5 rounded-xl border border-gray-100 bg-white hover:border-primary/20 hover:shadow-lg transition-all duration-300"
-              >
-                {/* Decorative background icon */}
-                <div className="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity transform rotate-12">
-                  <Trophy size={80} />
-                </div>
+          
+          <div className="relative border-l-2 border-gray-200 ml-3 space-y-8 py-2">
+            {awardsData.map((award, index) => (
+              <div key={award.id} className="relative pl-8 group">
+                {/* Timeline dot */}
+                <div className={`absolute -left-[9px] top-1.5 w-4 h-4 rounded-full border-2 border-white transition-colors duration-300 ${index === 0 ? 'bg-yellow-500 ring-4 ring-yellow-100' : 'bg-gray-300 group-hover:bg-primary group-hover:ring-4 group-hover:ring-primary/20'}`}></div>
                 
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex justify-between items-start mb-3">
-                    <div className="p-2 bg-yellow-50 text-yellow-600 rounded-lg group-hover:bg-primary/10 group-hover:text-primary transition-colors">
-                      <Award size={20} />
-                    </div>
-                    <div className="flex items-center text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded-full">
-                      <Calendar size={12} className="mr-1" />
-                      {award.date}
-                    </div>
-                  </div>
-                  
-                  <h3 className="font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors line-clamp-2">
+                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4">
+                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">
                     {award.title}
                   </h3>
-                  
-                  <p className="text-sm font-medium text-gray-500 mb-2">
-                    {award.issuer}
-                  </p>
-                  
+                  <span className="text-sm font-mono text-gray-500 whitespace-nowrap shrink-0">
+                    {award.date}
+                  </span>
+                </div>
+                
+                <div className="mt-1 flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm text-gray-600">
+                  <span className="font-medium">{award.issuer}</span>
                   {award.description && (
-                    <p className="text-sm text-gray-400 mt-auto line-clamp-2">
-                      {award.description}
-                    </p>
+                    <>
+                      <span className="hidden sm:inline text-gray-300">•</span>
+                      <span className="text-gray-500 italic">{award.description}</span>
+                    </>
                   )}
                 </div>
               </div>
