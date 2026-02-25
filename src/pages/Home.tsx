@@ -1,10 +1,11 @@
 import React from 'react';
 import profileData from '../data/profile.json';
 import publicationsData from '../data/publications.json';
+import awardsData from '../data/awards.json';
 import SocialLinks from '../components/SocialLinks';
 import PublicationCard from '../components/PublicationCard';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Trophy, Award, Calendar } from 'lucide-react';
 
 const Home: React.FC = () => {
   const recentPublications = publicationsData.slice(0, 3);
@@ -35,6 +36,54 @@ const Home: React.FC = () => {
           <SocialLinks links={profileData.social} className="justify-center md:justify-start pt-2" />
         </div>
       </section>
+
+      {/* Awards Section */}
+      {awardsData.length > 0 && (
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 border-b-4 border-primary/20 pb-1 inline-block mb-6">
+            Honors & Awards
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {awardsData.map((award) => (
+              <div 
+                key={award.id} 
+                className="group relative overflow-hidden p-5 rounded-xl border border-gray-100 bg-white hover:border-primary/20 hover:shadow-lg transition-all duration-300"
+              >
+                {/* Decorative background icon */}
+                <div className="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity transform rotate-12">
+                  <Trophy size={80} />
+                </div>
+                
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="flex justify-between items-start mb-3">
+                    <div className="p-2 bg-yellow-50 text-yellow-600 rounded-lg group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+                      <Award size={20} />
+                    </div>
+                    <div className="flex items-center text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded-full">
+                      <Calendar size={12} className="mr-1" />
+                      {award.date}
+                    </div>
+                  </div>
+                  
+                  <h3 className="font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors line-clamp-2">
+                    {award.title}
+                  </h3>
+                  
+                  <p className="text-sm font-medium text-gray-500 mb-2">
+                    {award.issuer}
+                  </p>
+                  
+                  {award.description && (
+                    <p className="text-sm text-gray-400 mt-auto line-clamp-2">
+                      {award.description}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Selected Publications */}
       {recentPublications.length > 0 && (

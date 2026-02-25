@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "National Scholarship",
+    "issuer": "Ministry of Education, China",
+    "date": "Oct. 2023",
+    "description": "Highest honor for undergraduate students in China (Top 0.2%)"
+  },
+  {
+    "id": 2,
+    "title": "First Prize, RoboMaster Robotics Competition",
+    "issuer": "DJI & The Hong Kong University of Science and Technology",
+    "date": "Aug. 2023",
+    "description": "National Regional Competition"
+  },
+  {
+    "id": 3,
+    "title": "Meritorious Winner, MCM/ICM",
+    "issuer": "COMAP",
+    "date": "Apr. 2023",
+    "description": "Mathematical Contest in Modeling"
+  }
+]
