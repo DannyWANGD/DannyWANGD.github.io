@@ -1,4 +1,4 @@
-# Personal Academic Homepage
+# Wang Ding's Academic Homepage
 
 This is a personal academic homepage built with React, Tailwind CSS, and Vite.
 

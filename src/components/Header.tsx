@@ -22,7 +22,7 @@ const Header: React.FC = () => {
     <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="text-xl font-bold text-primary font-serif">
-          Ding Wang
+          Wang Ding
         </Link>
 
         {/* Desktop Navigation */}

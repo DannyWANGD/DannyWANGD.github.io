@@ -32,7 +32,7 @@ const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
       
       <p className="mt-2 text-sm text-gray-600">
         {publication.authors.map((author, index) => (
-          <span key={index} className={author.includes("Ding Wang") ? "font-bold text-gray-900" : ""}>
+          <span key={index} className={author.includes("Wang Ding") ? "font-bold text-gray-900" : ""}>
             {author}{index < publication.authors.length - 1 ? ", " : ""}
           </span>
         ))}
