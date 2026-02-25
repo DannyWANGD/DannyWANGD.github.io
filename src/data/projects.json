@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "title": "Embodied-AI-Guide",
+    "title": "QECNN",
     "description": "A quantum machine learning project implementing hybrid quantum-classical neural networks for MNIST classification",
     "link": "https://github.com/DannyWANGD/Quantum_learning",
-    "tags": ["Quantum computing", "QECNN", "MINIST"]
+    "tags": ["Quantum computing", "Hybrid Neural Networks", "MINIST"]
   }
 ]

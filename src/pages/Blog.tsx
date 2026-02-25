@@ -39,16 +39,7 @@ const Blog: React.FC = () => {
         
         // Generate excerpt from content after frontmatter
         const contentBody = content.replace(frontmatterRegex, '').trim();
-        // Remove markdown syntax for excerpt
-        const plainText = contentBody
-          .replace(/(\*\*|__)(.*?)\1/g, '$2') // Remove bold
-          .replace(/(\*|_)(.*?)\1/g, '$2')   // Remove italic
-          .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Remove links
-          .replace(/#+\s/g, '') // Remove headers
-          .replace(/`{1,3}(.*?)`{1,3}/g, '$1') // Remove code blocks
-          .replace(/!\[.*?\]\(.*?\)/g, ''); // Remove images
-          
-        excerpt = plainText.substring(0, 150) + '...';
+        excerpt = contentBody.substring(0, 150) + '...';
       }
 
       return {
