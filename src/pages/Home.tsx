@@ -5,7 +5,7 @@ import awardsData from '../data/awards.json';
 import SocialLinks from '../components/SocialLinks';
 import PublicationCard from '../components/PublicationCard';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Trophy, Award, Calendar } from 'lucide-react';
+import { ArrowRight, Users, Trophy, Brain, Award, Calendar } from 'lucide-react';
 
 const Home: React.FC = () => {
   const recentPublications = publicationsData.slice(0, 3);
@@ -17,7 +17,7 @@ const Home: React.FC = () => {
     <div className="space-y-12 animate-in fade-in duration-500">
       {/* Profile Section */}
       <section className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-        <div className="w-48 h-48 shrink-0 rounded-full overflow-hidden border-4 border-white shadow-lg">
+        <div className="w-48 h-48 md:w-56 md:h-56 shrink-0 rounded-full overflow-hidden border-4 border-white shadow-xl ring-1 ring-gray-100">
           <img 
             src={profileData.avatar} 
             alt={profileData.name} 
@@ -25,15 +25,32 @@ const Home: React.FC = () => {
           />
         </div>
         
-        <div className="text-center md:text-left space-y-4 flex-1">
+        <div className="text-center md:text-left space-y-5 flex-1">
           <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900">{profileData.name}</h1>
-            <p className="text-xl text-gray-600 mt-2">{profileData.title}</p>
-            <p className="text-gray-500">{profileData.institution}</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">{profileData.name}</h1>
+            <p className="text-xl text-primary font-medium mt-2">{profileData.title}</p>
+            <p className="text-gray-500 font-medium">{profileData.institution}</p>
           </div>
           
-          <p className="text-gray-700 leading-relaxed max-w-2xl">
-            {profileData.bio}
+          <div className="flex flex-wrap justify-center md:justify-start gap-3 text-sm text-gray-600">
+            <span className="flex items-center gap-1 bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
+              <Users size={14} className="text-primary" />
+              Class Monitor
+            </span>
+            <span className="flex items-center gap-1 bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
+              <Trophy size={14} className="text-amber-500" />
+              6 National Awards
+            </span>
+            <span className="flex items-center gap-1 bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
+              <Brain size={14} className="text-blue-500" />
+              Rank 1st in Major
+            </span>
+          </div>
+
+          <p className="text-gray-600 leading-relaxed max-w-2xl text-lg">
+            Undergraduate student at <strong className="text-gray-900">Beijing Institute of Technology</strong>, 
+            Teli College (Li Zexiang Innovation Class). 
+            Passionate about building intelligent robots that can perceive and interact with the world.
           </p>
           
           <SocialLinks links={profileData.social} className="justify-center md:justify-start pt-2" />
