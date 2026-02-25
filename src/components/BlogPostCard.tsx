@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { formatDate } from '../utils/dateFormat';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export interface BlogPost {
   slug: string;
@@ -27,9 +29,18 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({ post }) => {
           </time>
         </div>
         
-        <p className="text-sm text-gray-600 line-clamp-2 mb-4">
-          {post.excerpt}
-        </p>
+        <div className="text-sm text-gray-600 line-clamp-2 mb-4 prose prose-sm prose-slate max-w-none">
+          <ReactMarkdown remarkPlugins={[remarkGfm]} components={{
+            // Override paragraph to avoid hydration errors or invalid nesting if needed
+            p: ({node, ...props}) => <span {...props} />,
+            // Disable other block elements that might break the layout
+            h1: ({node, ...props}) => <strong {...props} />,
+            h2: ({node, ...props}) => <strong {...props} />,
+            h3: ({node, ...props}) => <strong {...props} />,
+          }}>
+            {post.excerpt}
+          </ReactMarkdown>
+        </div>
         
         <div className="flex flex-wrap gap-2">
           {post.tags.map((tag) => (
