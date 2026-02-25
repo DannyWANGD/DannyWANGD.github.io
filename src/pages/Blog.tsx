@@ -58,7 +58,7 @@ const Blog: React.FC = () => {
   }, []);
 
   return (
-    <div className="space-y-8 animate-in fade-in duration-500">
+    <div className="space-y-8 animate-in fade-in duration-500 max-w-5xl mx-auto px-4 md:px-8">
       <div>
         <h1 className="text-3xl font-bold text-gray-900 mb-4">Blog</h1>
         <p className="text-gray-600 max-w-2xl">

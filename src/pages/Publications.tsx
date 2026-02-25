@@ -6,7 +6,7 @@ import { Github } from 'lucide-react';
 
 const Publications: React.FC = () => {
   return (
-    <div className="space-y-12 animate-in fade-in duration-500">
+    <div className="space-y-12 animate-in fade-in duration-500 max-w-5xl mx-auto px-4 md:px-8">
       {/* Publications Section */}
       <div className="space-y-8">
         <div>

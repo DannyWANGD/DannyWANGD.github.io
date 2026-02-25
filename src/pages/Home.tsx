@@ -153,7 +153,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Info Grid Section */}
-      <section className="grid md:grid-cols-3 gap-6 -mt-10 pt-4 px-2">
+      <section className="grid md:grid-cols-3 gap-6 -mt-16 pt-4 px-2">
         {/* Contact Info */}
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
           <h2 className="text-lg font-bold text-gray-900 mb-4 font-serif flex items-center gap-2">
