@@ -9,6 +9,9 @@ import { ArrowRight, Trophy, Award, Calendar } from 'lucide-react';
 
 const Home: React.FC = () => {
   const recentPublications = publicationsData.slice(0, 3);
+  
+  // Calculate national awards count
+  const nationalAwardsCount = awardsData.filter(award => award.description.includes('国家级') || award.description.includes('National')).length;
 
   return (
     <div className="space-y-12 animate-in fade-in duration-500">
@@ -45,7 +48,7 @@ const Home: React.FC = () => {
               Honors & Awards
             </h2>
             <span className="px-3 py-1 text-sm font-semibold text-primary bg-primary/10 rounded-full">
-              共 {awardsData.length} 项
+              国家级奖项 {nationalAwardsCount} 项
             </span>
           </div>
           
@@ -59,17 +62,19 @@ const Home: React.FC = () => {
                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">
                     {award.title}
                   </h3>
-                  <span className="text-sm font-mono text-gray-500 whitespace-nowrap shrink-0">
+                  <span className="text-sm font-mono text-gray-400 whitespace-nowrap shrink-0">
                     {award.date}
                   </span>
                 </div>
                 
                 <div className="mt-1 flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm text-gray-600">
-                  <span className="font-medium">{award.issuer}</span>
+                  <span className="font-medium text-gray-500">{award.issuer}</span>
                   {award.description && (
                     <>
                       <span className="hidden sm:inline text-gray-300">•</span>
-                      <span className="text-gray-500 italic">{award.description}</span>
+                      <span className={`font-semibold ${award.description.includes('一等奖') || award.description.includes('Winner') ? 'text-amber-600' : 'text-primary'}`}>
+                        {award.description}
+                      </span>
                     </>
                   )}
                 </div>
