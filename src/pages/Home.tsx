@@ -40,9 +40,14 @@ const Home: React.FC = () => {
       {/* Awards Section */}
       {awardsData.length > 0 && (
         <section>
-          <h2 className="text-2xl font-bold text-gray-900 border-b-4 border-primary/20 pb-1 inline-block mb-6">
-            Honors & Awards
-          </h2>
+          <div className="flex items-center gap-3 mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 border-b-4 border-primary/20 pb-1 inline-block">
+              Honors & Awards
+            </h2>
+            <span className="px-3 py-1 text-sm font-semibold text-primary bg-primary/10 rounded-full">
+              共 {awardsData.length} 项
+            </span>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {awardsData.map((award) => (
               <div 

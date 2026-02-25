@@ -1,23 +1,44 @@
 [
   {
     "id": 1,
-    "title": "National Scholarship",
-    "issuer": "Ministry of Education, China",
-    "date": "Oct. 2023",
-    "description": "Highest honor for undergraduate students in China (Top 0.2%)"
+    "title": "美国大学生数学建模竞赛(MCM/ICM)",
+    "issuer": "COMAP",
+    "date": "2024",
+    "description": "国际级二等奖 (Meritorious Winner)"
   },
   {
     "id": 2,
-    "title": "First Prize, RoboMaster Robotics Competition",
-    "issuer": "DJI & The Hong Kong University of Science and Technology",
-    "date": "Aug. 2023",
-    "description": "National Regional Competition"
+    "title": "CIC“悟空杯”量子计算大赛 — 量子创新赛道",
+    "issuer": "中国计算机学会 (CCF)",
+    "date": "2024",
+    "description": "国家级一等奖"
   },
   {
     "id": 3,
-    "title": "Meritorious Winner, MCM/ICM",
-    "issuer": "COMAP",
-    "date": "Apr. 2023",
-    "description": "Mathematical Contest in Modeling"
+    "title": "第十九届“挑战杯”全国大学生课外学术科技作品竞赛“人工智能+”挑战赛",
+    "issuer": "共青团中央",
+    "date": "2024",
+    "description": "国家级二等奖"
+  },
+  {
+    "id": 4,
+    "title": "全国大学生数学建模大赛",
+    "issuer": "中国工业与应用数学学会",
+    "date": "2024",
+    "description": "国家级二等奖"
+  },
+  {
+    "id": 5,
+    "title": "第四届CCF量子计算编程挑战赛 — 高校赛道",
+    "issuer": "中国计算机学会 (CCF)",
+    "date": "2024",
+    "description": "国家级三等奖"
+  },
+  {
+    "id": 6,
+    "title": "第39届全国青少年科技创新大赛",
+    "issuer": "中国科协",
+    "date": "2024",
+    "description": "国家级专项奖"
   }
 ]
