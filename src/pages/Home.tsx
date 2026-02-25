@@ -27,7 +27,10 @@ const Home: React.FC = () => {
         
         <div className="text-center md:text-left space-y-5 flex-1">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">{profileData.name}</h1>
+            <div className="flex items-center gap-4 flex-wrap justify-center md:justify-start">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">{profileData.name}</h1>
+              <SocialLinks links={profileData.social} className="pt-1" />
+            </div>
             <p className="text-xl text-primary font-medium mt-2">{profileData.title}</p>
             <p className="text-gray-500 font-medium">{profileData.institution}</p>
           </div>
@@ -52,8 +55,6 @@ const Home: React.FC = () => {
             Teli College (Li Zexiang Innovation Class). 
             Passionate about building intelligent robots that can perceive and interact with the world.
           </p>
-          
-          <SocialLinks links={profileData.social} className="justify-center md:justify-start pt-2" />
         </div>
       </section>
 

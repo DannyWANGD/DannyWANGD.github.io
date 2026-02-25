@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import profileData from '../data/profile.json';
+import SocialLinks from '../components/SocialLinks';
 import { 
   Mail, 
   MapPin, 
@@ -51,14 +52,17 @@ const About: React.FC = () => {
         
         <div className="text-center md:text-left flex-1 space-y-4">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">{profileData.name}</h1>
+            <div className="flex items-center gap-4 flex-wrap justify-center md:justify-start">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">{profileData.name}</h1>
+              <SocialLinks links={profileData.social} className="pt-1" />
+            </div>
             <p className="text-xl text-primary font-medium mt-2">{profileData.title}</p>
           </div>
           
           <div className="flex flex-wrap justify-center md:justify-start gap-3 text-sm text-gray-600">
             <span className="flex items-center gap-1 bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
               <Users size={14} className="text-primary" />
-              Class Monitor
+              Class Monitor for 13 Years
             </span>
             <span className="flex items-center gap-1 bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
               <Trophy size={14} className="text-amber-500" />
