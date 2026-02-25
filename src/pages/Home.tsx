@@ -223,7 +223,8 @@ const Home: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+        </section>
+      </div>
 
       {/* Awards Section */}
       {awardsData.length > 0 && (
