@@ -1,0 +1,28 @@
+{
+  "name": "Ding Wang",
+  "title": "PhD Student",
+  "institution": "University of Computer Science",
+  "bio": "I am a first-year Ph.D. student at MMLab@HKU, supervised by Prof. Ping Luo. My research focuses on Embodied AI, including robotic foundation models, generalizable manipulation policies, and robot data synthesizers.",
+  "avatar": "https://github.com/dingwang.png",
+  "email": "dingwang@example.com",
+  "social": {
+    "github": "https://github.com/dingwang",
+    "googleScholar": "https://scholar.google.com",
+    "linkedin": "https://linkedin.com/in/dingwang",
+    "twitter": "https://twitter.com/dingwang"
+  },
+  "education": [
+    {
+      "degree": "Ph.D. in Computer Science",
+      "school": "The University of Hong Kong",
+      "year": "2025 - Present",
+      "field": "Embodied AI"
+    },
+    {
+      "degree": "B.Eng. in Computer Science",
+      "school": "Shenzhen University",
+      "year": "2021 - 2025",
+      "field": "Computer Science and Technology"
+    }
+  ]
+}

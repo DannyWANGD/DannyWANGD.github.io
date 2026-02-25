@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Embodied-AI-Guide",
+    "description": "A comprehensive guide and roadmap for Embodied AI research, collecting resources and tutorials for beginners.",
+    "link": "https://github.com/dingwang/Embodied-AI-Guide",
+    "tags": ["Embodied AI", "Tutorial", "Education"]
+  },
+  {
+    "id": 2,
+    "title": "RoboTwin Project",
+    "description": "Open-source implementation of the RoboTwin benchmark, providing simulation environments and baseline algorithms.",
+    "link": "https://github.com/dingwang/RoboTwin",
+    "tags": ["Robotics", "Simulation", "Benchmark"]
+  }
+]
