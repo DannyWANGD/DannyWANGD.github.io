@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Publications from './pages/Publications';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import Life from './pages/Life';
+import LifePost from './pages/LifePost';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
             <Route path="/publications" element={<Publications />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/life" element={<Life />} />
+            <Route path="/life/:id" element={<LifePost />} />
           </Routes>
         </main>
         <Footer />
