@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import rehypeHighlight from 'rehype-highlight';
+import 'katex/dist/katex.min.css';
+import 'highlight.js/styles/atom-one-dark.css';
 import { formatDate } from '../utils/dateFormat';
 import { ArrowLeft } from 'lucide-react';
 
@@ -91,7 +96,10 @@ const BlogPost: React.FC = () => {
       )}
 
       <article className="prose prose-lg prose-slate max-w-none prose-headings:font-bold prose-headings:text-primary prose-a:text-primary hover:prose-a:text-blue-700">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        <ReactMarkdown 
+          remarkPlugins={[remarkGfm, remarkMath]}
+          rehypePlugins={[rehypeKatex, rehypeHighlight]}
+        >
           {content}
         </ReactMarkdown>
       </article>
