@@ -49,7 +49,7 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-12 animate-in fade-in duration-500">
+    <div className="space-y-12 animate-in fade-in duration-500 max-w-5xl mx-auto px-4 md:px-8">
       {/* Profile Section */}
       <section className="flex flex-col md:flex-row gap-8 items-center md:items-start">
         <div className="w-48 h-48 md:w-56 md:h-56 shrink-0 rounded-full overflow-hidden border-4 border-white shadow-xl ring-1 ring-gray-100">
@@ -87,31 +87,46 @@ const Home: React.FC = () => {
 
           <p className="text-gray-600 leading-relaxed max-w-2xl text-lg">
             Undergraduate student at <strong className="text-gray-900">Beijing Institute of Technology</strong>, 
-            Teli College (Li Zexiang Innovation Class). 
+            Xu Teli College (Li Zexiang Innovation Class). 
             Passionate about building intelligent robots that can perceive and interact with the world.
           </p>
         </div>
       </section>
 
       {/* Biography Section */}
-      <section className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-        <div className="prose prose-lg prose-slate max-w-none text-gray-600">
+      <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+        <h2 className="text-2xl font-bold text-gray-900 border-b-4 border-primary/20 pb-1 inline-block mb-6">
+          Biography
+        </h2>
+        
+        <div className="prose prose-lg prose-slate max-w-none text-gray-700 leading-relaxed space-y-4">
           <p>
-            I am currently an undergraduate student (Class of 2028) majoring in <strong>Robotics Engineering</strong> at the prestigious <strong>Li Zexiang Innovation and Entrepreneurship Class</strong>, Teli College, Beijing Institute of Technology. I serve as the monitor of Class 2453.
+            I am currently an undergraduate student (Class of 2028) majoring in <strong className="text-primary font-semibold">Robotics Engineering</strong> at the prestigious <strong className="text-primary font-semibold">Li Zexiang Innovation and Entrepreneurship Class</strong>, Teli College, Beijing Institute of Technology. I serve as the monitor of Class 2453.
           </p>
           <p>
-            My academic journey is driven by a passion for innovation and excellence. I have maintained the <strong>top ranking (1st)</strong> in my major comprehensive evaluation. I have been honored as a University-level Excellent Student and College-level Excellent League Member, and have received both First-class and Second-class University Scholarships.
+            My academic journey is driven by a passion for innovation and excellence. I have maintained the <strong className="text-primary font-semibold">top ranking (1st)</strong> in my major comprehensive evaluation. I have been honored as a University-level Excellent Student and College-level Excellent League Member, and have received both First-class and Second-class University Scholarships.
           </p>
           <p>
-            In research, I actively lead cutting-edge projects. I serve as the team captain for two National Innovation Projects: <em>"Physics-Informed Reinforcement Learning Algorithms"</em> and <em>"Quantum-Classical Hybrid Algorithms"</em>. My team has achieved significant recognition, winning <strong>six national-level awards</strong>.
+            In research, I actively lead cutting-edge projects. I serve as the team captain for two National Innovation Projects: <em>"Physics-Informed Reinforcement Learning Algorithms"</em> and <em>"Quantum-Classical Hybrid Algorithms"</em>. My team has achieved significant recognition, winning <strong className="text-amber-600 font-semibold">six national-level awards</strong>.
           </p>
           <p>
-            Beyond research, I am the leader of the <strong>Robocon</strong> National University Robotics Competition (Volleyball Track). I possess strong skills in programming, hardware engineering, and project management. I am deeply enthusiastic about Robotics, Embodied AI, and contributing to the open-source community.
+            Beyond research, I am the leader of the <strong className="text-primary font-semibold">Robocon</strong> National University Robotics Competition (Volleyball Track). I possess strong skills in programming, hardware engineering, and project management. I am deeply enthusiastic about Robotics, Embodied AI, and contributing to the open-source community.
           </p>
+          
+          <div className="mt-8 mb-4">
+            <h3 className="text-lg font-bold text-gray-900 mb-3 font-serif">Research Interests</h3>
+            <div className="flex flex-wrap gap-3">
+              {interests.map((item) => (
+                <span key={item} className="px-4 py-1.5 bg-blue-50 text-blue-700 rounded-lg font-medium border border-blue-100 hover:bg-blue-100 transition-colors cursor-default shadow-sm">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Chinese Version (Collapsible) */}
-        <div className="mt-6 border-t border-gray-100 pt-4">
+        <div className="mt-8 border-t border-gray-100 pt-6">
           <button 
             onClick={() => setShowChinese(!showChinese)}
             className="flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-primary transition-colors bg-gray-50 hover:bg-gray-100 px-3 py-1.5 rounded-full"
@@ -125,11 +140,7 @@ const Home: React.FC = () => {
             <div className="mt-4 p-4 bg-gray-50 rounded-lg prose prose-sm prose-slate max-w-none text-gray-600">
               <p className="mt-0">
                 北京理工大学特立书院机器人工程（李泽湘双创班）专业 24 级在读本科生，现任 2453 班班长。善于沟通协调，组织开展诸 多班级活动，曾获评校级优秀学生、院级优秀团员，校级一、二等奖学金等荣誉。综合成绩专业第一。
-              </p>
-              <p>
-                作为队长主持 “基于物理信息引导的强化学习算法……” 与 “量子-经典混合算法探究……” 两项大创项目，共获得第十九届“挑战杯”全国大学生课外学术科技作品竞赛“人工智能+”挑战赛国家级二等奖、全国大学生数学建模大赛国家级二等奖、CIC “悟空杯” 量子计算大赛(量子创新赛道)国家级一等奖等六项国家级奖项。
-              </p>
-              <p className="mb-0">
+                作为队长主持 “基于物理信息引导的强化学习算法” 与 “量子-经典混合算法探究” 两项大创项目，共获得第十九届“挑战杯”全国大学生课外学术科技作品竞赛“人工智能+”挑战赛国家级二等奖、全国大学生数学建模大赛国家级二等奖、CIC “悟空杯” 量子计算大赛(量子创新赛道)国家级一等奖等六项国家级奖项。
                 目前作为 Robocon 全国大学生机器人大赛排球赛道的负责人，具有较强的编程能力、硬件能力、以及工程项目管理能力。我热衷于机器人技术、具身人工智能以及为开源社区做贡献。
               </p>
             </div>
@@ -138,90 +149,72 @@ const Home: React.FC = () => {
       </section>
 
       {/* Info Grid Section */}
-      <section className="grid md:grid-cols-12 gap-6">
-        {/* Left Column: Research Interests & Skills (spans 7 cols) */}
-        <div className="md:col-span-7 space-y-6">
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-full">
-            <h2 className="text-xl font-bold text-navy-900 mb-4 font-serif text-gray-900">Research Interests</h2>
-            <div className="flex flex-wrap gap-2 mb-8">
-              {interests.map((item) => (
-                <span key={item} className="px-3 py-1.5 bg-blue-50 text-blue-600 rounded-lg text-sm font-medium border border-blue-100 hover:bg-blue-100 transition-colors cursor-default">
-                  {item}
-                </span>
-              ))}
+      <section className="grid md:grid-cols-3 gap-6">
+        {/* Contact Info */}
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h2 className="text-lg font-bold text-gray-900 mb-4 font-serif flex items-center gap-2">
+            <Mail size={18} className="text-primary" />
+            Contact Info
+          </h2>
+          <div className="space-y-4">
+            <div className="group">
+              <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase mb-1">EMAIL</p>
+              <a href={`mailto:${profileData.email}`} className="text-gray-700 hover:text-primary hover:underline font-medium break-all transition-colors flex items-center gap-2">
+                {profileData.email}
+              </a>
+            </div>
+            
+            <div className="group">
+              <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase mb-1">WECHAT</p>
+              <p className="text-gray-700 font-medium">WANGD0206</p>
             </div>
 
-            <h2 className="text-xl font-bold text-navy-900 mb-4 font-serif text-gray-900">Skills</h2>
-            <div className="grid grid-cols-2 gap-y-3 gap-x-4">
-              <div className="flex items-center gap-2 text-gray-700">
-                <Code size={16} className="text-gray-400" />
-                <span className="text-sm font-medium">Programming</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-700">
-                <Cpu size={16} className="text-gray-400" />
-                <span className="text-sm font-medium">Hardware</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-700">
-                <Users size={16} className="text-gray-400" />
-                <span className="text-sm font-medium">Project Management</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-700">
-                <Wrench size={16} className="text-gray-400" />
-                <span className="text-sm font-medium">Robotics</span>
-              </div>
+            <div className="group">
+              <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase mb-1">OFFICE</p>
+              <p className="text-gray-700 font-medium">Interdisciplinary Building, 1F</p>
             </div>
           </div>
         </div>
 
-        {/* Right Column: Contact Info & Hobbies (spans 5 cols) */}
-        <div className="md:col-span-5 space-y-6">
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-            <h2 className="text-xl font-bold text-navy-900 mb-4 font-serif text-gray-900">Contact Info</h2>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shrink-0">
-                  <Mail size={14} className="text-gray-400" />
-                </div>
-                <div className="min-w-0">
-                  <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase">EMAIL</p>
-                  <a href={`mailto:${profileData.email}`} className="text-primary hover:underline text-sm font-medium truncate block">
-                    {profileData.email}
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shrink-0">
-                  <MessageSquare size={14} className="text-gray-400" />
-                </div>
-                <div>
-                  <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase">WECHAT</p>
-                  <p className="text-gray-900 text-sm font-medium">WANGD0206</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shrink-0">
-                  <MapPin size={14} className="text-gray-400" />
-                </div>
-                <div>
-                  <p className="text-[10px] text-gray-400 font-bold tracking-wider uppercase">OFFICE</p>
-                  <p className="text-gray-900 text-sm font-medium">Interdisciplinary Building, 1F</p>
-                </div>
-              </div>
+        {/* Skills */}
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h2 className="text-lg font-bold text-gray-900 mb-4 font-serif flex items-center gap-2">
+            <Code size={18} className="text-primary" />
+            Skills
+          </h2>
+          <div className="space-y-3">
+            <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+              <span className="text-sm font-medium text-gray-700">Programming</span>
+              <Code size={14} className="text-gray-400" />
+            </div>
+            <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+              <span className="text-sm font-medium text-gray-700">Hardware</span>
+              <Cpu size={14} className="text-gray-400" />
+            </div>
+            <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+              <span className="text-sm font-medium text-gray-700">Project Mgmt</span>
+              <Users size={14} className="text-gray-400" />
+            </div>
+            <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+              <span className="text-sm font-medium text-gray-700">Robotics</span>
+              <Wrench size={14} className="text-gray-400" />
             </div>
           </div>
+        </div>
 
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-            <h2 className="text-xl font-bold text-navy-900 mb-4 font-serif text-gray-900">Hobbies</h2>
-            <div className="flex flex-wrap gap-2">
-              {hobbies.map((hobby) => (
-                <span key={hobby.name} className="flex items-center gap-1.5 px-2.5 py-1 bg-gray-50 text-gray-600 rounded-md border border-gray-100 text-xs font-medium hover:bg-white hover:shadow-sm transition-all">
-                  <span className="text-gray-400 scale-90">{typeof hobby.icon === 'string' ? hobby.icon : hobby.icon}</span>
-                  {hobby.name}
-                </span>
-              ))}
-            </div>
+        {/* Hobbies */}
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h2 className="text-lg font-bold text-gray-900 mb-4 font-serif flex items-center gap-2">
+            <Camera size={18} className="text-primary" />
+            Hobbies
+          </h2>
+          <div className="flex flex-wrap gap-2">
+            {hobbies.map((hobby) => (
+              <span key={hobby.name} className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 text-gray-600 rounded-lg border border-gray-100 text-xs font-medium hover:bg-white hover:shadow-sm hover:border-primary/20 hover:text-primary transition-all cursor-default">
+                <span className="scale-90 opacity-70">{typeof hobby.icon === 'string' ? hobby.icon : hobby.icon}</span>
+                {hobby.name}
+              </span>
+            ))}
           </div>
         </div>
       </section>
