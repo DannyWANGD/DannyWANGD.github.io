@@ -1,6 +1,7 @@
 {
   "name": "DannyWANGD.github.io",
   "private": true,
+  "homepage": "https://DannyWANGD.github.io",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
