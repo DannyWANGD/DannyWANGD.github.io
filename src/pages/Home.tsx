@@ -101,20 +101,20 @@ const Home: React.FC = () => {
         
         <div className="prose prose-lg prose-slate max-w-none text-gray-700 leading-relaxed space-y-4">
           <p>
-            I am currently an undergraduate student (Class of 2028) majoring in <strong className="text-primary font-serif font-bold">Robotics Engineering</strong> at the prestigious <strong className="text-primary font-serif font-bold">Li Zexiang Innovation and Entrepreneurship Class</strong>, Teli College, Beijing Institute of Technology. I serve as the monitor of Class 2453.
+            Hi! I am <strong className="text-primary font-serif font-extrabold text-lg">Ding Wang (Chinese name: 王玎).</strong> I am currently an undergraduate student (Class of 2028) majoring in <strong className="text-primary font-serif font-extrabold">Robotics Engineering</strong> at the prestigious <strong className="text-primary font-serif font-extrabold">Li Zexiang Innovation and Entrepreneurship Class</strong>, Teli College, Beijing Institute of Technology. I serve as the monitor of Class 2453.
           </p>
           <p>
-            My academic journey is driven by a passion for innovation and excellence. I have maintained the <strong className="text-primary font-serif font-bold">top ranking (1st)</strong> in my major comprehensive evaluation. I have been honored as a University-level Excellent Student and College-level Excellent League Member, and have received both First-class and Second-class University Scholarships.
+            My academic journey is driven by a passion for innovation and excellence. I have maintained the <strong className="text-primary font-serif font-extrabold">top ranking (1st)</strong> in my major comprehensive evaluation. I have been honored as a University-level Excellent Student and College-level Excellent League Member, and have received both First-class and Second-class University Scholarships.
           </p>
           <p>
-            In research, I actively lead cutting-edge projects. I serve as the team captain for two National Innovation Projects: <em>"Physics-Informed Reinforcement Learning Algorithms"</em> and <em>"Quantum-Classical Hybrid Algorithms"</em>. My team has achieved significant recognition, winning <strong className="text-amber-600 font-serif font-bold">six national-level awards</strong>.
+            In research, I actively lead cutting-edge projects. I serve as the team captain for two National Innovation Projects: <em>"Physics-Informed Reinforcement Learning Algorithms"</em> and <em>"Quantum-Classical Hybrid Algorithms"</em>. My team has achieved significant recognition, winning <strong className="text-amber-600 font-serif font-extrabold">six national-level awards</strong>.
           </p>
           <p>
-            Beyond research, I am the leader of the <strong className="text-primary font-serif font-bold">Robocon</strong> National University Robotics Competition (Volleyball Track). I possess strong skills in programming, hardware engineering, and project management. I am deeply enthusiastic about Robotics, Embodied AI, and contributing to the open-source community.
+            Beyond research, I am the leader of the <strong className="text-primary font-serif font-extrabold">Robocon</strong> National University Robotics Competition (Volleyball Track). I possess strong skills in programming, hardware engineering, and project management. I am deeply enthusiastic about Robotics, Embodied AI, and contributing to the open-source community.
           </p>
           
           <div className="mt-6 mb-2">
-            <h3 className="text-lg font-bold text-gray-900 mb-3 font-serif">Research Interests</h3>
+            <h3 className="text-lg font-bold text-gray-900 mb-2 font-serif">Research Interests</h3>
             <div className="flex flex-wrap gap-3">
               {interests.map((item) => (
                 <span key={item} className="px-4 py-1.5 bg-blue-50 text-blue-700 rounded-lg font-medium border border-blue-100 hover:bg-blue-100 transition-colors cursor-default shadow-sm">
@@ -126,7 +126,7 @@ const Home: React.FC = () => {
         </div>
 
         {/* Chinese Version (Collapsible) */}
-        <div className="mt-4 border-t border-gray-100 pt-4">
+        <div className="mt-2 border-t border-gray-100 pt-4">
           <button 
             onClick={() => setShowChinese(!showChinese)}
             className="flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-primary transition-colors bg-gray-50 hover:bg-gray-100 px-3 py-1.5 rounded-full"
@@ -142,10 +142,10 @@ const Home: React.FC = () => {
                 北京理工大学特立书院机器人工程（李泽湘双创班）专业 24 级在读本科生，现任 2453 班班长。善于沟通协调，组织开展诸 多班级活动，曾获评校级优秀学生、院级优秀团员，校级一、二等奖学金等荣誉。综合成绩专业第一。
               </p>
               <p>
-                作为队长主持 <strong className="text-primary font-serif font-bold">“基于物理信息引导的强化学习算法”</strong> 与 <strong className="text-primary font-serif font-bold">“量子-经典混合算法探究”</strong> 两项大创项目，共获得第十九届“挑战杯”全国大学生课外学术科技作品竞赛“人工智能+”挑战赛国家级二等奖、全国大学生数学建模大赛国家级二等奖、CIC “悟空杯” 量子计算大赛(量子创新赛道)国家级一等奖等<strong className="text-amber-600 font-serif font-bold">六项国家级奖项</strong>。
+                作为队长主持 <strong className="text-primary font-serif font-extrabold">“基于物理信息引导的强化学习算法”</strong> 与 <strong className="text-primary font-serif font-extrabold">“量子-经典混合算法探究”</strong> 两项大创项目，共获得第十九届“挑战杯”全国大学生课外学术科技作品竞赛“人工智能+”挑战赛国家级二等奖、全国大学生数学建模大赛国家级二等奖、CIC “悟空杯” 量子计算大赛(量子创新赛道)国家级一等奖等<strong className="text-amber-600 font-serif font-extrabold">六项国家级奖项</strong>。
               </p>
               <p className="mb-0">
-                目前作为 <strong className="text-primary font-serif font-bold">Robocon</strong> 全国大学生机器人大赛排球赛道的负责人，具有较强的编程能力、硬件能力、以及工程项目管理能力。我热衷于机器人技术、具身人工智能以及为开源社区做贡献。
+                目前作为 <strong className="text-primary font-serif font-extrabold">Robocon</strong> 全国大学生机器人大赛排球赛道的负责人，具有较强的编程能力、硬件能力、以及工程项目管理能力。我热衷于机器人技术、具身人工智能以及为开源社区做贡献。
               </p>
             </div>
           )}
@@ -153,7 +153,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Info Grid Section */}
-      <section className="grid md:grid-cols-3 gap-6 -mt-6">
+      <section className="grid md:grid-cols-3 gap-6 -mt-10 pt-4 px-2">
         {/* Contact Info */}
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
           <h2 className="text-lg font-bold text-gray-900 mb-4 font-serif flex items-center gap-2">
