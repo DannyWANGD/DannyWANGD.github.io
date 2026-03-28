@@ -4,10 +4,156 @@
 
 @layer base {
   body {
-    @apply bg-secondary text-secondary-foreground font-serif antialiased;
+    @apply bg-slate-100 text-slate-700 font-serif antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold text-primary;
+  }
+}
+
+@layer components {
+  .obsidian-post-shell {
+    @apply rounded-[28px] bg-white/95 backdrop-blur-sm;
+  }
+
+  .obsidian-markdown {
+    @apply max-w-none text-[1.08rem] leading-8 text-slate-700;
+  }
+
+  .obsidian-markdown > :first-child {
+    @apply mt-0;
+  }
+
+  .obsidian-markdown > :last-child {
+    @apply mb-0;
+  }
+
+  .obsidian-markdown h1,
+  .obsidian-markdown h2,
+  .obsidian-markdown h3,
+  .obsidian-markdown h4,
+  .obsidian-markdown h5,
+  .obsidian-markdown h6 {
+    @apply scroll-mt-24 font-semibold tracking-tight;
+  }
+
+  .obsidian-markdown h1 {
+    @apply mt-14 text-4xl leading-tight text-slate-950;
+  }
+
+  .obsidian-markdown h2 {
+    @apply mt-14 border-b border-slate-200 pb-3 text-3xl leading-tight text-blue-900;
+  }
+
+  .obsidian-markdown h3 {
+    @apply mt-10 text-2xl leading-tight text-sky-900;
+  }
+
+  .obsidian-markdown h4 {
+    @apply mt-8 text-xl leading-tight text-indigo-800;
+  }
+
+  .obsidian-markdown h5 {
+    @apply mt-6 text-lg leading-tight text-indigo-700;
+  }
+
+  .obsidian-markdown h6 {
+    @apply mt-5 text-base leading-tight text-slate-600;
+  }
+
+  .obsidian-markdown p,
+  .obsidian-markdown ul,
+  .obsidian-markdown ol,
+  .obsidian-markdown blockquote,
+  .obsidian-markdown pre,
+  .obsidian-markdown table {
+    @apply my-6;
+  }
+
+  .obsidian-markdown p {
+    @apply leading-8 text-slate-700;
+  }
+
+  .obsidian-markdown strong {
+    @apply font-semibold text-blue-900;
+  }
+
+  .obsidian-markdown a {
+    @apply font-medium text-sky-700 underline decoration-sky-300 underline-offset-4 transition-colors hover:text-sky-800;
+  }
+
+  .obsidian-markdown ul,
+  .obsidian-markdown ol {
+    @apply pl-7;
+  }
+
+  .obsidian-markdown ul {
+    @apply list-disc;
+  }
+
+  .obsidian-markdown ol {
+    @apply list-decimal;
+  }
+
+  .obsidian-markdown li {
+    @apply my-2 pl-1;
+  }
+
+  .obsidian-markdown li::marker {
+    color: rgb(100 116 139);
+  }
+
+  .obsidian-markdown blockquote {
+    @apply rounded-2xl border-l-4 border-sky-500 bg-sky-50/80 px-5 py-4 text-slate-700 shadow-sm;
+  }
+
+  .obsidian-markdown hr {
+    @apply my-10 border-slate-200;
+  }
+
+  .obsidian-markdown :not(pre) > code {
+    @apply rounded-md bg-slate-100 px-1.5 py-1 text-[0.92em] text-sky-800;
+  }
+
+  .obsidian-markdown pre {
+    @apply overflow-x-auto rounded-2xl border border-slate-800/60 bg-slate-950 px-5 py-4 text-[0.95rem] leading-7 shadow-lg;
+  }
+
+  .obsidian-markdown pre code {
+    @apply bg-transparent p-0 text-inherit;
+  }
+
+  .obsidian-markdown table {
+    @apply block w-full overflow-x-auto rounded-2xl border border-slate-200;
+  }
+
+  .obsidian-markdown table thead {
+    @apply bg-slate-50;
+  }
+
+  .obsidian-markdown table th,
+  .obsidian-markdown table td {
+    @apply border-b border-slate-200 px-4 py-3 text-left align-top;
+  }
+
+  .obsidian-markdown table tr:last-child td {
+    @apply border-b-0;
+  }
+
+  .obsidian-markdown img {
+    @apply rounded-2xl border border-slate-200 shadow-sm;
+  }
+
+  .obsidian-markdown .katex {
+    font-size: 1.06em;
+  }
+
+  .obsidian-markdown .katex-display {
+    @apply my-8 overflow-x-auto overflow-y-hidden text-center;
+  }
+
+  .obsidian-markdown .katex-display > .katex {
+    @apply inline-block text-center;
   }
 }

@@ -9,50 +9,26 @@ import 'katex/dist/katex.min.css';
 import 'highlight.js/styles/atom-one-dark.css';
 import { formatDate } from '../utils/dateFormat';
 import { ArrowLeft } from 'lucide-react';
+import { parseMarkdownPost, type PostMetadata } from '../utils/markdownPost';
 
 const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const [content, setContent] = useState('');
-  const [metadata, setMetadata] = useState<any>(null);
+  const [metadata, setMetadata] = useState<PostMetadata | null>(null);
 
   useEffect(() => {
     const loadPost = async () => {
       try {
-        // In Vite we need to handle dynamic imports carefully
-        // Ideally we should have a map or utility, but here we try to match the slug
         const modules = import.meta.glob('../posts/*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
         const path = `../posts/${slug}.md`;
         const postContent = modules[path];
 
         if (postContent) {
-           const frontmatterRegex = /---\n([\s\S]*?)\n---/;
-           const match = postContent.match(frontmatterRegex);
-           
-           if (match) {
-             const frontmatter = match[1];
-             const lines = frontmatter.split('\n');
-             const meta: any = {};
-             
-             lines.forEach(line => {
-               const [key, ...valueParts] = line.split(':');
-               if (key && valueParts.length) {
-                 const value = valueParts.join(':').trim().replace(/^["']|["']$/g, '');
-                 if (key.trim() === 'tags') {
-                     // Simple parsing for tags
-                     meta[key.trim()] = value.replace(/^\[|\]$/g, '').split(',').map((t: string) => t.trim().replace(/^["']|["']$/g, ''));
-                 } else {
-                     meta[key.trim()] = value;
-                 }
-               }
-             });
-             
-             setMetadata(meta);
-             setContent(postContent.replace(frontmatterRegex, ''));
-           } else {
-             setContent(postContent);
-           }
+          const parsedPost = parseMarkdownPost(postContent, slug ?? '');
+          setMetadata(parsedPost.metadata);
+          setContent(parsedPost.content);
         } else {
-            setContent('# Post not found');
+          setContent('# Post not found');
         }
       } catch (error) {
         console.error('Error loading post:', error);
@@ -66,42 +42,49 @@ const BlogPost: React.FC = () => {
   if (!content) return <div className="p-8 text-center">Loading...</div>;
 
   return (
-    <div className="max-w-3xl mx-auto animate-in fade-in duration-500">
-      <Link to="/blog" className="inline-flex items-center text-sm text-gray-500 hover:text-primary mb-6">
-        <ArrowLeft size={16} className="mr-1" /> Back to Blog
+    <div className="mx-auto max-w-5xl animate-in fade-in duration-500 px-4 md:px-6">
+      <Link to="/blog" className="mb-6 inline-flex items-center gap-2 text-sm text-slate-500 transition-colors hover:text-slate-900">
+        <ArrowLeft size={16} /> 返回博客
       </Link>
       
       {metadata && (
-        <div className="mb-8 pb-8 border-b border-gray-100">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="obsidian-post-shell mb-8 border border-slate-200/80 px-6 py-8 shadow-sm md:px-10 md:py-10">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
+            {metadata.category || 'Technical Note'}
+          </p>
+          <h1 className="mb-4 text-3xl font-semibold leading-tight text-slate-900 md:text-5xl">
             {metadata.title}
           </h1>
-          <div className="flex flex-wrap gap-4 items-center text-sm text-gray-500">
-            <time>{formatDate(metadata.date)}</time>
-            {metadata.category && (
+          <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
+            {metadata.date && <time>{formatDate(metadata.date)}</time>}
+            {metadata.category && metadata.date && (
               <>
                 <span>•</span>
-                <span className="text-primary font-medium">{metadata.category}</span>
+                <span>{metadata.category}</span>
               </>
             )}
           </div>
-          {metadata.tags && (
-             <div className="flex gap-2 mt-4">
+          {metadata.tags.length > 0 && (
+             <div className="mt-5 flex flex-wrap gap-2">
                {metadata.tags.map((tag: string) => (
-                 <span key={tag} className="text-xs bg-gray-100 px-2 py-1 rounded text-gray-600">#{tag}</span>
+                 <span key={tag} className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-600">
+                   #{tag}
+                 </span>
                ))}
              </div>
           )}
         </div>
       )}
 
-      <article className="prose prose-lg prose-slate max-w-none prose-headings:font-bold prose-headings:text-primary prose-a:text-primary hover:prose-a:text-blue-700">
-        <ReactMarkdown 
-          remarkPlugins={[remarkGfm, remarkMath]}
-          rehypePlugins={[rehypeKatex, rehypeHighlight]}
-        >
-          {content}
-        </ReactMarkdown>
+      <article className="obsidian-post-shell border border-slate-200/80 px-6 py-8 shadow-sm md:px-10 md:py-10">
+        <div className="obsidian-markdown">
+          <ReactMarkdown 
+            remarkPlugins={[remarkGfm, [remarkMath, { singleDollarTextMath: true }]]}
+            rehypePlugins={[rehypeKatex, rehypeHighlight]}
+          >
+            {content}
+          </ReactMarkdown>
+        </div>
       </article>
     </div>
   );
