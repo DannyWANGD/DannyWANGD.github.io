@@ -921,7 +921,7 @@ $$其中 $w(t)$ 可用于平衡不同时间段难度。
 \\widetilde{\\mathbf{x}}_{k+1}&=\\mathbf{x}_k+\\Delta t\\,\\mathbf{v}_\\theta(\\mathbf{x}_k,t_k),\\\\
 \\mathbf{x}_{k+1}&=\\mathbf{x}_k+\\frac{\\Delta t}{2}\\Big(\\mathbf{v}_\\theta(\\mathbf{x}_k,t_k)+\\mathbf{v}_\\theta(\\widetilde{\\mathbf{x}}_{k+1},t_{k+1})\\Big).\\end{aligned}
 $$
-	3. 输出 $\\mathbf{x}(1)$ 作为最终预测结果。
+	3. 最后输出 $\\mathbf{x}(1)$ 作为最终预测结果。
 
 - **常见实践取舍**：
 	1. 追求极低延迟：Euler + 小 NFE（例如 4-10）。
