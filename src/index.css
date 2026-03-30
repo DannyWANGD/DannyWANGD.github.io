@@ -40,18 +40,79 @@
 
   .obsidian-markdown h1 {
     @apply mt-14 text-4xl leading-tight text-slate-950;
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  .obsidian-markdown h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    bottom: 0.15em;
+    width: 5px;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, #6366f1, #3b82f6);
   }
 
   .obsidian-markdown h2 {
-    @apply mt-14 border-b border-slate-200 pb-3 text-3xl leading-tight text-blue-900;
+    @apply mt-14 pb-3 text-3xl leading-tight text-blue-900;
+    position: relative;
+    border-bottom: none;
+    padding-left: 1rem;
+    background: linear-gradient(90deg, #eff6ff 0%, transparent 80%);
+    border-radius: 6px 0 0 6px;
+    padding-top: 0.35em;
+    padding-bottom: 0.35em;
+  }
+
+  .obsidian-markdown h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, #3b82f6, #0ea5e9);
   }
 
   .obsidian-markdown h3 {
     @apply mt-10 text-2xl leading-tight text-sky-900;
+    position: relative;
+    padding-left: 1.1rem;
+  }
+
+  .obsidian-markdown h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #0ea5e9;
+    box-shadow: 0 0 0 3px #e0f2fe;
   }
 
   .obsidian-markdown h4 {
     @apply mt-8 text-xl leading-tight text-indigo-800;
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  .obsidian-markdown h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 2px;
+    background: #818cf8;
+    transform: translateY(-50%) rotate(45deg);
   }
 
   .obsidian-markdown h5 {
@@ -77,6 +138,15 @@
 
   .obsidian-markdown strong {
     @apply font-semibold text-blue-900;
+  }
+
+  .obsidian-markdown em {
+    @apply italic text-violet-700;
+  }
+
+  .obsidian-markdown strong em,
+  .obsidian-markdown em strong {
+    @apply font-semibold text-violet-800;
   }
 
   .obsidian-markdown a {
@@ -142,7 +212,12 @@
   }
 
   .obsidian-markdown img {
-    @apply rounded-2xl border border-slate-200 shadow-sm;
+    @apply mx-auto block rounded-2xl border border-slate-200 shadow-sm;
+    max-width: 100%;
+  }
+
+  .obsidian-markdown p:has(img) {
+    @apply text-center;
   }
 
   .obsidian-markdown .katex {
@@ -155,5 +230,64 @@
 
   .obsidian-markdown .katex-display > .katex {
     @apply inline-block text-center;
+  }
+
+  /* ── Blog post page layout ── */
+  .blog-post-page {
+    @apply relative mx-auto flex max-w-7xl gap-8 px-4 md:px-6;
+  }
+
+  .blog-post-main {
+    @apply min-w-0 flex-1 py-2;
+    max-width: 860px;
+  }
+
+  .toc-sidebar {
+    @apply hidden xl:block;
+    width: 280px;
+    flex-shrink: 0;
+  }
+
+  /* ── TOC panel ── */
+  .toc-panel {
+    position: sticky;
+    top: 96px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    background: linear-gradient(160deg, #ffffff 0%, #f8faff 100%);
+    padding: 1.25rem 1rem;
+    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 0.06);
+    backdrop-filter: blur(8px);
+    scrollbar-width: thin;
+    scrollbar-color: rgb(203 213 225) transparent;
+  }
+
+  .toc-panel::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .toc-panel::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-slate-300;
+  }
+
+  .toc-title {
+    @apply mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400;
+  }
+
+  .toc-list {
+    @apply space-y-0.5 list-none p-0 m-0;
+  }
+
+  .toc-link {
+    @apply block rounded-lg px-2 py-1.5 text-[0.8rem] leading-snug text-slate-500 transition-all duration-150 hover:bg-slate-50 hover:text-slate-800 no-underline;
+  }
+
+  .toc-link-active {
+    @apply font-medium text-sky-700;
+    background: linear-gradient(90deg, #e0f2fe 0%, #f0f9ff 100%);
+    border-left: 3px solid #0ea5e9;
+    padding-left: calc(0.5rem - 3px);
   }
 }

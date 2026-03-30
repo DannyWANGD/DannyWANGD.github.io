@@ -57,6 +57,12 @@ const stripMarkdown = (content: string): string =>
     .replace(/\s+/g, ' ')
     .trim();
 
+const normalizeObsidianImages = (content: string): string =>
+  content.replace(/!\[\[([^\]|]+?)(?:\|[^\]]*?)?\]\]/g, (_, filename: string) => {
+    const name = filename.trim();
+    return `![](/pictures/${name})`;
+  });
+
 const normalizeMathBlocks = (content: string): string =>
   content.replace(/\$\$([\s\S]+?)\$\$/g, (_, expression: string) => {
     const trimmed = expression.trim();
@@ -70,7 +76,7 @@ const normalizeMathBlocks = (content: string): string =>
 
 export const parseMarkdownPost = (raw: string, slug: string): ParsedMarkdownPost => {
   const frontmatterMatch = raw.match(FRONTMATTER_REGEX);
-  const content = normalizeMathBlocks(raw.replace(FRONTMATTER_REGEX, '').trim());
+  const content = normalizeMathBlocks(normalizeObsidianImages(raw.replace(FRONTMATTER_REGEX, '').trim()));
   const metadata: PostMetadata = {
     title: '',
     date: '',
