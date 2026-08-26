@@ -10,7 +10,7 @@ import rehypeRaw from 'rehype-raw';
 import 'katex/dist/katex.min.css';
 import 'highlight.js/styles/atom-one-dark.css';
 import { formatDate } from '../utils/dateFormat';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, BookOpen, CalendarDays, Clock3, ExternalLink } from 'lucide-react';
 import { parseMarkdownPost, type PostMetadata } from '../utils/markdownPost';
 import TableOfContents from '../components/TableOfContents';
 
@@ -18,6 +18,8 @@ const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const [content, setContent] = useState('');
   const [metadata, setMetadata] = useState<PostMetadata | null>(null);
+  const [readTime, setReadTime] = useState(1);
+  const [readingProgress, setReadingProgress] = useState(0);
 
   useEffect(() => {
     const loadPost = async () => {
@@ -30,6 +32,7 @@ const BlogPost: React.FC = () => {
           const parsedPost = parseMarkdownPost(postContent, slug ?? '');
           setMetadata(parsedPost.metadata);
           setContent(parsedPost.content);
+          setReadTime(parsedPost.readTime);
         } else {
           setContent('# Post not found');
         }
@@ -42,51 +45,57 @@ const BlogPost: React.FC = () => {
     loadPost();
   }, [slug]);
 
+  useEffect(() => {
+    const updateProgress = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      setReadingProgress(scrollable > 0 ? Math.min(100, (window.scrollY / scrollable) * 100) : 0);
+    };
+
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    return () => {
+      window.removeEventListener('scroll', updateProgress);
+      window.removeEventListener('resize', updateProgress);
+    };
+  }, [content]);
+
   if (!content) return <div className="p-8 text-center">Loading...</div>;
 
   return (
     <div className="blog-post-page animate-in fade-in duration-500">
-      {/* TOC sidebar */}
-      <aside className="toc-sidebar">
-        <TableOfContents content={content} />
-      </aside>
+      <div className="blog-reading-progress" aria-hidden="true"><span style={{ width: `${readingProgress}%` }} /></div>
 
-      {/* Main content */}
       <div className="blog-post-main">
-        <Link to="/blog" className="mb-6 inline-flex items-center gap-2 text-sm text-slate-500 transition-colors hover:text-slate-900">
-          <ArrowLeft size={16} /> 返回博客
+        <Link to="/blog" className="mb-7 inline-flex items-center gap-2 text-sm text-slate-500 transition-colors hover:text-slate-950">
+          <ArrowLeft size={16} /> All writing / 返回博客
         </Link>
 
-        {metadata && (
-          <div className="obsidian-post-shell mb-8 border border-slate-200/80 px-6 py-8 shadow-sm md:px-10 md:py-10">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
-              {metadata.category || 'Technical Note'}
-            </p>
-            <h1 className="mb-4 text-3xl font-semibold leading-tight text-slate-900 md:text-5xl">
-              {metadata.title}
-            </h1>
-            <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500">
-              {metadata.date && <time>{formatDate(metadata.date)}</time>}
-              {metadata.category && metadata.date && (
-                <>
-                  <span>•</span>
-                  <span>{metadata.category}</span>
-                </>
-              )}
-            </div>
-            {metadata.tags.length > 0 && (
-              <div className="mt-5 flex flex-wrap gap-2">
-                {metadata.tags.map((tag: string) => (
-                  <span key={tag} className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-600">
-                    #{tag}
-                  </span>
-                ))}
+        <article className="blog-article-shell">
+          {metadata && (
+            <header className="blog-article-header">
+              <p className={`mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] ${metadata.collection === 'deep-reading' ? 'text-amber-700' : 'text-sky-700'}`}>
+                <BookOpen size={14} /> {metadata.collection === 'deep-reading' ? 'Deep Reading · 深度阅读' : (metadata.category || 'Research Note')}
+              </p>
+              <h1 className="max-w-3xl text-3xl font-semibold leading-[1.16] tracking-tight text-slate-950 md:text-5xl">{metadata.title}</h1>
+              {metadata.description && <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600">{metadata.description}</p>}
+              <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-slate-500">
+                {metadata.date && <time className="inline-flex items-center gap-1.5"><CalendarDays size={15} />{formatDate(metadata.date)}</time>}
+                <span className="inline-flex items-center gap-1.5"><Clock3 size={15} />{readTime} min read</span>
+                {metadata.sourceUrl && (
+                  <a href={metadata.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 font-medium text-sky-700 transition-colors hover:text-sky-900">
+                    {metadata.sourceName ? `原始来源 · ${metadata.sourceName}` : '查看原始来源'} <ExternalLink size={14} />
+                  </a>
+                )}
               </div>
-            )}
-          </div>
-        )}
+              {metadata.tags.length > 0 && (
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {metadata.tags.map((tag: string) => <span key={tag} className="rounded-full bg-slate-100 px-3 py-1.5 text-xs text-slate-500">#{tag}</span>)}
+                </div>
+              )}
+            </header>
+          )}
 
-        <article className="obsidian-post-shell border border-slate-200/80 px-6 py-8 shadow-sm md:px-10 md:py-10">
           <div className="obsidian-markdown">
             <ReactMarkdown
               remarkPlugins={[remarkGfm, [remarkMath, { singleDollarTextMath: true }]]}
@@ -96,7 +105,14 @@ const BlogPost: React.FC = () => {
             </ReactMarkdown>
           </div>
         </article>
+
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-slate-200 pt-6 text-sm">
+          <Link to="/blog" className="inline-flex items-center gap-2 font-medium text-slate-600 hover:text-slate-950"><ArrowLeft size={15} />继续浏览其他文章</Link>
+          {metadata?.sourceUrl && <a href={metadata.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-slate-500 hover:text-sky-800">阅读原始内容 <ExternalLink size={14} /></a>}
+        </div>
       </div>
+
+      <aside className="toc-sidebar"><TableOfContents content={content} /></aside>
     </div>
   );
 };
