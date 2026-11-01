@@ -5,6 +5,7 @@
     "description": "A quantum machine learning project implementing hybrid quantum-classical neural networks for MNIST classification",
     "link": "https://github.com/DannyWANGD/Quantum_learning",
     "image": "/images/projects/QECNN.png",
+    "imageScale": 0.6666666667,
     "imageAlt": "QECNN 量子—经典混合学习框架：数据预处理、参数化量子电路、经典后处理网络与混合训练流程",
     "tags": [
       "Quantum computing",
