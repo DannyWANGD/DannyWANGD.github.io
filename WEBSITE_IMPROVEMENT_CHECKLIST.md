@@ -95,4 +95,5 @@
 - [x] 将本人提供的 `QECNN.png` 移入 `public/images/projects/`，在 `src/data/projects.json` 首项配置 `image` 和 `imageAlt`。
 - [x] 首页 Selected work 与 Research & Projects 页面共用项目插图，架构图完整显示，不裁切内容。
 - [x] README 明确后续每项项目通过 `image`、`imageAlt` 配置各自的插图。
-- [x] QECNN 插图显示宽高缩至原来的 2/3 并居中；通过 `imageScale` 单独配置，不修改原图清晰度。
+- [x] QECNN 插图显示宽高缩至原来的 2/3 并靠左；通过 `imageScale` 单独配置，不修改原图清晰度。
+- [x] 图片列随插图同步缩窄，右侧文字向左靠近，电脑端图文间距收紧为 24px；手机端左对齐、上下排列，间距为 14px。

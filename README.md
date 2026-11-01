@@ -36,7 +36,7 @@ npm run preview
 在 `src/data/projects.json` 增加条目，填写 `id`、`title`、`description`、`tags`，并为每个项目选择插图，配置 `image` 和 `imageAlt`。可选字段：
 
 - `link`：代码或项目地址。
-- `imageScale`：插图显示比例，默认 `1`；例如 `0.6666666667` 表示宽高缩至原来的 2/3，并在图片区域居中。
+- `imageScale`：插图显示比例，默认 `1`；例如 `0.6666666667` 表示宽高缩至原来的 2/3。插图靠左，电脑端文字随图片列一起向左收紧，图文间距为 24px；手机端保持左对齐并上下排列。
 - `contribution`、`result`：个人贡献与可验证结果。
 
 图片放入 `public/images/projects/`，使用 `/images/projects/文件名.png` 或 `.webp` 引用；`imageAlt` 填写图片内容说明。图片在约 16:10 的展示区域完整显示，不裁切架构图。首项 QECNN 已配置为 `/images/projects/QECNN.png`。暂未配置图片时保留文字版回退布局。
