@@ -89,3 +89,9 @@
 - [x] 荣誉区英文与标题使用一致的衬线字体，中文继续使用宋体。
 - [x] README 补充“本地修改 → 检查 → 提交推送 main → 自动部署”的具体命令与操作步骤。
 - [x] 网站改造已提交推送至 GitHub，代码提交 `512c1d6`；[自动构建](https://github.com/DannyWANGD/DannyWANGD.github.io/actions/runs/41296119343)与 [Pages 部署](https://github.com/DannyWANGD/DannyWANGD.github.io/actions/runs/41296189771)均成功，[正式网站](https://dannywangd.github.io/)线上验收通过。
+
+## 10. QECNN 项目插图
+
+- [x] 将本人提供的 `QECNN.png` 移入 `public/images/projects/`，在 `src/data/projects.json` 首项配置 `image` 和 `imageAlt`。
+- [x] 首页 Selected work 与 Research & Projects 页面共用项目插图，架构图完整显示，不裁切内容。
+- [x] README 明确后续每项项目通过 `image`、`imageAlt` 配置各自的插图。
