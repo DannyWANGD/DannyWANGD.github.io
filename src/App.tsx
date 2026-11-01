@@ -1,32 +1,23 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Publications from './pages/Publications';
-import Blog from './pages/Blog';
-import BlogPost from './pages/BlogPost';
-import Life from './pages/Life';
-import LifePost from './pages/LifePost';
+import { lazy, Suspense, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
+import SiteLayout from './components/SiteLayout';
+import { applyPageMetadata, getPageMetadata } from './utils/pageMetadata';
 
-function App() {
-  return (
-    <Router>
-      <div className="min-h-screen flex flex-col bg-secondary text-secondary-foreground font-serif">
-        <Header />
-        <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/publications" element={<Publications />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/life" element={<Life />} />
-            <Route path="/life/:id" element={<LifePost />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
-  );
+const Home = lazy(() => import('./pages/Home'));
+const Publications = lazy(() => import('./pages/Publications'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
+const Life = lazy(() => import('./pages/Life'));
+const LifePost = lazy(() => import('./pages/LifePost'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+
+function PageEffects() {
+  const { pathname, hash } = useLocation();
+  const navigation = useNavigationType();
+  useEffect(() => { applyPageMetadata(getPageMetadata(pathname)); }, [pathname]);
+  useEffect(() => { if (!hash && navigation !== 'POP') window.scrollTo({ top: 0, behavior: 'instant' }); }, [pathname, hash, navigation]);
+  return null;
 }
-
-export default App;
+export default function App() {
+  return <BrowserRouter><PageEffects /><SiteLayout><Suspense fallback={<p className="loading-state" role="status">Loading…</p>}><Routes><Route path="/" element={<Home />} /><Route path="/publications" element={<Publications />} /><Route path="/blog" element={<Blog />} /><Route path="/blog/:slug" element={<BlogPost />} /><Route path="/life" element={<Life />} /><Route path="/life/:id" element={<LifePost />} /><Route path="*" element={<NotFound />} /></Routes></Suspense></SiteLayout></BrowserRouter>;
+}

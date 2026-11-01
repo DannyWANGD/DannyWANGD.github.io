@@ -1,37 +1,14 @@
-/** @type {import('tailwindcss').Config} */
+import typography from '@tailwindcss/typography';
+
 export default {
-  darkMode: "class",
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: { extend: {
+    fontFamily: {
+      serif: ['Site Song', 'Georgia', 'SimSun', 'serif'],
+      sans: ['Site Song', 'Inter', 'Segoe UI', 'SimSun', 'serif'],
+      mono: ['Site Song', 'Cascadia Code', 'Consolas', 'SimSun', 'monospace'],
     },
-    extend: {
-      fontFamily: {
-        serif: ['"Palatino Linotype"', '"Book Antiqua"', 'Palatino', 'serif'],
-        sans: ['"Palatino Linotype"', '"Book Antiqua"', 'Palatino', 'serif'],
-      },
-      colors: {
-        primary: {
-          DEFAULT: "#1e3a8a",
-          foreground: "#ffffff",
-        },
-        secondary: {
-          DEFAULT: "#f8fafc", // Light gray background
-          foreground: "#374151", // Dark gray text
-        },
-        muted: {
-          DEFAULT: "#f1f5f9",
-          foreground: "#64748b",
-        },
-      },
-    },
-  },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+    colors: { primary: '#204d63', secondary: { DEFAULT: '#faf9f6', foreground: '#242a2c' }, muted: { DEFAULT: '#f1f0eb', foreground: '#626c70' } },
+  } },
+  plugins: [typography],
 };

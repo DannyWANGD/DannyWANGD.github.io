@@ -1,28 +1,31 @@
 {
-  "name": "Wang Ding",
+  "name": "Ding Wang",
+  "chineseName": "王玎",
   "title": "Robotics Engineering Student",
-  "institution": "Beijing Institute of Technology, BIT",
-  "bio": "I am an undergraduate student (Class of 2024) at the Xu Teli College, Beijing Institute of Technology, majoring in Robotics Engineering (Li Zexiang Innovation Class). I am passionate about embodied AI, robot manipulation, and contributing to the open-source community.",
-  "avatar": "https://github.com/DannyWANGD.png",
+  "institution": "Beijing Institute of Technology",
+  "college": "Teli College · Li Zexiang Innovation Class",
+  "headline": "Learning to build robots that understand the world.",
+  "bio": "I study Robotics Engineering at Beijing Institute of Technology, in the Li Zexiang Innovation Class. My interests span embodied AI, robot manipulation, reinforcement learning, and generative models. I work across algorithms and hardware, and share what I learn through research notes and open-source projects.",
+  "bioChinese": "我是王玎，北京理工大学特立书院机器人工程（李泽湘双创班）2024 级本科生，学业成绩优异，2026年获国家奖学金，连续三次获评校级一等奖学金。科研竞赛成果丰硕，2026年作为第一负责人主持北京市自然科学基金本科生启研计划项目，获5万元资助；累计斩获ROBOCON国一、挑战杯国二、数模国赛国二、美赛M奖等国家级以上奖项8项；主持校级大创项目2项、国创市创项目1项。学生工作履职得力，建设运营“李泽湘双创班创新实践基地”，组织深圳科创实践、杭州具身智能调研等多项班级实践活动。获评校级优秀学生、院级优秀团员、优秀朋辈导师等荣誉，综合素养全面。",
+  "avatar": "/images/avatar.webp",
+  "avatarAlt": "蓝色山水与月光的水彩画，Ding Wang 的个人标识",
+  "heroImage": "/images/home-portrait.webp",
+  "heroImageAlt": "Ding Wang 在机器人比赛场地的个人照片",
   "email": "bx.ding@163.com",
+  "cv": "",
+  "interests": ["Embodied AI", "Robot Manipulation", "Model-based RL", "Generative Models"],
   "social": {
     "github": "https://github.com/DannyWANGD",
+    "xiaohongshu": "https://www.xiaohongshu.com/user/profile/63397147000000001901ec5b?m_source=pwa",
     "googleScholar": "",
     "linkedin": "",
     "twitter": ""
   },
+  "details": {
+    "wechat": "WANGD0206"
+  },
   "education": [
-    {
-      "degree": "B.Eng. in Robotics Engineering",
-      "school": "Beijing Institute of Technology, BIT",
-      "year": "2024.9 - Present",
-      "field": "\"Li Zexiang Innovation and Entrepreneurship Class\" (Robotics Engineering)"
-    },
-    {
-      "degree": "Early Development Program (Zhaopei Class)",
-      "school": "The High School Affiliated to Renmin University of China, RDFZ",
-      "year": "2017.9 - 2024.6",
-      "field": "Secondary Education"
-    }
+    { "degree": "B.Eng. in Robotics Engineering", "school": "Beijing Institute of Technology", "year": "2024 — 2028 (expected)", "field": "Teli College · Li Zexiang Innovation Class" },
+    { "degree": "Early Development Program (Zhaopei Class)", "school": "The High School Affiliated to Renmin University of China", "year": "2017 — 2024", "field": "Secondary education" }
   ]
 }

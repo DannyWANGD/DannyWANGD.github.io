@@ -8,7 +8,11 @@ sourceName: "What's Next S9E33"
 sourceUrl: "https://youtu.be/uTBwTOoBDBA"
 sourceType: "Podcast"
 tags: ["Attention", "Behavior Design", "AI Memory", "Learning"]
+updated: "2026-08-26"
+draft: false
+archived: false
 ---
+
 > [!info] 节目信息
 > **嘉宾**：Nir Eyal，《Hooked》《Indistractable》作者  
 > **材料**：YouTube 英文字幕（SRT），约 9,800 词  

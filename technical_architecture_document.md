@@ -1,224 +1,49 @@
-## 1. Architecture Design
+# 技术架构说明
 
-```mermaid
-graph TD
-    A[User Browser] --> B[React Frontend Application]
-    B --> C[Static File Service]
-    C --> D[GitHub Pages]
-    B --> E[Local JSON Data]
-    B --> F[Markdown Files]
-    
-    subgraph "Frontend Layer"
-        B
-    end
-    
-    subgraph "Data Layer"
-        E
-        F
-    end
-    
-    subgraph "Deployment Layer"
-        C
-        D
-    end
-```
+## 技术栈
 
-## 2. Technology Description
+- React 18、TypeScript、React Router 7。
+- Vite 6、Tailwind CSS 3，全局版式与阅读样式位于 `src/index.css`。
+- react-markdown、remark-gfm、remark-math、rehype-raw、rehype-slug、KaTeX 和代码高亮。
+- Node.js 22，静态部署至 GitHub Pages，无数据库或登录后台。
 
-- **Frontend**: React@18 + Tailwind CSS@3 + Vite
-- **Initialization Tool**: vite-init
-- **Backend**: None (Static Site Generation)
-- **Deployment**: GitHub Pages
-- **Dependency Management**: npm/yarn
+## 内容流
 
-## 3. Route Definitions
+1. 资料、项目、荣誉、动态和生活记录存储于 `src/data/`，文章存储于 `src/posts/`。
+2. `src/utils/post-content.mjs` 统一解析元数据、换行与 Obsidian 语法，并保护代码内容。
+3. `scripts/content.mjs` 过滤草稿和归档文章，生成摘要索引与公开文章的动态加载清单。
+4. 列表页只加载摘要；文章正文、Markdown 渲染、数学排版与代码高亮按需加载。
+5. 开发时监听 Markdown 更新；构建前重新生成内容索引。
 
-| Route | Purpose |
-|-------|---------|
-| / | Homepage, displays personal profile and quick navigation |
-| /publications | Publications page, displays papers and project list |
-| /blog | Blog page, displays article list |
-| /blog/:slug | Article detail page, displays single blog content |
-| /about | About page, displays detailed information |
+## 构建与静态页面
 
-## 4. Project Structure
+`npm run build` 先生成索引、执行 TypeScript 检查，再运行 `scripts/build.mjs`：
 
-```
-src/
-├── components/          # Reusable components
-│   ├── Header.jsx      # Website header navigation
-│   ├── Footer.jsx      # Website footer
-│   ├── PublicationCard.jsx  # Paper card component
-│   ├── BlogPostCard.jsx     # Blog post card
-│   └── SocialLinks.jsx      # Social media links
-├── pages/              # Page components
-│   ├── Home.jsx        # Homepage
-│   ├── Publications.jsx # Publications page
-│   ├── Blog.jsx        # Blog list page
-│   ├── BlogPost.jsx    # Blog detail page
-│   └── About.jsx       # About page
-├── data/               # Static data
-│   ├── profile.json    # Personal profile data
-│   ├── publications.json # Paper data
-│   └── projects.json   # Project data
-├── posts/              # Markdown blog posts
-│   ├── hello-world.md
-│   └── another-post.md
-├── styles/             # Style files
-│   └── globals.css     # Global styles
-├── utils/              # Utility functions
-│   ├── markdown.js     # Markdown parsing utility
-│   └── dateFormat.js   # Date formatting
-└── App.jsx             # Main application component
-```
+1. Vite 生成浏览器代码与资源清单。
+2. Vite SSR 加载 `src/entry-server.tsx`，通过 React `renderToString` 输出首页、项目、写作、公开文章及生活页面。
+3. `src/utils/pageMetadata.ts` 提供每个路由的标题、描述、canonical、分享图片、文章日期与索引状态，供静态构建和浏览器路由切换共同使用。
+4. 每条公开路由生成对应目录的 `index.html`；文章页引用公式与代码所需样式，禁用 JavaScript 时也能阅读正文。
+5. 额外生成 `404.html`、`sitemap.xml`、`rss.xml`、`robots.txt` 和 `.nojekyll`。
 
-## 5. Data Model
+浏览器按路由加载 React 页面；GitHub Pages 直接提供对应静态 HTML，未知地址使用 `404.html`。导航、搜索与目录交互由 React 提供。
 
-### 5.1 Personal Profile Data Structure
+## 目录与阅读
 
-```json
-{
-  "name": "John Doe",
-  "title": "PhD Student",
-  "institution": "University of Computer Science",
-  "bio": "Focused on artificial intelligence and machine learning research...",
-  "avatar": "/images/avatar.jpg",
-  "email": "john.doe@example.com",
-  "social": {
-    "github": "https://github.com/johndoe",
-    "googleScholar": "https://scholar.google.com/citations?user=xxx",
-    "linkedin": "https://linkedin.com/in/johndoe",
-    "twitter": "https://twitter.com/johndoe"
-  },
-  "education": [
-    {
-      "degree": "PhD",
-      "school": "University Name",
-      "year": "2020-2024",
-      "field": "Computer Science and Technology"
-    }
-  ]
-}
-```
+`MarkdownBody.tsx` 先处理内嵌 HTML，再为标题分配 ID。`TableOfContents.tsx` 读取正文实际渲染的 H2–H4 和 ID，避免独立正则生成不同锚点；代码块不会成为目录项。支持中文、重复标题、标点和内嵌 HTML。
 
-### 5.2 Paper Data Structure
+目录追踪当前章节；桌面使用侧栏，窄屏使用可展开区块。宽公式、表格和代码使用局部滚动，图片采用本地资源、替代文本、延迟加载和失败回退。
 
-```json
-[
-  {
-    "id": 1,
-    "title": "Example Paper Title",
-    "authors": ["John Doe", "Jane Smith", "Bob Wilson"],
-    "venue": "Nature Machine Intelligence",
-    "year": 2024,
-    "abstract": "This paper proposes a new...",
-    "keywords": ["Machine Learning", "Deep Learning"],
-    "links": {
-      "pdf": "/files/paper1.pdf",
-      "code": "https://github.com/johndoe/project1",
-      "project": "https://project1.github.io"
-    },
-    "highlight": true
-  }
-]
-```
+## 关键文件
 
-### 5.3 Blog Article Data Structure
+- `src/App.tsx`：懒加载路由与浏览器元数据更新。
+- `src/components/SiteLayout.tsx`：统一导航、主区域和页脚。
+- `src/components/ProjectCard.tsx`：有图或纯文字项目展示。
+- `src/components/Article.tsx`：文章标题、阅读进度和目录布局。
+- `src/data/profile.json`、`site.json`：个人资料与站点配置。
+- `.github/workflows/deploy.yml`：安装、构建、Lint 与 GitHub Pages 发布。
 
-```markdown
----
-title: "Blog Article Title"
-date: "2024-01-15"
-category: "Technical Sharing"
-tags: ["React", "Frontend Development"]
----
+## 维护约束
 
-This is the main content of the blog article, supporting Markdown format.
+正文支持受信任的仓库内 HTML；新增不受信任的投稿或在线编辑入口前，需要增加 HTML 清洗。不得将私密草稿提交到公开仓库。
 
-## Secondary Heading
-
-- List item 1
-- List item 2
-
-```code block example```
-```
-
-## 6. Core Dependencies
-
-```json
-{
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.0",
-    "react-markdown": "^8.0.0",
-    "remark-gfm": "^3.0.0",
-    "date-fns": "^2.29.0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^3.1.0",
-    "vite": "^4.1.0",
-    "tailwindcss": "^3.2.0",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0"
-  }
-}
-```
-
-## 7. Deployment Configuration
-
-### 7.1 GitHub Actions Workflow
-
-```yaml
-name: Deploy to GitHub Pages
-on:
-  push:
-    branches: [ main ]
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-    - name: Install dependencies
-      run: npm ci
-    - name: Build
-      run: npm run build
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
-```
-
-### 7.2 Vite配置
-
-```javascript
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-export default defineConfig({
-  plugins: [react()],
-  base: '/',
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets'
-  }
-})
-```
-
-## 8. Development Scripts
-
-```json
-{
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist"
-  }
-}
-```
+提交前执行 `npm run check`、`npm run lint` 和 `npm run build`，并用 `npm run preview` 复查最终产物。具体内容维护流程见 README。

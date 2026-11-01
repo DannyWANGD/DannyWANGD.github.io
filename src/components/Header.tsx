@@ -1,75 +1,25 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import profile from '../data/profile.json';
+import life from '../data/life.json';
+import SiteImage from './SiteImage';
 
-const Header: React.FC = () => {
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
-
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Publications', path: '/publications' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Life', path: '/life' },
-  ];
-
-  const isActive = (path: string) => {
-    if (path === '/' && location.pathname !== '/') return false;
-    return location.pathname.startsWith(path);
-  };
-
-  return (
-    <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link to="/" className="text-xl font-bold text-primary font-serif">
-          Wang Ding
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive(item.path) ? 'text-primary' : 'text-gray-600'
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-gray-600"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 p-4 shadow-lg">
-          <nav className="flex flex-col gap-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(item.path) ? 'text-primary' : 'text-gray-600'
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      )}
-    </header>
-  );
-};
-
-export default Header;
+  const toggle = useRef<HTMLButtonElement>(null);
+  const header = useRef<HTMLElement>(null);
+  const { pathname } = useLocation();
+  useEffect(() => { setIsOpen(false); }, [pathname]);
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (event: KeyboardEvent) => { if (event.key === 'Escape') { setIsOpen(false); toggle.current?.focus(); } };
+    const onOutside = (event: PointerEvent) => { if (!header.current?.contains(event.target as Node)) setIsOpen(false); };
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('pointerdown', onOutside);
+    return () => { document.removeEventListener('keydown', onKey); document.removeEventListener('pointerdown', onOutside); };
+  }, [isOpen]);
+  const items = [{ name: 'Home', path: '/' }, { name: 'Research & Projects', path: '/publications' }, { name: 'Blog', path: '/blog' }, ...(life.length ? [{ name: 'Life', path: '/life' }] : [])];
+  const links = items.map(item => <NavLink key={item.path} to={item.path} end={item.path === '/'} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>{item.name}</NavLink>);
+  return <header className="site-header" ref={header}><div className="site-width header-inner"><Link to="/" className="brand" aria-label={`${profile.name}, home`}><SiteImage src={profile.avatar} alt="" width={36} height={36} className="brand-image" /><span>{profile.name}</span></Link><nav className="desktop-nav" aria-label="Main navigation">{links}</nav><button ref={toggle} type="button" className="menu-toggle" aria-label={isOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={isOpen} aria-controls="mobile-navigation" onClick={() => setIsOpen(!isOpen)}>{isOpen ? <X size={22} /> : <Menu size={22} />}</button></div><nav id="mobile-navigation" className="mobile-nav site-width" aria-label="Mobile navigation" hidden={!isOpen}>{links}</nav></header>;
+}

@@ -1,135 +1,33 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-interface Heading {
-  id: string;
-  text: string;
-  level: number;
-}
-
-interface TableOfContentsProps {
-  content: string;
-}
-
-function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/[\s]+/g, '-')
-    .replace(/[^\w\u4e00-\u9fa5-]/g, '')
-    .replace(/--+/g, '-')
-    .replace(/^-|-$/g, '');
-}
-
-function extractHeadings(markdown: string): Heading[] {
-  const lines = markdown.split('\n');
-  const headings: Heading[] = [];
-  const idCount: Record<string, number> = {};
-
-  for (const line of lines) {
-    const match = line.match(/^(#{1,6})\s+(.+)$/);
-    if (match) {
-      const level = match[1].length;
-      const text = match[2].trim();
-      let id = slugify(text);
-      if (idCount[id] !== undefined) {
-        idCount[id]++;
-        id = `${id}-${idCount[id]}`;
-      } else {
-        idCount[id] = 0;
-      }
-      headings.push({ id, text, level });
-    }
-  }
-  return headings;
-}
-
-const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
+interface Heading { id: string; text: string; level: number; }
+export default function TableOfContents({ content }: { content: string }) {
   const [headings, setHeadings] = useState<Heading[]>([]);
-  const [activeId, setActiveId] = useState<string>('');
-  const observerRef = useRef<IntersectionObserver | null>(null);
-  const navRef = useRef<HTMLElement | null>(null);
-  const activeLinkRef = useRef<HTMLAnchorElement | null>(null);
-
+  const [activeId, setActiveId] = useState('');
+  const mobileDetails = useRef<HTMLDetailsElement>(null);
   useEffect(() => {
-    setHeadings(extractHeadings(content));
-  }, [content]);
-
-  // Scroll active TOC item into view within the panel
-  useEffect(() => {
-    if (!activeId || !navRef.current || !activeLinkRef.current) return;
-    const panel = navRef.current;
-    const link = activeLinkRef.current;
-    const panelTop = panel.scrollTop;
-    const panelBottom = panelTop + panel.clientHeight;
-    const linkTop = link.offsetTop;
-    const linkBottom = linkTop + link.offsetHeight;
-    if (linkTop < panelTop + 32) {
-      panel.scrollTo({ top: linkTop - 32, behavior: 'smooth' });
-    } else if (linkBottom > panelBottom - 32) {
-      panel.scrollTo({ top: linkBottom - panel.clientHeight + 32, behavior: 'smooth' });
-    }
-  }, [activeId]);
-
-  useEffect(() => {
-    if (headings.length === 0) return;
-
-    observerRef.current?.disconnect();
-
-    const callback: IntersectionObserverCallback = (entries) => {
-      const visible = entries
-        .filter((e) => e.isIntersecting)
-        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-      if (visible.length > 0) {
-        setActiveId(visible[0].target.id);
-      }
+    // Read the actual rendered headings: IDs, punctuation and duplicates already
+    // use the same rehype-slug output as the article, including inline HTML.
+    const elements = Array.from(document.querySelectorAll<HTMLElement>('.article-body h2[id], .article-body h3[id], .article-body h4[id]'));
+    setHeadings(elements.map(element => ({ id: element.id, text: element.textContent || '', level: Number(element.tagName.slice(1)) })));
+    const update = () => {
+      const preceding = elements.filter(element => element.getBoundingClientRect().top <= 130);
+      const current = preceding[preceding.length - 1] || elements[0];
+      if (current) setActiveId(current.id);
     };
-
-    observerRef.current = new IntersectionObserver(callback, {
-      rootMargin: '-80px 0px -60% 0px',
-      threshold: 0,
-    });
-
-    headings.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (el) observerRef.current!.observe(el);
-    });
-
-    return () => observerRef.current?.disconnect();
-  }, [headings]);
-
+    let frame = 0;
+    const onScroll = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(update); };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => { window.removeEventListener('scroll', onScroll); cancelAnimationFrame(frame); };
+  }, [content]);
   if (headings.length < 2) return null;
-
-  const minLevel = Math.min(...headings.map((h) => h.level));
-
-  return (
-    <nav className="toc-panel" ref={navRef}>
-      <p className="toc-title">目录</p>
-      <ul className="toc-list">
-        {headings.map((h) => {
-          const indent = (h.level - minLevel) * 12;
-          const isActive = activeId === h.id;
-          return (
-            <li key={h.id} style={{ paddingLeft: indent }}>
-              <a
-                href={`#${h.id}`}
-                ref={isActive ? activeLinkRef : null}
-                className={`toc-link${isActive ? ' toc-link-active' : ''}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  const el = document.getElementById(h.id);
-                  if (el) {
-                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    setActiveId(h.id);
-                  }
-                }}
-              >
-                {h.text}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
-  );
-};
-
-export default TableOfContents;
+  const navigate = (id: string) => {
+    if (mobileDetails.current) mobileDetails.current.open = false;
+    document.getElementById(id)?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    history.replaceState(history.state, '', `${location.pathname}${location.search}#${encodeURIComponent(id)}`);
+    setActiveId(id);
+  };
+  const items = <ol>{headings.map(heading => <li key={heading.id} style={{ paddingLeft: `${(heading.level - 2) * 12}px` }}><a href={`#${encodeURIComponent(heading.id)}`} aria-current={activeId === heading.id ? 'location' : undefined} onClick={event => { event.preventDefault(); navigate(heading.id); }}>{heading.text}</a></li>)}</ol>;
+  return <><nav className="toc-desktop" aria-label="Article contents"><p className="eyebrow">On this page / 目录</p>{items}</nav><details className="toc-mobile" ref={mobileDetails}><summary>On this page / 文章目录</summary><nav aria-label="Mobile article contents">{items}</nav></details></>;
+}

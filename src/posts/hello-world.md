@@ -3,6 +3,11 @@ title: "Hello World: My First Blog Post"
 date: "2026-02-06"
 category: "General"
 tags: ["Personal"]
+updated: "2026-02-06"
+collection: "research"
+description: "记录个人学术主页的最初搭建。"
+draft: false
+archived: true
 ---
 
 Welcome to my personal academic homepage!

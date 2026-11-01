@@ -1,0 +1,102 @@
+[
+  {
+    "slug": "whats-next-attention-agency",
+    "title": "从上瘾模型到专注力训练：在 AI 时代重新掌握注意力",
+    "date": "2026-08-26",
+    "updated": "2026-08-26",
+    "description": "AI 正在从内容推荐走向长期记忆与主动服务。面对越来越懂你的产品，真正需要保留的是定义目标、安排时间和退出系统的能力。",
+    "category": "Deep Reading",
+    "collection": "deep-reading",
+    "tags": [
+      "Attention",
+      "Behavior Design",
+      "AI Memory",
+      "Learning"
+    ],
+    "sourceName": "What's Next S9E33",
+    "sourceUrl": "https://youtu.be/uTBwTOoBDBA",
+    "sourceType": "Podcast",
+    "excerpt": "AI 正在从内容推荐走向长期记忆与主动服务。面对越来越懂你的产品，真正需要保留的是定义目标、安排时间和退出系统的能力。",
+    "readTime": 11
+  },
+  {
+    "slug": "hejiayan-liang-wenfeng",
+    "title": "梁文锋的来时路与明日歌：五个值得记住的判断",
+    "date": "2026-08-23",
+    "updated": "2026-08-23",
+    "description": "从自主学习、量化能力迁移到 DeepSeek 的开源与 AGI 路线：用五个判断压缩一篇三万字人物长文。",
+    "category": "Deep Reading",
+    "collection": "deep-reading",
+    "tags": [
+      "DeepSeek",
+      "梁文锋",
+      "AGI",
+      "Technology Strategy"
+    ],
+    "sourceName": "何加盐",
+    "sourceUrl": "https://mp.weixin.qq.com/s/B1Xw2rAdwJydLe0FULIu2A",
+    "sourceType": "Article",
+    "excerpt": "从自主学习、量化能力迁移到 DeepSeek 的开源与 AGI 路线：用五个判断压缩一篇三万字人物长文。",
+    "readTime": 2
+  },
+  {
+    "slug": "sv101-token-economy",
+    "title": "Token 经济的转点：从烧算力到衡量每次成功任务",
+    "date": "2026-08-19",
+    "updated": "2026-08-19",
+    "description": "Agent 竞争正在从尽可能多烧 Token，转向让每个 Token 产生可验证价值：模型路由、Skills 与多 Agent 如何改变成本结构。",
+    "category": "Deep Reading",
+    "collection": "deep-reading",
+    "tags": [
+      "Agents",
+      "Token Economics",
+      "Skills",
+      "Local Models"
+    ],
+    "sourceName": "硅谷101 E249",
+    "sourceUrl": "https://sv101.fireside.fm/262",
+    "sourceType": "Podcast",
+    "excerpt": "Agent 竞争正在从尽可能多烧 Token，转向让每个 Token 产生可验证价值：模型路由、Skills 与多 Agent 如何改变成本结构。",
+    "readTime": 7
+  },
+  {
+    "slug": "Loss_Function",
+    "title": "PyTorch 损失函数全解：从数学原理到工程实践",
+    "date": "2026-02-25",
+    "updated": "2026-02-25",
+    "description": "比较回归、分类、排序和分布损失的数学定义、数值稳定性及 PyTorch 使用方式。",
+    "category": "Deep Learning",
+    "collection": "research",
+    "tags": [
+      "PyTorch",
+      "Loss Function",
+      "Mathematics",
+      "Best Practices"
+    ],
+    "sourceName": "",
+    "sourceUrl": "",
+    "sourceType": "",
+    "excerpt": "比较回归、分类、排序和分布损失的数学定义、数值稳定性及 PyTorch 使用方式。",
+    "readTime": 7
+  },
+  {
+    "slug": "扩散模型理论体系",
+    "title": "扩散模型理论体系",
+    "date": "",
+    "updated": "",
+    "description": "从 DDPM、Score Matching 与 SDE 出发，梳理扩散模型与 Flow Matching 的联系及关键推导。",
+    "category": "Generative Models",
+    "collection": "research",
+    "tags": [
+      "Diffusion",
+      "Score Matching",
+      "SDE",
+      "Flow Matching"
+    ],
+    "sourceName": "",
+    "sourceUrl": "",
+    "sourceType": "",
+    "excerpt": "从 DDPM、Score Matching 与 SDE 出发，梳理扩散模型与 Flow Matching 的联系及关键推导。",
+    "readTime": 35
+  }
+]

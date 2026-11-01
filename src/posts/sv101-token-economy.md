@@ -8,7 +8,11 @@ sourceName: "硅谷101 E249"
 sourceUrl: "https://sv101.fireside.fm/262"
 sourceType: "Podcast"
 tags: ["Agents", "Token Economics", "Skills", "Local Models"]
+updated: "2026-08-19"
+draft: false
+archived: false
 ---
+
 > [!info] 节目信息
 > **嘉宾**：张宏江、黄东旭  
 > **说明**：本笔记服务于长期记忆，不复述节目时间线。内容依据节目官方介绍与主题提纲整理；涉及个人花费、产品体验和未来判断时，按嘉宾观点、自述或预测理解，不将其视为独立验证的事实。

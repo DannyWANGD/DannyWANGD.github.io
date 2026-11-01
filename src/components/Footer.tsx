@@ -1,14 +1,5 @@
-import React from 'react';
+import profile from '../data/profile.json';
 
-const Footer: React.FC = () => {
-  return (
-    <footer className="bg-secondary py-8 border-t border-gray-200 mt-auto">
-      <div className="container mx-auto px-4 text-center text-gray-500 text-sm">
-        <p>© {new Date().getFullYear()} Wang Ding. All rights reserved.</p>
-        <p className="mt-2">Built with React, Tailwind CSS, and Vite.</p>
-      </div>
-    </footer>
-  );
-};
-
-export default Footer;
+export default function Footer() {
+  return <footer className="site-footer site-width"><p>© {new Date().getFullYear()} {profile.name} <span className="footer-dot">·</span> {profile.chineseName}</p><div className="footer-links"><a href={`mailto:${profile.email}`}>Email</a><a href={profile.social.github} target="_blank" rel="noreferrer">GitHub ↗</a><a href="/rss.xml">RSS</a></div></footer>;
+}
