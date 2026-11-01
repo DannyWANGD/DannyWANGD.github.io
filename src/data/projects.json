@@ -12,5 +12,29 @@
       "Hybrid Neural Networks",
       "MNIST"
     ]
+  },
+  {
+    "id": 2,
+    "title": "PaperBrain",
+    "description": "An Obsidian-first research assistant that turns arXiv and Hugging Face papers into screened digests, in-depth reading notes, and research briefs. Pairs a Python analysis pipeline with an Obsidian console for setup, run control, and browsing results.",
+    "link": "https://github.com/DannyWANGD/PaperBrain",
+    "links": [
+      {
+        "label": "Python pipeline",
+        "url": "https://github.com/DannyWANGD/PaperBrain"
+      },
+      {
+        "label": "Obsidian plugin",
+        "url": "https://github.com/DannyWANGD/obsidian-paperbrain"
+      }
+    ],
+    "image": "/images/projects/PaperBrain.png",
+    "imageScale": 0.6666666667,
+    "imageAlt": "PaperBrain 项目标识：左半为折纸大脑，右半为连接的神经网络与电路，象征论文阅读与知识连接。",
+    "tags": [
+      "Research Tools",
+      "LLM Workflows",
+      "Obsidian"
+    ]
   }
 ]

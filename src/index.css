@@ -95,7 +95,7 @@ img { display: block; max-width: 100%; }
 .project-content h3 { margin: 8px 0 14px; font-family: var(--font-heading); font-size: 1.8rem; }
 .project-content h3 a, .writing-item h3 a { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
 .project-content > p:not(.eyebrow) { font-size: .94rem; color: var(--muted); margin-block: 12px; }
-.project-content > .text-link { margin-top: 8px; }
+.project-links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 8px; }
 /* Scale the original image column too, so smaller images keep the text close. */
 .project-with-image { grid-template-columns: minmax(0, calc((100% - 44px) * .45 * var(--project-image-scale, 1))) minmax(0, 1fr); gap: 24px; align-items: start; }
 .project-image { width: 100%; aspect-ratio: 1.6; height: auto; object-fit: contain; border-radius: 4px; justify-self: start; }

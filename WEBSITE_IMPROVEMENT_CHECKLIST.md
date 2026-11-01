@@ -97,3 +97,10 @@
 - [x] README 明确后续每项项目通过 `image`、`imageAlt` 配置各自的插图。
 - [x] QECNN 插图显示宽高缩至原来的 2/3 并靠左；通过 `imageScale` 单独配置，不修改原图清晰度。
 - [x] 图片列随插图同步缩窄，右侧文字向左靠近，电脑端图文间距收紧为 24px；手机端左对齐、上下排列，间距为 14px。
+
+## 11. PaperBrain 项目
+
+- [x] 阅读 PaperBrain 与 obsidian-paperbrain 的 README，将其合并为第二个项目，说明论文发现、筛选、深读、笔记与简报流程，以及 Obsidian 控制台。
+- [x] 在 `src/data/projects.json` 添加英文介绍、研究工具标签、封面与两个独立仓库入口。
+- [x] 采用 PaperBrain 仓库自带的品牌封面，保存为 `public/images/projects/PaperBrain.png`，与首项保持相同图片比例、左对齐和紧凑图文间距。
+- [x] 支持项目 `links` 多入口配置，并在 README 中说明后续维护方式。
