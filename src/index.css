@@ -105,7 +105,7 @@ img { display: block; max-width: 100%; }
 .project-figure figcaption { margin-top: 8px; color: var(--muted); font-size: .68rem; line-height: 1.6; }
 .report-row { scroll-margin-top: 20px; }
 .report-row .project-content h3 { font-size: 1.65rem; margin-bottom: 8px; }
-.project-content > .project-subtitle { font-family: var(--font-heading); color: var(--ink); font-size: 1.04rem; line-height: 1.65; margin-block: 0 10px; }
+.project-content > .project-subtitle { font-family: var(--font-heading); font-weight: 700; font-synthesis: weight; color: var(--ink); font-size: 1.04rem; line-height: 1.65; margin-block: 0 10px; }
 .reports-section { scroll-margin-top: 20px; }
 .reports-count { color: var(--muted); font-size: .78rem; white-space: nowrap; }
 .reports-intro { max-width: 780px; font-size: .94rem; color: var(--muted); line-height: 1.9; }
@@ -115,7 +115,7 @@ img { display: block; max-width: 100%; }
 .report-index-list a { display: grid; grid-template-columns: 24px minmax(0, 1fr) 16px; gap: 12px; align-items: baseline; padding-block: 14px; }
 .report-index-number { font-family: var(--font-heading); font-size: .85rem; color: var(--accent); }
 .report-index-list strong { font-family: var(--font-heading); font-size: .95rem; font-weight: 500; }
-.report-index-subtitle { display: block; margin-top: 3px; font-size: .73rem; line-height: 1.6; color: var(--muted); }
+.report-index-subtitle { display: block; margin-top: 3px; font-size: .73rem; font-weight: 600; font-synthesis: weight; line-height: 1.6; color: var(--muted); }
 .reports-entry { margin-top: 8px; }
 .writing-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; }
 .writing-item { padding: 28px 0; border-top: 1px solid var(--line); }
