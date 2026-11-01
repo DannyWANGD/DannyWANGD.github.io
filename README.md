@@ -33,12 +33,15 @@ npm run preview
 
 ## 新增项目
 
-在 `src/data/projects.json` 增加条目，填写 `id`、`title`、`description`、`tags`，并为每个项目选择插图，配置 `image` 和 `imageAlt`。可选字段：
+在 `src/data/projects.json` 增加条目，填写唯一的 `id`、`title`、`description`、`tags`，并为每个项目选择插图，配置 `image` 和 `imageAlt`。可选字段：
 
 - `link`：代码或项目地址。
 - `links`：同一项目的多个入口，格式为 `[{ "label": "Python pipeline", "url": "https://github.com/..." }]`；有此配置时替代默认的 Explore the code 链接。
 - `imageScale`：插图显示比例，默认 `1`；例如 `0.6666666667` 表示宽高缩至原来的 2/3。插图靠左，电脑端文字随图片列一起向左收紧，图文间距为 24px；手机端保持左对齐并上下排列。
 - `contribution`、`result`：个人贡献与可验证结果。
+- `slug`、`subtitle`、`language`：项目的稳定锚点、副标题与正文语言；报告条目使用短标题配副标题。
+- `report`：工程报告，包含 `file`（`/pdf/原文件名.pdf`）、`pages`（PDF 实际页数）、`startPage`（阅读起始页）、`figurePage`（代表图所在 PDF 页码）。配置后，标题直接打开原文，并自动显示阅读与图表出处链接。
+- `imageCaption`：封面图注，说明原文图号或“方法示意”。
 
 图片放入 `public/images/projects/`，使用 `/images/projects/文件名.png` 或 `.webp` 引用；`imageAlt` 填写图片内容说明。图片在约 16:10 的展示区域完整显示，不裁切架构图。首项 QECNN 已配置为 `/images/projects/QECNN.png`。暂未配置图片时保留文字版回退布局。
 
@@ -48,7 +51,7 @@ npm run preview
 
 ```json
 {
-  "id": 2,
+  "id": 11,
   "title": "项目名称",
   "description": "项目要解决的问题与方法。",
   "tags": ["Robotics", "Learning"],
@@ -60,7 +63,40 @@ npm run preview
 }
 ```
 
-保存 `projects.json` 后，首页 Selected work 与 Research & Projects 页面都会自动更新；无需修改页面代码。
+保存 `projects.json` 后，首页 Selected work 展示数组前三项，Research & Projects 展示全部条目；无需修改页面代码。
+
+### 工程报告与 PDF
+
+PDF 保留在 `public/pdf/`，封面放入 `public/images/projects/reports/`。目前已整理 8 份报告、共 250 页，分别涵盖视觉与惯性信号同步、活动轮廓分割、体育运营优化、光伏功率预测、大气边界层预测、NIPT 风险建模、Airbnb 空间分析和可持续旅游。
+
+- 报告入口：`/publications/#engineering-reports`。索引按配置顺序定位到各自 `slug`，每份 PDF 对应一个独立项目。
+- 点击报告标题或“阅读报告”会在新标签打开 PDF；点击封面或“图表出处”会打开 `figurePage`。页码按 PDF 实际页序计数，包含封面、目录、承诺书；`startPage` 可跳过承诺书直达摘要。
+- 7 张 WebP 封面取自报告原图，仅裁去页面正文并等比例留白；同步课件使用原创 SVG 方法示意，波形不代表实验数据。原图出处已写入各条目的图注和 `figurePage`。
+- 构建时同时生成页面索引和包含报告 PDF 的站点地图；内容检查会验证 PDF 与项目一一对应、封面存在以及跳转页码合法。
+
+新增报告时，先放入 PDF 与封面，再在 `projects.json` 添加以下格式的条目，替换文件名、页数及文字：
+
+```json
+{
+  "id": 11,
+  "slug": "my-engineering-report",
+  "title": "简洁的项目标题",
+  "subtitle": "要解决的工程问题与主要方法",
+  "description": "依据报告摘要、方法与结论撰写，不将模型实验结果表述为实际部署效果。",
+  "language": "zh-CN",
+  "tags": ["Signal Processing", "Modeling"],
+  "image": "/images/projects/reports/my-engineering-report.webp",
+  "imageScale": 0.6666666667,
+  "imageAlt": "图表内容说明",
+  "imageCaption": "原文图 1 · 方法流程",
+  "report": {
+    "file": "/pdf/我的工程报告.pdf",
+    "pages": 20,
+    "startPage": 1,
+    "figurePage": 3
+  }
+}
+```
 
 ## 发布文章
 

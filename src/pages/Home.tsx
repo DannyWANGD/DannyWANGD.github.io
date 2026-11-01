@@ -12,6 +12,7 @@ import ContactLinks from '../components/ContactLinks';
 export default function Home() {
   const research = posts.filter(post => post.collection === 'research').slice(0, 2);
   const sortedAwards = [...awards].sort((a, b) => b.date.localeCompare(a.date));
+  const reportCount = projects.filter(project => project.report).length;
   return <div className="home-page">
     <section className="home-hero" aria-labelledby="home-title">
       <div className="hero-copy">
@@ -41,7 +42,7 @@ export default function Home() {
         </details>
       </div>
     </section>
-    {projects.length > 0 && <section className="page-section" id="selected-work"><div className="section-heading"><div><p className="eyebrow">01 / In practice</p><h2>Selected work</h2></div><Link className="text-link" to="/publications">All projects <ArrowRight size={16} /></Link></div>{projects.slice(0, 3).map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}</section>}
+    {projects.length > 0 && <section className="page-section" id="selected-work"><div className="section-heading"><div><p className="eyebrow">01 / In practice</p><h2>Selected work</h2></div><Link className="text-link" to="/publications">All projects <ArrowRight size={16} /></Link></div>{projects.slice(0, 3).map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}{reportCount > 0 && <Link className="text-link reports-entry" to="/publications#engineering-reports">Browse engineering reports · {reportCount} PDFs <ArrowRight size={16} aria-hidden="true" /></Link>}</section>}
     {sortedAwards.length > 0 && <section className="page-section honors-section" aria-labelledby="honors-title">
       <div className="section-heading">
         <div><p className="eyebrow">02 / Recognition</p><h2 id="honors-title">Honors & awards</h2></div>

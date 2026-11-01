@@ -9,7 +9,7 @@ export function getPageMetadata(pathname: string): PageMetadata {
   try { path = decodeURIComponent(path); } catch { /* Invalid URL: use the 404 metadata. */ }
   const defaults = { url: new URL(path === '/' ? '/' : `${path}/`, site.url).href, image: new URL(site.image, site.url).href, type: 'website', language: site.language };
   if (path === '/') return { ...defaults, title: `${profile.name} · Robotics & Machine Learning`, description: site.description };
-  if (path === '/publications') return { ...defaults, title: `Research & Projects · ${profile.name}`, description: 'Open-source projects and research explorations in robotics and machine learning.' };
+  if (path === '/publications') return { ...defaults, title: `Research & Projects · ${profile.name}`, description: 'Open-source projects and engineering reports in signal processing, computer vision, forecasting, and decision optimization, with original PDFs.' };
   if (path === '/blog') return { ...defaults, title: `Blog · ${profile.name}`, description: 'Research notes, practical tutorials, and deep reading on robotics, machine learning, and ideas worth keeping.' };
   const post = posts.find(post => path === `/blog/${post.slug}`);
   if (post) return { ...defaults, title: `${post.title} · ${profile.name}`, description: post.description || post.excerpt, type: 'article', language: 'zh-CN', date: post.date, updated: post.updated };

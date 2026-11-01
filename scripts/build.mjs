@@ -21,6 +21,7 @@ const articleStyles = [...styles].map(file => `<link rel="stylesheet" href="/${f
 const site = JSON.parse(await readFile('src/data/site.json', 'utf8'));
 const profile = JSON.parse(await readFile('src/data/profile.json', 'utf8'));
 const life = JSON.parse(await readFile('src/data/life.json', 'utf8'));
+const projects = JSON.parse(await readFile('src/data/projects.json', 'utf8'));
 const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' })[char]);
 const server = await createServer({ server: { middlewareMode: true }, appType: 'custom', optimizeDeps: { noDiscovery: true, include: [] }, ssr: { noExternal: ['react-router-dom', 'react-router'], resolve: { conditions: ['module', 'import', 'development'] } } });
 const routes = [{ path: '/' }, { path: '/publications' }, { path: '/blog' }, { path: '/life' }, ...posts.map(post => ({ path: `/blog/${post.slug}`, post })), ...life.map(entry => ({ path: `/life/${entry.id}` })), { path: '/404' }];
@@ -37,7 +38,7 @@ try {
 } finally { await server.close(); }
 const canonical = path => new URL(path === '/' ? '/' : `${path}/`, site.url).href;
 const publicRoutes = routes.filter(route => route.path !== '/404' && (route.path !== '/life' || life.length));
-await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${publicRoutes.map(route => `<url><loc>${escape(canonical(route.path))}</loc>${route.post?.metadata.updated ? `<lastmod>${route.post.metadata.updated}</lastmod>` : ''}</url>`).join('')}</urlset>`);
+await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${publicRoutes.map(route => `<url><loc>${escape(canonical(route.path))}</loc>${route.post?.metadata.updated ? `<lastmod>${route.post.metadata.updated}</lastmod>` : ''}</url>`).join('')}${projects.filter(project => project.report).map(project => `<url><loc>${escape(new URL(project.report.file, site.url).href)}</loc></url>`).join('')}</urlset>`);
 await writeFile('dist/rss.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>${escape(profile.name)} — Blog</title><link>${escape(site.url)}/blog/</link><description>${escape(site.description)}</description><atom:link href="${escape(site.url)}/rss.xml" rel="self" type="application/rss+xml"/>${posts.map(post => `<item><title>${escape(post.metadata.title)}</title><link>${escape(canonical(`/blog/${post.slug}`))}</link><guid>${escape(canonical(`/blog/${post.slug}`))}</guid><description>${escape(post.excerpt)}</description>${post.metadata.date ? `<pubDate>${new Date(`${post.metadata.date}T00:00:00Z`).toUTCString()}</pubDate>` : ''}</item>`).join('')}</channel></rss>`);
 await writeFile('dist/robots.txt', `User-agent: *\nAllow: /\nSitemap: ${site.url}/sitemap.xml\n`);
 await writeFile('dist/.nojekyll', '');

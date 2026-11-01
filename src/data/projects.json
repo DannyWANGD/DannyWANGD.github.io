@@ -36,5 +36,189 @@
       "LLM Workflows",
       "Obsidian"
     ]
+  },
+  {
+    "id": 3,
+    "slug": "visual-inertial-sync",
+    "title": "视觉与惯性信号的时间同步",
+    "subtitle": "插值、互相关与相位拟合的精度与效率权衡",
+    "description": "围绕相机与 IMU 的异步采样，比较四类插值方法及时域互相关、频域相位斜率两条估计路径，分析重采样率、窗口长度、误差与计算开销。针对大延迟引入“时域粗估 + 频域细化”，并讨论去趋势、Hann 窗与 FFT 加速。",
+    "language": "zh-CN",
+    "image": "/images/projects/reports/visual-inertial-sync.svg",
+    "imageScale": 0.6666666667,
+    "imageAlt": "根据报告方法绘制的同步示意图：相机与 IMU 的异步波形经过时域粗估、频域相位细化，映射到共同时间基准；波形仅作方法示意。",
+    "imageCaption": "方法示意 · 时域粗估与频域细化",
+    "tags": [
+      "Signal Processing",
+      "Sensor Fusion",
+      "Time Synchronization"
+    ],
+    "report": {
+      "file": "/pdf/面向视觉-惯性测量的异步信号时间同步方法研究(1).pdf",
+      "pages": 28,
+      "startPage": 1,
+      "figurePage": 19
+    }
+  },
+  {
+    "id": 4,
+    "slug": "active-contour-segmentation",
+    "title": "形界之辨",
+    "subtitle": "从 Canny 边缘先验到 Transformer 语义引导的活动轮廓分割",
+    "description": "面向 BSDS500 复杂场景，构建精度、鲁棒性与耗时的多维评价体系；以 Canny 边缘先验改进 Chan–Vese，再引入 SAM / Transformer 语义掩膜形成 CiSTN，比较边界提取与收敛效率。",
+    "language": "zh-CN",
+    "image": "/images/projects/reports/active-contour-segmentation.webp",
+    "imageScale": 0.6666666667,
+    "imageAlt": "报告中的模型流程图：经典 ACM 评价、Canny 引导的 CiSC，以及 Transformer 语义引导的 CiSTN。",
+    "imageCaption": "原文图 1 · 建模工作流程",
+    "tags": [
+      "Computer Vision",
+      "Image Segmentation",
+      "Transformer"
+    ],
+    "report": {
+      "file": "/pdf/“形界之辨”——基于Canny边缘检测与深度学习语义分割优化的活动轮廓模型.pdf",
+      "pages": 22,
+      "startPage": 2,
+      "figurePage": 3
+    }
+  },
+  {
+    "id": 5,
+    "slug": "sports-management",
+    "title": "My Gain Is Not Your Loss",
+    "subtitle": "Stochastic MPC and game theory for sports franchise management",
+    "description": "Models basketball franchise management as a constrained, rolling-horizon decision problem. Combines stochastic MPC, risk-aware Monte Carlo tree search and a bi-level game to study roster selection, budget allocation, ticket pricing and injury response.",
+    "language": "en",
+    "image": "/images/projects/reports/sports-management.webp",
+    "imageScale": 0.6666666667,
+    "imageAlt": "Original closed-loop MPC framework linking player evaluation, franchise state, operational decisions, future state and financial constraints.",
+    "imageCaption": "Original Figure 3 · Closed-loop MPC framework",
+    "tags": [
+      "Optimal Control",
+      "MPC",
+      "Game Theory"
+    ],
+    "report": {
+      "file": "/pdf/My Gain Is Not Your Loss——Dynamic Management Based on MPC and Game Theory.pdf",
+      "pages": 26,
+      "startPage": 1,
+      "figurePage": 6
+    }
+  },
+  {
+    "id": 6,
+    "slug": "photovoltaic-forecasting",
+    "title": "因光制宜",
+    "subtitle": "融合物理机理与数据驱动的光伏功率多尺度预测",
+    "description": "从太阳位置、阵面辐照度与温度修正建立物理基线，结合 SARIMA 刻画周期性，再通过天气场景划分、XGBoost 残差修正与随机森林降尺度，研究日前功率预测在不同季节与气象条件下的表现。",
+    "language": "zh-CN",
+    "image": "/images/projects/reports/photovoltaic-forecasting.webp",
+    "imageScale": 0.6666666667,
+    "imageAlt": "报告中的光伏预测流程图：物理参数模型、SARIMA 时间序列、XGBoost 场景修正与随机森林降尺度。",
+    "imageCaption": "原文图 1 · 光伏预测整体模型",
+    "tags": [
+      "Renewable Energy",
+      "Time Series",
+      "Machine Learning"
+    ],
+    "report": {
+      "file": "/pdf/“因光制宜”——融合物理建模与数据驱动方法的光伏发电功率多尺度预测研究.pdf",
+      "pages": 35,
+      "startPage": 1,
+      "figurePage": 2
+    }
+  },
+  {
+    "id": 7,
+    "slug": "boundary-layer-forecasting",
+    "title": "风云变幻",
+    "subtitle": "以 XGBoost、VAR 与贝叶斯融合预测大气边界层高度",
+    "description": "利用嘉兴激光雷达与气象数据，以 XGBoost 分析边界层高度的非线性驱动因素，用 PCA 与 VAR 研究其与空气质量的时序关系，再通过贝叶斯信息融合整合预测结果。",
+    "language": "zh-CN",
+    "image": "/images/projects/reports/boundary-layer-forecasting.webp",
+    "imageScale": 0.6666666667,
+    "imageAlt": "报告中的大气边界层建模流程：XGBoost 非线性预测、PCA 与 VAR 时间序列，以及贝叶斯信息融合。",
+    "imageCaption": "原文图 1 · 多模型协同预测流程",
+    "tags": [
+      "Atmospheric Modeling",
+      "XGBoost",
+      "VAR"
+    ],
+    "report": {
+      "file": "/pdf/“风云变幻”——基于 XGBoost 与 VAR 协同预测大气边界层高度.pdf",
+      "pages": 33,
+      "startPage": 2,
+      "figurePage": 3
+    }
+  },
+  {
+    "id": 8,
+    "slug": "nipt-risk-modeling",
+    "title": "防患未然",
+    "subtitle": "基于分组拟合与风险惩罚的 NIPT 检测时点建模",
+    "description": "基于检测数据分析孕周、BMI 与 Y 染色体浓度的关系，通过分组拟合、聚类与风险惩罚目标研究检测时点选择；结合差分进化和 XGBoost 残差修正，并扩展至非整倍体分类与敏感性分析。",
+    "language": "zh-CN",
+    "image": "/images/projects/reports/nipt-risk-modeling.webp",
+    "imageScale": 0.6666666667,
+    "imageAlt": "报告中的 NIPT 建模流程图：数据预处理、分组拟合、风险函数、XGBoost 残差优化与非整倍体分类。",
+    "imageCaption": "原文图 1 · 分组建模与风险优化流程",
+    "tags": [
+      "Statistical Modeling",
+      "Risk Optimization",
+      "XGBoost"
+    ],
+    "report": {
+      "file": "/pdf/“防患未然”——基于分组拟合与风险惩罚优化的.pdf",
+      "pages": 40,
+      "startPage": 1,
+      "figurePage": 3
+    }
+  },
+  {
+    "id": 9,
+    "slug": "airbnb-market",
+    "title": "见微知著",
+    "subtitle": "纽约 Airbnb 短租市场的空间分析与定价优化",
+    "description": "基于纽约短租房源数据，结合数据清洗、PCA 热度指标与 K-means 识别细分市场；利用回归、Moran’s I 与 General G 分析房价和入住率的空间差异，进一步讨论收益目标下的定价策略。",
+    "language": "zh-CN",
+    "image": "/images/projects/reports/airbnb-market.webp",
+    "imageScale": 0.6666666667,
+    "imageAlt": "报告中的纽约五大行政区房租散点图，以不同颜色展示各区房源价格的空间分布。",
+    "imageCaption": "原文图 7 · 纽约五大行政区房租分布",
+    "tags": [
+      "Spatial Analysis",
+      "Regression",
+      "Clustering"
+    ],
+    "report": {
+      "file": "/pdf/“见微知著”——基于 Airbnb 平台的纽约市短租市场数据分析与优化研究.pdf",
+      "pages": 42,
+      "startPage": 2,
+      "figurePage": 11
+    }
+  },
+  {
+    "id": 10,
+    "slug": "sustainable-tourism",
+    "title": "From Juno to Global",
+    "subtitle": "A multi-objective approach to sustainable tourism",
+    "description": "Builds an economic, environmental and social evaluation framework for sustainable tourism in Juneau. Uses AHP weighting and simulated annealing to explore visitor and tax policies, then extends the model to Venice with fuzzy-coefficient linear programming and cross-destination visitor allocation.",
+    "language": "en",
+    "image": "/images/projects/reports/sustainable-tourism.webp",
+    "imageScale": 0.6666666667,
+    "imageAlt": "Original tourism modeling workflow: data analysis, economic-environmental-social evaluation, optimization, model extension and policy memorandum.",
+    "imageCaption": "Original Figure 2 · Sustainable tourism framework",
+    "tags": [
+      "Sustainable Systems",
+      "Multi-objective Optimization",
+      "AHP"
+    ],
+    "report": {
+      "file": "/pdf/From Juno to Global——Journey to Sustainable Tourism.pdf",
+      "pages": 24,
+      "startPage": 1,
+      "figurePage": 4
+    }
   }
 ]

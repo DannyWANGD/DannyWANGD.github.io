@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { open, readFile, readdir, access } from 'node:fs/promises';
+import { resolve } from 'node:path';
 import { parseMarkdownPost } from '../src/utils/post-content.mjs';
 import { loadPosts } from './content.mjs';
 
@@ -33,4 +35,30 @@ test('Public content has no archived Hello World and dates are never invented', 
   assert.ok(!posts.some(post => post.slug === 'hello-world'));
   assert.ok(posts.every(post => !post.metadata.draft && !post.metadata.archived));
   assert.equal(parseMarkdownPost('## No date supplied', 'undated').metadata.date, '');
+});
+
+test('Each engineering PDF has one project, a real cover, and valid source-page links', async () => {
+  const projects = JSON.parse(await readFile('src/data/projects.json', 'utf8'));
+  const reports = projects.filter(project => project.report);
+  const files = (await readdir('public/pdf')).filter(file => file.toLowerCase().endsWith('.pdf'));
+  const reportFiles = reports.map(project => project.report.file);
+  assert.deepEqual([...reportFiles].sort(), files.map(file => `/pdf/${file}`).sort());
+  assert.equal(new Set(projects.map(project => project.id)).size, projects.length);
+  assert.equal(new Set(reports.map(project => project.slug)).size, reports.length);
+  for (const project of reports) {
+    assert.match(project.slug, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+    assert.ok(project.title && project.subtitle && project.description && project.imageAlt && project.imageCaption);
+    assert.ok(Number.isInteger(project.report.pages) && project.report.pages > 0);
+    for (const page of [project.report.startPage, project.report.figurePage]) {
+      assert.ok(Number.isInteger(page) && page >= 1 && page <= project.report.pages);
+    }
+    assert.match(project.report.file, /^\/pdf\/.+\.pdf$/);
+    const source = await open(resolve('public', project.report.file.slice(1)), 'r');
+    try {
+      const header = Buffer.alloc(5);
+      await source.read(header, 0, 5, 0);
+      assert.equal(header.toString(), '%PDF-');
+    } finally { await source.close(); }
+    await access(resolve('public', project.image.slice(1)));
+  }
 });
