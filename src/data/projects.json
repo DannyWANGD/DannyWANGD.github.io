@@ -61,6 +61,33 @@
     ]
   },
   {
+    "id": 12,
+    "slug": "focus-lamp",
+    "title": "Focus Lamp",
+    "subtitle": "融合灯光与动作反馈的专注辅助台灯",
+    "description": "基于 Human Computer Lab 的 LeLamp 开源平台，构建桌面专注辅助交互原型。结合会话时间、疲劳等级与专注模式调度色温和亮度，通过外部专注评级触发动作反馈；支持 WebSocket 参数更新、动作录制回放及独立语音交互。",
+    "language": "zh-CN",
+    "link": "https://github.com/DannyWANGD/Focus_Lamp",
+    "links": [
+      {
+        "label": "查看代码",
+        "url": "https://github.com/DannyWANGD/Focus_Lamp"
+      },
+      {
+        "label": "LeLamp 平台",
+        "url": "https://github.com/humancomputerlab/LeLamp"
+      }
+    ],
+    "image": "/images/projects/Focus-Lamp.png",
+    "imageScale": 0.6666666667,
+    "imageAlt": "Human Computer Lab 的 LeLamp 黑色机器人台灯三维模型，展示底座、多关节机械臂和灯头，来自 Focus_Lamp 仓库。",
+    "tags": [
+      "Human-Robot Interaction",
+      "Python",
+      "WebSocket"
+    ]
+  },
+  {
     "id": 3,
     "slug": "visual-inertial-sync",
     "title": "视觉与惯性信号的时间同步",

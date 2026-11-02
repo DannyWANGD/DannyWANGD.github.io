@@ -49,11 +49,13 @@ npm run preview
 
 第三项 ROBOCON 2026 排球机器人对应 [volleyball_1](https://github.com/DannyWANGD/volleyball_1)，介绍前车板的嵌入式控制功能；封面 `/images/projects/ROBOCON-2026.jpg` 为本人提供的赛事图片，完整保留原图，沿用 2/3 图片比例与左对齐。
 
+第四项 Focus Lamp 对应 [Focus_Lamp](https://github.com/DannyWANGD/Focus_Lamp)，展示基于 Human Computer Lab 的 LeLamp 平台扩展的专注辅助交互原型。封面 `/images/projects/Focus-Lamp.png` 完整采用[仓库中的 LeLamp 模型图](https://github.com/DannyWANGD/Focus_Lamp/blob/main/assets/images/1_lamp_3d.png)，保留原图内容，并提供 LeLamp 平台入口；原项目许可副本保存在 `public/images/projects/LeLamp-LICENSE.txt`。项目展示于 Research & Projects 第四项，首页继续按前三项精选展示。
+
 例如，在数组中添加下面的对象，并将示例文字和路径替换为真实信息：
 
 ```json
 {
-  "id": 12,
+  "id": 13,
   "title": "项目名称",
   "description": "项目要解决的问题与方法。",
   "tags": ["Robotics", "Learning"],
@@ -80,7 +82,7 @@ PDF 保留在 `public/pdf/`，封面放入 `public/images/projects/reports/`。�
 
 ```json
 {
-  "id": 12,
+  "id": 13,
   "slug": "my-engineering-report",
   "title": "简洁的项目标题",
   "subtitle": "要解决的工程问题与主要方法",
