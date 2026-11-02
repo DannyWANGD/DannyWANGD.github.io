@@ -1,23 +1,23 @@
 {
-  "_BlogPostCard-J0Ganxt5.js": {
-    "file": "assets/BlogPostCard-J0Ganxt5.js",
+  "_BlogPostCard-k0epgpD1.js": {
+    "file": "assets/BlogPostCard-k0epgpD1.js",
     "name": "BlogPostCard",
     "imports": [
       "index.html",
       "_dateFormat-Cq4bjPYH.js",
-      "_arrow-up-right-HaeI3uPL.js"
+      "_arrow-up-right-DmpVh0lF.js"
     ]
   },
-  "_ProjectCard-BIDyULFQ.js": {
-    "file": "assets/ProjectCard-BIDyULFQ.js",
+  "_ProjectCard-BprwrVwy.js": {
+    "file": "assets/ProjectCard-BprwrVwy.js",
     "name": "ProjectCard",
     "imports": [
       "index.html",
-      "_arrow-up-right-HaeI3uPL.js"
+      "_arrow-up-right-DmpVh0lF.js"
     ]
   },
-  "_arrow-up-right-HaeI3uPL.js": {
-    "file": "assets/arrow-up-right-HaeI3uPL.js",
+  "_arrow-up-right-DmpVh0lF.js": {
+    "file": "assets/arrow-up-right-DmpVh0lF.js",
     "name": "arrow-up-right",
     "imports": [
       "index.html"
@@ -111,7 +111,7 @@
     "src": "_syntax-highlighting-ZgkIHsf0.css"
   },
   "index.html": {
-    "file": "assets/index-B485oqCN.js",
+    "file": "assets/index-Cg-FHMsy.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -365,7 +365,7 @@
     "src": "node_modules/katex/dist/fonts/KaTeX_Typewriter-Regular.woff2"
   },
   "src/components/MarkdownBody.tsx": {
-    "file": "assets/MarkdownBody-CRAN3NSg.js",
+    "file": "assets/MarkdownBody-Cnm9Ixtz.js",
     "name": "MarkdownBody",
     "src": "src/components/MarkdownBody.tsx",
     "isDynamicEntry": true,
@@ -376,26 +376,26 @@
     ]
   },
   "src/pages/Blog.tsx": {
-    "file": "assets/Blog-Dt9PWMQG.js",
+    "file": "assets/Blog-CUCtmmir.js",
     "name": "Blog",
     "src": "src/pages/Blog.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_BlogPostCard-J0Ganxt5.js",
+      "_BlogPostCard-k0epgpD1.js",
       "_dateFormat-Cq4bjPYH.js",
-      "_arrow-up-right-HaeI3uPL.js"
+      "_arrow-up-right-DmpVh0lF.js"
     ]
   },
   "src/pages/BlogPost.tsx": {
-    "file": "assets/BlogPost-3srDBClC.js",
+    "file": "assets/BlogPost-BBK-pLbk.js",
     "name": "BlogPost",
     "src": "src/pages/BlogPost.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
       "_dateFormat-Cq4bjPYH.js",
-      "_arrow-up-right-HaeI3uPL.js",
+      "_arrow-up-right-DmpVh0lF.js",
       "src/pages/NotFound.tsx"
     ],
     "dynamicImports": [
@@ -408,20 +408,20 @@
     ]
   },
   "src/pages/Home.tsx": {
-    "file": "assets/Home-5d9sn2sG.js",
+    "file": "assets/Home-CwHRSgXp.js",
     "name": "Home",
     "src": "src/pages/Home.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_ProjectCard-BIDyULFQ.js",
-      "_BlogPostCard-J0Ganxt5.js",
-      "_arrow-up-right-HaeI3uPL.js",
+      "_ProjectCard-BprwrVwy.js",
+      "_BlogPostCard-k0epgpD1.js",
+      "_arrow-up-right-DmpVh0lF.js",
       "_dateFormat-Cq4bjPYH.js"
     ]
   },
   "src/pages/Life.tsx": {
-    "file": "assets/Life-DPhGntWC.js",
+    "file": "assets/Life-PHngcNzJ.js",
     "name": "Life",
     "src": "src/pages/Life.tsx",
     "isDynamicEntry": true,
@@ -430,7 +430,7 @@
     ]
   },
   "src/pages/LifePost.tsx": {
-    "file": "assets/LifePost-wq-dnwOW.js",
+    "file": "assets/LifePost-B14_EFNJ.js",
     "name": "LifePost",
     "src": "src/pages/LifePost.tsx",
     "isDynamicEntry": true,
@@ -440,7 +440,7 @@
     ]
   },
   "src/pages/NotFound.tsx": {
-    "file": "assets/NotFound-CAAip08K.js",
+    "file": "assets/NotFound-CutEIu6T.js",
     "name": "NotFound",
     "src": "src/pages/NotFound.tsx",
     "isDynamicEntry": true,
@@ -449,14 +449,14 @@
     ]
   },
   "src/pages/Publications.tsx": {
-    "file": "assets/Publications-C9CdQQaJ.js",
+    "file": "assets/Publications-DWMcfO40.js",
     "name": "Publications",
     "src": "src/pages/Publications.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_ProjectCard-BIDyULFQ.js",
-      "_arrow-up-right-HaeI3uPL.js"
+      "_ProjectCard-BprwrVwy.js",
+      "_arrow-up-right-DmpVh0lF.js"
     ]
   },
   "src/posts/Loss_Function.md?raw": {
