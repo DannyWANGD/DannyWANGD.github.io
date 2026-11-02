@@ -38,6 +38,29 @@
     ]
   },
   {
+    "id": 11,
+    "slug": "robocon-volleyball",
+    "title": "ROBOCON 2026",
+    "subtitle": "排球机器人前车板的嵌入式控制",
+    "description": "面向 ROBOCON 排球机器人的前车板固件，基于 STM32F427、HAL 与 FreeRTOS 实现三电机击球平台的轨迹生成、运动学解算与力矩输出，集成双轴云台串级 PID、底盘指令协同，以及 CAN / UART DMA 通信。",
+    "language": "zh-CN",
+    "link": "https://github.com/DannyWANGD/volleyball_1",
+    "links": [
+      {
+        "label": "查看代码",
+        "url": "https://github.com/DannyWANGD/volleyball_1"
+      }
+    ],
+    "image": "/images/projects/ROBOCON-2026.jpg",
+    "imageScale": 0.6666666667,
+    "imageAlt": "本人提供的第二十五届全国大学生机器人大赛 ROBOCON 暨 ABU ROBOCON 2026 国内选拔赛红色赛事海报。",
+    "tags": [
+      "Embedded Robotics",
+      "STM32",
+      "FreeRTOS"
+    ]
+  },
+  {
     "id": 3,
     "slug": "visual-inertial-sync",
     "title": "视觉与惯性信号的时间同步",

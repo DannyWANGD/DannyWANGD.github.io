@@ -43,15 +43,17 @@ npm run preview
 - `report`：工程报告，包含 `file`（`/pdf/原文件名.pdf`）、`pages`（PDF 实际页数）、`startPage`（阅读起始页）、`figurePage`（代表图所在 PDF 页码）。配置后，标题直接打开原文，并自动显示阅读与图表出处链接。
 - `imageCaption`：封面图注，说明原文图号或“方法示意”。
 
-图片放入 `public/images/projects/`，使用 `/images/projects/文件名.png` 或 `.webp` 引用；`imageAlt` 填写图片内容说明。图片在约 16:10 的展示区域完整显示，不裁切架构图。首项 QECNN 已配置为 `/images/projects/QECNN.png`。暂未配置图片时保留文字版回退布局。
+图片放入 `public/images/projects/`，使用 `/images/projects/文件名.png`、`.jpg` 或 `.webp` 引用；`imageAlt` 填写图片内容说明。图片在约 16:10 的展示区域完整显示，不裁切架构图。首项 QECNN 已配置为 `/images/projects/QECNN.png`。暂未配置图片时保留文字版回退布局。
 
 第二项 PaperBrain 将 Python 后端与 Obsidian 插件合并展示，并保留各自的仓库链接；封面 `/images/projects/PaperBrain.png` 采用 [PaperBrain 仓库自带的项目品牌图](https://github.com/DannyWANGD/PaperBrain/blob/main/paperbrain_arch.png)。两项插图均使用 `imageScale: 0.6666666667`，保持尺寸与左对齐一致。
+
+第三项 ROBOCON 2026 排球机器人对应 [volleyball_1](https://github.com/DannyWANGD/volleyball_1)，介绍前车板的嵌入式控制功能；封面 `/images/projects/ROBOCON-2026.jpg` 为本人提供的赛事图片，完整保留原图，沿用 2/3 图片比例与左对齐。
 
 例如，在数组中添加下面的对象，并将示例文字和路径替换为真实信息：
 
 ```json
 {
-  "id": 11,
+  "id": 12,
   "title": "项目名称",
   "description": "项目要解决的问题与方法。",
   "tags": ["Robotics", "Learning"],
@@ -78,7 +80,7 @@ PDF 保留在 `public/pdf/`，封面放入 `public/images/projects/reports/`。�
 
 ```json
 {
-  "id": 11,
+  "id": 12,
   "slug": "my-engineering-report",
   "title": "简洁的项目标题",
   "subtitle": "要解决的工程问题与主要方法",
