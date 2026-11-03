@@ -11,6 +11,12 @@ import ContactLinks from '../components/ContactLinks';
 import useLanguage from '../hooks/useLanguage';
 import { localize } from '../i18n/context';
 
+function BiographyParagraph({ text }: { text: string }) {
+  return <p className="intro-copy">{text.split(/(\*\*[^*]+\*\*)/g).map((part, index) =>
+    part.startsWith('**') && part.endsWith('**') ? <strong key={index}>{part.slice(2, -2)}</strong> : part
+  )}</p>;
+}
+
 export default function Home() {
   const { language, t } = useLanguage();
   const profile = { ...profileData, ...profileData.translations[language] };
@@ -36,7 +42,7 @@ export default function Home() {
     <section className="intro-section" aria-label={t.home.about}>
       <p className="eyebrow">{t.home.aboutEyebrow}</p>
       <div>
-        {profile.bio.map((paragraph, index) => <p className="intro-copy" key={index}>{paragraph}</p>)}
+        {profile.bio.map((paragraph, index) => <BiographyParagraph key={index} text={paragraph} />)}
         <ul className="research-interests" aria-label={t.home.interests}>
           {profile.interests.map(interest => <li key={interest}>{interest}</li>)}
         </ul>

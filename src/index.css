@@ -80,6 +80,7 @@ img { display: block; max-width: 100%; }
 .intro-section > div { max-width: 730px; min-width: 0; }
 .intro-copy { max-width: 730px; font-size: 1rem; line-height: 1.9; }
 .intro-copy + .intro-copy { margin-top: 16px; }
+.intro-copy strong { color: #153f54; font-weight: 700; font-synthesis: weight; }
 .research-interests { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 16px 0 0; }
 .research-interests li { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px solid #d5e0de; border-radius: 5px; background: #edf2ef; color: var(--accent); font-size: .88rem; line-height: 1.6; }
 .research-interests li::before { content: ''; width: 5px; height: 5px; flex-shrink: 0; border-radius: 50%; background: currentColor; opacity: .65; }
