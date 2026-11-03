@@ -1,23 +1,23 @@
 {
-  "_BlogPostCard-q4_0Mqsm.js": {
-    "file": "assets/BlogPostCard-q4_0Mqsm.js",
+  "_BlogPostCard-DeYeYrJK.js": {
+    "file": "assets/BlogPostCard-DeYeYrJK.js",
     "name": "BlogPostCard",
     "imports": [
       "index.html",
       "_dateFormat-CFWwmALy.js",
-      "_content-yXp1AeSm.js"
+      "_content-D1_N742b.js"
     ]
   },
-  "_ProjectCard-QIf8rT9f.js": {
-    "file": "assets/ProjectCard-QIf8rT9f.js",
+  "_ProjectCard-CeUrkT58.js": {
+    "file": "assets/ProjectCard-CeUrkT58.js",
     "name": "ProjectCard",
     "imports": [
       "index.html",
-      "_content-yXp1AeSm.js"
+      "_content-D1_N742b.js"
     ]
   },
-  "_content-yXp1AeSm.js": {
-    "file": "assets/content-yXp1AeSm.js",
+  "_content-D1_N742b.js": {
+    "file": "assets/content-D1_N742b.js",
     "name": "content",
     "imports": [
       "index.html"
@@ -111,7 +111,7 @@
     "src": "_syntax-highlighting-ZgkIHsf0.css"
   },
   "index.html": {
-    "file": "assets/index-FTtfMBiV.js",
+    "file": "assets/index-B63g2L-3.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -125,7 +125,7 @@
       "src/pages/NotFound.tsx"
     ],
     "css": [
-      "assets/index-CYPZrcGV.css"
+      "assets/index-CjlSPHc5.css"
     ]
   },
   "node_modules/katex/dist/fonts/KaTeX_AMS-Regular.ttf": {
@@ -365,7 +365,7 @@
     "src": "node_modules/katex/dist/fonts/KaTeX_Typewriter-Regular.woff2"
   },
   "src/components/MarkdownBody.tsx": {
-    "file": "assets/MarkdownBody-DL7EGd8q.js",
+    "file": "assets/MarkdownBody-fVXpogAW.js",
     "name": "MarkdownBody",
     "src": "src/components/MarkdownBody.tsx",
     "isDynamicEntry": true,
@@ -376,26 +376,26 @@
     ]
   },
   "src/pages/Blog.tsx": {
-    "file": "assets/Blog-B0EbqsSz.js",
+    "file": "assets/Blog-DERLVRC-.js",
     "name": "Blog",
     "src": "src/pages/Blog.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_BlogPostCard-q4_0Mqsm.js",
-      "_content-yXp1AeSm.js",
+      "_BlogPostCard-DeYeYrJK.js",
+      "_content-D1_N742b.js",
       "_dateFormat-CFWwmALy.js"
     ]
   },
   "src/pages/BlogPost.tsx": {
-    "file": "assets/BlogPost-DwzKRYUF.js",
+    "file": "assets/BlogPost-Cd8o9GE1.js",
     "name": "BlogPost",
     "src": "src/pages/BlogPost.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
       "_dateFormat-CFWwmALy.js",
-      "_content-yXp1AeSm.js",
+      "_content-D1_N742b.js",
       "src/pages/NotFound.tsx"
     ],
     "dynamicImports": [
@@ -408,20 +408,20 @@
     ]
   },
   "src/pages/Home.tsx": {
-    "file": "assets/Home-CHb8Nxuh.js",
+    "file": "assets/Home-Bp9l-iK-.js",
     "name": "Home",
     "src": "src/pages/Home.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_ProjectCard-QIf8rT9f.js",
-      "_BlogPostCard-q4_0Mqsm.js",
-      "_content-yXp1AeSm.js",
+      "_ProjectCard-CeUrkT58.js",
+      "_BlogPostCard-DeYeYrJK.js",
+      "_content-D1_N742b.js",
       "_dateFormat-CFWwmALy.js"
     ]
   },
   "src/pages/Life.tsx": {
-    "file": "assets/Life-BmriAahk.js",
+    "file": "assets/Life-BmKkv_5q.js",
     "name": "Life",
     "src": "src/pages/Life.tsx",
     "isDynamicEntry": true,
@@ -431,7 +431,7 @@
     ]
   },
   "src/pages/LifePost.tsx": {
-    "file": "assets/LifePost-3I08U7Qb.js",
+    "file": "assets/LifePost-bJbNvpFQ.js",
     "name": "LifePost",
     "src": "src/pages/LifePost.tsx",
     "isDynamicEntry": true,
@@ -442,7 +442,7 @@
     ]
   },
   "src/pages/NotFound.tsx": {
-    "file": "assets/NotFound-BnjXItVM.js",
+    "file": "assets/NotFound-DFH0xERj.js",
     "name": "NotFound",
     "src": "src/pages/NotFound.tsx",
     "isDynamicEntry": true,
@@ -451,14 +451,14 @@
     ]
   },
   "src/pages/Publications.tsx": {
-    "file": "assets/Publications-BUJ1NLa2.js",
+    "file": "assets/Publications-Cm__rDmB.js",
     "name": "Publications",
     "src": "src/pages/Publications.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_ProjectCard-QIf8rT9f.js",
-      "_content-yXp1AeSm.js"
+      "_ProjectCard-CeUrkT58.js",
+      "_content-D1_N742b.js"
     ]
   },
   "src/posts/Loss_Function.md?raw": {
