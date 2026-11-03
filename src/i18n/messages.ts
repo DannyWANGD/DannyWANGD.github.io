@@ -8,7 +8,7 @@ const en = {
   },
   home: {
     eyebrow: 'Robotics · Learning · Building', explore: 'Explore my work', contact: 'Get in touch',
-    about: 'About me', aboutEyebrow: 'A little about me', interests: 'Research interests', more: 'More about me',
+    about: 'About me', aboutEyebrow: 'A little about me', interests: 'Research interests',
     practice: '01 / In practice', selectedWork: 'Selected work', browseReports: 'Browse engineering reports',
     recognition: '02 / Recognition', honors: 'Honors & awards', notes: '03 / Working things out',
     selectedPosts: 'Selected posts', background: '04 / Background', education: 'Education',
@@ -66,7 +66,7 @@ const zh: Messages = {
   },
   home: {
     eyebrow: '机器人 · 学习 · 创造', explore: '浏览我的项目', contact: '与我联系',
-    about: '关于我', aboutEyebrow: '关于我', interests: '研究兴趣', more: '更多个人介绍',
+    about: '关于我', aboutEyebrow: '关于我', interests: '研究兴趣',
     practice: '01 / 探索与实践', selectedWork: '精选项目', browseReports: '浏览工程报告',
     recognition: '02 / 荣誉与认可', honors: '荣誉与奖项', notes: '03 / 研究与思考',
     selectedPosts: '精选文章', background: '04 / 求学经历', education: '教育背景',

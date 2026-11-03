@@ -26,6 +26,7 @@ npm run preview
 ## 更新个人资料
 
 - `src/data/profile.json`：姓名、简介、头像、首页照片、联系信息、研究兴趣和教育经历。`heroImage` 控制首页大照片，`avatar` 控制导航标识。
+- “关于我”直接展示三段简介：英文填写 `bio` 字符串数组，中文填写 `translations["zh-CN"].bio` 字符串数组，每项对应一段；无需额外长简介或折叠入口。研究标签分别修改基础 `interests` 和中文翻译中的 `interests`。
 - `src/data/site.json`：正式域名、分享图片和站点描述；首页已移除 Latest updates 栏目。
 - `src/data/awards.json`：奖项。日期统一为 `YYYY-MM`；`level` 使用 `national` 或 `international`；首页按时间倒序、统一样式完整展示，`description` 中的 `/` 分隔同一赛事的多项荣誉。
 - `src/data/publications.json`：论文。为空时自动隐藏论文区块。

@@ -36,14 +36,10 @@ export default function Home() {
     <section className="intro-section" aria-label={t.home.about}>
       <p className="eyebrow">{t.home.aboutEyebrow}</p>
       <div>
-        <p className="intro-copy">{profile.bio}</p>
+        {profile.bio.map((paragraph, index) => <p className="intro-copy" key={index}>{paragraph}</p>)}
         <ul className="research-interests" aria-label={t.home.interests}>
           {profile.interests.map(interest => <li key={interest}>{interest}</li>)}
         </ul>
-        <details className="about-details">
-          <summary>{t.home.more}</summary>
-          <div><p className="bio-chinese">{profile.bioLong}</p></div>
-        </details>
       </div>
     </section>
     {projects.length > 0 && <section className="page-section" id="selected-work"><div className="section-heading"><div><p className="eyebrow">{t.home.practice}</p><h2>{t.home.selectedWork}</h2></div><Link className="text-link" to="/publications">{t.common.allProjects} <ArrowRight size={16} /></Link></div>{projects.slice(0, 3).map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}{reportCount > 0 && <Link className="text-link reports-entry" to="/publications#engineering-reports">{t.home.browseReports} · {reportCount} PDFs <ArrowRight size={16} aria-hidden="true" /></Link>}</section>}
