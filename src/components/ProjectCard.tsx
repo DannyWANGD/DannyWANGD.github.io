@@ -5,7 +5,7 @@ import useLanguage from '../hooks/useLanguage';
 import { localizeProject } from '../i18n/content';
 import type { Language } from '../i18n/messages';
 
-type ProjectTranslation = Partial<Pick<Project, 'title' | 'subtitle' | 'description' | 'imageAlt' | 'imageCaption' | 'contribution' | 'result' | 'tags'>> & { linkLabels?: string[] };
+type ProjectTranslation = Partial<Pick<Project, 'title' | 'subtitle' | 'description' | 'category' | 'imageAlt' | 'imageCaption' | 'contribution' | 'result' | 'tags'>> & { linkLabels?: string[] };
 
 export interface Project {
   id: number;
@@ -13,6 +13,7 @@ export interface Project {
   title: string;
   subtitle?: string;
   description: string;
+  category?: string;
   language?: string;
   link?: string;
   links?: { label: string; url: string }[];
@@ -34,6 +35,7 @@ export default function ProjectCard({ project: source, index = 0 }: { project: P
   const reportUrl = project.report ? `${project.report.file}#page=${project.report.startPage}` : undefined;
   const figureUrl = project.report ? `${project.report.file}#page=${project.report.figurePage}` : undefined;
   const primaryUrl = reportUrl || project.link;
+  const heading = <h3>{primaryUrl ? <a href={primaryUrl} target="_blank" rel="noreferrer">{project.title}<ArrowUpRight size={21} aria-hidden="true" /></a> : project.title}</h3>;
   const links = project.report ? [
     { label: `${t.projects.read} · ${project.report.pages} ${t.projects.pages}`, url: reportUrl! },
     { label: t.projects.figure, url: figureUrl! },
@@ -47,7 +49,7 @@ export default function ProjectCard({ project: source, index = 0 }: { project: P
     </figure> : image : <span className="project-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>}
     <div className="project-content">
       <p className="eyebrow">{project.tags.join(' / ')}</p>
-      <h3>{primaryUrl ? <a href={primaryUrl} target="_blank" rel="noreferrer">{project.title}<ArrowUpRight size={21} aria-hidden="true" /></a> : project.title}</h3>
+      {project.category ? <div className="project-heading">{heading}<span className="project-category">{project.category}</span></div> : heading}
       {project.subtitle && <p className="project-subtitle">{project.subtitle}</p>}
       <p>{project.description}</p>
       {project.contribution && <p><strong>{t.projects.contribution}</strong> {project.contribution}</p>}

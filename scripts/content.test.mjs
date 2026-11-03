@@ -71,7 +71,7 @@ test('Both interface languages cover every project, award, and published blog su
     for (const project of projects) {
       const text = project.translations?.[language];
       assert.ok(text, `Missing ${language} project ${project.id}`);
-      for (const field of ['title', 'description', 'imageAlt', ...(project.subtitle ? ['subtitle'] : []), ...(project.imageCaption ? ['imageCaption'] : [])]) {
+      for (const field of ['title', 'description', 'imageAlt', ...(project.category ? ['category'] : []), ...(project.subtitle ? ['subtitle'] : []), ...(project.imageCaption ? ['imageCaption'] : [])]) {
         assert.ok(text[field]?.trim(), `Missing ${language} ${field} for project ${project.id}`);
         if (language === 'en') assert.doesNotMatch(text[field], /\p{Script=Han}/u);
       }

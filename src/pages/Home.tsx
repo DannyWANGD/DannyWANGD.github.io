@@ -23,6 +23,7 @@ export default function Home() {
   const research = posts.filter(post => post.collection === 'research').slice(0, 2);
   const sortedAwards = awards.map(award => localize(award, language)).sort((a, b) => b.date.localeCompare(a.date));
   const reportCount = projects.filter(project => project.report).length;
+  const featuredProjects = projects.filter(project => !project.report).slice(0, 4);
   return <div className="home-page">
     <section className="home-hero" aria-labelledby="home-title">
       <div className="hero-copy">
@@ -48,7 +49,7 @@ export default function Home() {
         </ul>
       </div>
     </section>
-    {projects.length > 0 && <section className="page-section" id="selected-work"><div className="section-heading"><div><p className="eyebrow">{t.home.practice}</p><h2>{t.home.selectedWork}</h2></div><Link className="text-link" to="/publications">{t.common.allProjects} <ArrowRight size={16} /></Link></div>{projects.slice(0, 3).map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}{reportCount > 0 && <Link className="text-link reports-entry" to="/publications#engineering-reports">{t.home.browseReports} · {reportCount} PDFs <ArrowRight size={16} aria-hidden="true" /></Link>}</section>}
+    {featuredProjects.length > 0 && <section className="page-section" id="selected-work"><div className="section-heading"><div><p className="eyebrow">{t.home.practice}</p><h2>{t.home.selectedWork}</h2></div><Link className="text-link" to="/publications">{t.common.allProjects} <ArrowRight size={16} /></Link></div>{featuredProjects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}{reportCount > 0 && <Link className="text-link reports-entry" to="/publications#engineering-reports">{t.home.browseReports} · {reportCount} PDFs <ArrowRight size={16} aria-hidden="true" /></Link>}</section>}
     {sortedAwards.length > 0 && <section className="page-section honors-section" aria-labelledby="honors-title">
       <div className="section-heading">
         <div><p className="eyebrow">{t.home.recognition}</p><h2 id="honors-title">{t.home.honors}</h2></div>

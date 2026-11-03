@@ -38,6 +38,7 @@ npm run preview
 在 `src/data/projects.json` 增加条目，填写唯一的 `id`、`title`、`description`、`tags`，并为每个项目选择插图，配置 `image` 和 `imageAlt`。可选字段：
 
 - `link`：代码或项目地址。
+- `category`：标题右侧的项目类别标签。基础字段填写英文，`translations["zh-CN"].category` 填中文；桌面优先同行靠右，窄屏自然换行。
 - `links`：同一项目的多个入口，格式为 `[{ "label": "Python pipeline", "url": "https://github.com/..." }]`；有此配置时替代默认的 Explore the code 链接。
 - `imageScale`：插图显示比例，默认 `1`；例如 `0.6666666667` 表示宽高缩至原来的 2/3。插图靠左，电脑端文字随图片列一起向左收紧，图文间距为 24px；手机端保持左对齐并上下排列。
 - `contribution`、`result`：个人贡献与可验证结果。
@@ -45,13 +46,13 @@ npm run preview
 - `report`：工程报告，包含 `file`（`/pdf/原文件名.pdf`）、`pages`（PDF 实际页数）、`startPage`（阅读起始页）、`figurePage`（代表图所在 PDF 页码）。配置后，标题直接打开原文，并自动显示阅读与图表出处链接。
 - `imageCaption`：封面图注，说明原文图号或“方法示意”。
 
-图片放入 `public/images/projects/`，使用 `/images/projects/文件名.png`、`.jpg` 或 `.webp` 引用；`imageAlt` 填写图片内容说明。图片在约 16:10 的展示区域完整显示，不裁切架构图。首项 QECNN 已配置为 `/images/projects/QECNN.png`。暂未配置图片时保留文字版回退布局。
+图片放入 `public/images/projects/`，使用 `/images/projects/文件名.png`、`.jpg` 或 `.webp` 引用；`imageAlt` 填写图片内容说明。图片在约 16:10 的展示区域完整显示，不裁切架构图。QECNN 已配置为 `/images/projects/QECNN.png`，目前位于第四项。暂未配置图片时保留文字版回退布局。
 
 第二项 PaperBrain 将 Python 后端与 Obsidian 插件合并展示，并保留各自的仓库链接；封面 `/images/projects/PaperBrain.png` 采用 [PaperBrain 仓库自带的项目品牌图](https://github.com/DannyWANGD/PaperBrain/blob/main/paperbrain_arch.png)。两项插图均使用 `imageScale: 0.6666666667`，保持尺寸与左对齐一致。
 
-第三项 ROBOCON 2026 排球机器人对应 [volleyball_1](https://github.com/DannyWANGD/volleyball_1)，介绍前车板的嵌入式控制功能；封面 `/images/projects/ROBOCON-2026.jpg` 为本人提供的机器人实物照片，保留原摄影署名，沿用 2/3 图片比例与左对齐。
+第一项 ROBOCON 2026 排球机器人对应 [volleyball_1](https://github.com/DannyWANGD/volleyball_1)，介绍前车板的嵌入式控制功能；封面 `/images/projects/ROBOCON-2026.jpg` 为本人提供的机器人实物照片，保留原摄影署名，沿用 2/3 图片比例与左对齐。
 
-第四项 Focus Lamp 对应 [Focus_Lamp](https://github.com/DannyWANGD/Focus_Lamp)，展示基于 Human Computer Lab 的 LeLamp 平台扩展的专注辅助交互原型。封面 `/images/projects/Focus-Lamp.png` 使用本人提供的黄色台灯封面，完整显示并保留 Human Computer Lab 署名；原项目许可副本保存在 `public/images/projects/LeLamp-LICENSE.txt`。项目展示于 Research & Projects 第四项，首页继续按前三项精选展示。
+第三项 Focus Lamp 对应 [Focus_Lamp](https://github.com/DannyWANGD/Focus_Lamp)，展示基于 Human Computer Lab 的 LeLamp 平台扩展的专注辅助交互原型。封面 `/images/projects/Focus-Lamp.png` 使用本人提供的黄色台灯封面，完整显示并保留 Human Computer Lab 署名；原项目许可副本保存在 `public/images/projects/LeLamp-LICENSE.txt`。
 
 例如，下面展示基础字段；实际新增时建议复制一个已有完整条目，修改唯一 `id`、文字和路径，并按“中英文切换”一节补齐 `translations`：
 
@@ -69,7 +70,7 @@ npm run preview
 }
 ```
 
-保存 `projects.json` 后，首页 Selected work 展示数组前三项，Research & Projects 展示全部条目；无需修改页面代码。
+保存 `projects.json` 后，首页 Selected work 展示前四个非报告项目，Research & Projects 展示全部条目；当前顺序为 ROBOCON → PaperBrain → Focus Lamp → QECNN，工程报告顺序单独保留。
 
 ### 工程报告与 PDF
 
@@ -150,10 +151,10 @@ archived: false
 
 ## 中英文切换
 
-- 右上角的“中文 / EN”按钮一键切换，电脑与手机均可直接使用；默认英文，选择保存在浏览器的 `site-language` 中，刷新与跨页面访问时保持。浏览器禁用本地存储时，本次访问仍可切换。
+- 右上角的“中文 / EN”按钮一键切换，电脑与手机均可直接使用。新打开网站默认英文；手动切换的选择保存在当前标签页的 `sessionStorage.site-language` 中，该标签页刷新或站内跳转时保持，新访问以英文开始。旧的 `localStorage` 语言偏好不再覆盖默认英文；存储不可用时仍可手动切换。
 - 导航、首页、完整简介、研究兴趣、教育经历、奖项、项目、报告索引、博客列表、搜索与状态提示均提供中英文。博客文章标题、摘要、正文、公式、代码与正文目录条目保留原文，文章周围的导航和阅读提示随界面切换；原始 PDF 与图片保持原样。
 - 界面短句位于 `src/i18n/messages.ts`；个人资料、奖项与项目的双语文字分别保存在 `profile.json`、`awards.json`、`projects.json` 的 `translations.en` 与 `translations["zh-CN"]` 中。新增或修改内容时，同时更新两个语言版本。
-- 项目翻译可配置 `title`、`subtitle`、`description`、`tags`、`imageAlt`、`imageCaption`、`contribution`、`result`。多链接文案使用 `linkLabels` 数组，顺序对应原来的 `links`；项目 URL、图片、PDF 页码与 `slug` 继续只在基础字段维护。
+- 项目翻译可配置 `title`、`subtitle`、`description`、`category`、`tags`、`imageAlt`、`imageCaption`、`contribution`、`result`。多链接文案使用 `linkLabels` 数组，顺序对应原来的 `links`；项目 URL、图片、PDF 页码与 `slug` 继续只在基础字段维护。
 - 博客列表英文标题与摘要维护于 `src/data/post-translations.json`，以文章 `slug` 为键；中文列表读取原始 Markdown 元数据。不要手工修改自动生成的 `post-index.json`，也不需要翻译 Markdown 正文。
 - 切换时同步更新页面标题、描述与 HTML 语言，首页英文标题为 `Ding Wang · Robotics & Embodied AI`；链接与锚点始终保持一致。
 - 翻译优先采用可核对的机构和赛事名称：双创班参考[北理工英文官网](https://english.bit.edu.cn/2024-01/04/c_953382.htm)，特立书院参考[学院官方介绍](https://xuteli.bit.edu.cn/english/COLLEGELIFE/Introductionc/34842ac17d9444b89e5779497dc96593.htm)，国赛名称参考[CUMCM 官网](https://en.mcm.edu.cn/html_en/section/b77a1402496e05863c96de6120931806.html)，美赛奖项参考[COMAP 官方说明](https://contest.comap.com/undergraduate/contests/mcm/faq.php)，挑战杯名称参考[承办高校介绍](https://www.nju.edu.cn/en/info/1057/21291.htm)。翻译保留原文中的奖项等级、赛道、项目角色、数量与技术功能范围。

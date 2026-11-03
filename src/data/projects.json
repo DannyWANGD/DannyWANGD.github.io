@@ -1,39 +1,59 @@
 [
   {
-    "id": 1,
-    "title": "QECNN",
-    "description": "A quantum machine learning project implementing hybrid quantum–classical neural networks for MNIST image classification.",
-    "link": "https://github.com/DannyWANGD/Quantum_learning",
-    "image": "/images/projects/QECNN.png",
+    "id": 11,
+    "slug": "robocon-volleyball",
+    "title": "ROBOCON 2026",
+    "subtitle": "排球机器人前车板的嵌入式控制",
+    "description": "面向 ROBOCON 排球机器人的前车板固件，基于 STM32F427、HAL 与 FreeRTOS 实现三电机击球平台的轨迹生成、运动学解算与力矩输出，集成双轴云台串级 PID、底盘指令协同，以及 CAN / UART DMA 通信。",
+    "language": "zh-CN",
+    "link": "https://github.com/DannyWANGD/volleyball_1",
+    "links": [
+      {
+        "label": "查看代码",
+        "url": "https://github.com/DannyWANGD/volleyball_1"
+      }
+    ],
+    "image": "/images/projects/ROBOCON-2026.jpg",
     "imageScale": 0.6666666667,
-    "imageAlt": "QECNN 量子—经典混合学习框架：数据预处理、参数化量子电路、经典后处理网络与混合训练流程",
+    "imageAlt": "本人提供的北京理工大学 ROBOCON 排球机器人实物照片，蓝色背景，保留原摄影署名。",
     "tags": [
-      "Quantum computing",
-      "Hybrid Neural Networks",
-      "MNIST"
+      "Embedded Robotics",
+      "STM32",
+      "FreeRTOS"
     ],
     "translations": {
       "en": {
-        "title": "QECNN",
-        "description": "A quantum machine learning project implementing hybrid quantum–classical neural networks for MNIST image classification.",
-        "imageAlt": "QECNN hybrid quantum–classical learning framework: preprocessing, parameterized quantum circuits, classical post-processing, and joint training.",
+        "title": "ROBOCON 2026",
+        "subtitle": "Embedded control for a volleyball robot’s front controller",
+        "description": "Front-controller firmware for a ROBOCON volleyball robot, built with STM32F427, HAL, and FreeRTOS. Implements trajectory generation, kinematic computation, and torque commands for a three-motor striking platform, with cascaded PID for a two-axis gimbal, coordinated chassis commands, and CAN / UART DMA communication.",
+        "imageAlt": "User-provided photograph of the Beijing Institute of Technology ROBOCON volleyball robot against a blue background, with the original photography credit visible.",
         "tags": [
-          "Quantum computing",
-          "Hybrid Neural Networks",
-          "MNIST"
-        ]
+          "Embedded Robotics",
+          "STM32",
+          "FreeRTOS"
+        ],
+        "linkLabels": [
+          "View code"
+        ],
+        "category": "Robotics Competition Project"
       },
       "zh-CN": {
-        "title": "QECNN",
-        "description": "面向 MNIST 图像分类的量子机器学习项目，采用量子—经典混合神经网络。",
-        "imageAlt": "QECNN 量子—经典混合学习框架：数据预处理、参数化量子电路、经典后处理网络与混合训练流程",
+        "title": "ROBOCON 2026",
+        "subtitle": "排球机器人前车板的嵌入式控制",
+        "description": "面向 ROBOCON 排球机器人的前车板固件，基于 STM32F427、HAL 与 FreeRTOS 实现三电机击球平台的轨迹生成、运动学解算与力矩输出，集成双轴云台串级 PID、底盘指令协同，以及 CAN / UART DMA 通信。",
+        "imageAlt": "本人提供的北京理工大学 ROBOCON 排球机器人实物照片，蓝色背景，保留原摄影署名。",
         "tags": [
-          "量子计算",
-          "混合神经网络",
-          "MNIST"
-        ]
+          "机器人嵌入式控制",
+          "STM32",
+          "FreeRTOS"
+        ],
+        "linkLabels": [
+          "查看代码"
+        ],
+        "category": "机器人比赛项目"
       }
-    }
+    },
+    "category": "Robotics Competition Project"
   },
   {
     "id": 2,
@@ -71,7 +91,8 @@
         "linkLabels": [
           "Python pipeline",
           "Obsidian plugin"
-        ]
+        ],
+        "category": "Personal Open-source Project"
       },
       "zh-CN": {
         "title": "PaperBrain",
@@ -85,62 +106,11 @@
         "linkLabels": [
           "Python 分析流程",
           "Obsidian 插件"
-        ]
-      }
-    }
-  },
-  {
-    "id": 11,
-    "slug": "robocon-volleyball",
-    "title": "ROBOCON 2026",
-    "subtitle": "排球机器人前车板的嵌入式控制",
-    "description": "面向 ROBOCON 排球机器人的前车板固件，基于 STM32F427、HAL 与 FreeRTOS 实现三电机击球平台的轨迹生成、运动学解算与力矩输出，集成双轴云台串级 PID、底盘指令协同，以及 CAN / UART DMA 通信。",
-    "language": "zh-CN",
-    "link": "https://github.com/DannyWANGD/volleyball_1",
-    "links": [
-      {
-        "label": "查看代码",
-        "url": "https://github.com/DannyWANGD/volleyball_1"
-      }
-    ],
-    "image": "/images/projects/ROBOCON-2026.jpg",
-    "imageScale": 0.6666666667,
-    "imageAlt": "本人提供的北京理工大学 ROBOCON 排球机器人实物照片，蓝色背景，保留原摄影署名。",
-    "tags": [
-      "Embedded Robotics",
-      "STM32",
-      "FreeRTOS"
-    ],
-    "translations": {
-      "en": {
-        "title": "ROBOCON 2026",
-        "subtitle": "Embedded control for a volleyball robot’s front controller",
-        "description": "Front-controller firmware for a ROBOCON volleyball robot, built with STM32F427, HAL, and FreeRTOS. Implements trajectory generation, kinematic computation, and torque commands for a three-motor striking platform, with cascaded PID for a two-axis gimbal, coordinated chassis commands, and CAN / UART DMA communication.",
-        "imageAlt": "User-provided photograph of the Beijing Institute of Technology ROBOCON volleyball robot against a blue background, with the original photography credit visible.",
-        "tags": [
-          "Embedded Robotics",
-          "STM32",
-          "FreeRTOS"
         ],
-        "linkLabels": [
-          "View code"
-        ]
-      },
-      "zh-CN": {
-        "title": "ROBOCON 2026",
-        "subtitle": "排球机器人前车板的嵌入式控制",
-        "description": "面向 ROBOCON 排球机器人的前车板固件，基于 STM32F427、HAL 与 FreeRTOS 实现三电机击球平台的轨迹生成、运动学解算与力矩输出，集成双轴云台串级 PID、底盘指令协同，以及 CAN / UART DMA 通信。",
-        "imageAlt": "本人提供的北京理工大学 ROBOCON 排球机器人实物照片，蓝色背景，保留原摄影署名。",
-        "tags": [
-          "机器人嵌入式控制",
-          "STM32",
-          "FreeRTOS"
-        ],
-        "linkLabels": [
-          "查看代码"
-        ]
+        "category": "个人开源项目"
       }
-    }
+    },
+    "category": "Personal Open-source Project"
   },
   {
     "id": 12,
@@ -182,7 +152,8 @@
         "linkLabels": [
           "View code",
           "LeLamp platform"
-        ]
+        ],
+        "category": "Internship Project"
       },
       "zh-CN": {
         "title": "Focus Lamp",
@@ -197,9 +168,50 @@
         "linkLabels": [
           "查看代码",
           "LeLamp 平台"
-        ]
+        ],
+        "category": "实习项目"
       }
-    }
+    },
+    "category": "Internship Project"
+  },
+  {
+    "id": 1,
+    "title": "QECNN",
+    "description": "A quantum machine learning project implementing hybrid quantum–classical neural networks for MNIST image classification.",
+    "link": "https://github.com/DannyWANGD/Quantum_learning",
+    "image": "/images/projects/QECNN.png",
+    "imageScale": 0.6666666667,
+    "imageAlt": "QECNN 量子—经典混合学习框架：数据预处理、参数化量子电路、经典后处理网络与混合训练流程",
+    "tags": [
+      "Quantum computing",
+      "Hybrid Neural Networks",
+      "MNIST"
+    ],
+    "translations": {
+      "en": {
+        "title": "QECNN",
+        "description": "A quantum machine learning project implementing hybrid quantum–classical neural networks for MNIST image classification.",
+        "imageAlt": "QECNN hybrid quantum–classical learning framework: preprocessing, parameterized quantum circuits, classical post-processing, and joint training.",
+        "tags": [
+          "Quantum computing",
+          "Hybrid Neural Networks",
+          "MNIST"
+        ],
+        "category": "Undergraduate Innovation & Entrepreneurship Project"
+      },
+      "zh-CN": {
+        "title": "QECNN",
+        "description": "面向 MNIST 图像分类的量子机器学习项目，采用量子—经典混合神经网络。",
+        "imageAlt": "QECNN 量子—经典混合学习框架：数据预处理、参数化量子电路、经典后处理网络与混合训练流程",
+        "tags": [
+          "量子计算",
+          "混合神经网络",
+          "MNIST"
+        ],
+        "category": "大学生创业创新项目"
+      }
+    },
+    "category": "Undergraduate Innovation & Entrepreneurship Project"
   },
   {
     "id": 3,

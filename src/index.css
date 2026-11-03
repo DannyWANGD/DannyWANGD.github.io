@@ -97,6 +97,10 @@ img { display: block; max-width: 100%; }
 .project-content { max-width: 730px; }
 .project-content h3 { margin: 8px 0 14px; font-family: var(--font-heading); font-size: 1.8rem; }
 .project-content h3 a, .writing-item h3 a { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
+.project-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin: 8px 0 14px; }
+.project-heading h3 { margin: 0; min-width: 0; }
+.project-heading h3 a { justify-content: start; gap: 10px; }
+.project-category { max-width: 100%; margin-left: auto; padding: 4px 9px; border: 1px solid #d5e0de; border-radius: 4px; background: #edf2ef; color: var(--accent); font-family: var(--font-body); font-size: .7rem; font-weight: 500; font-synthesis: weight; line-height: 1.5; }
 .project-content > p:not(.eyebrow) { font-size: .94rem; color: var(--muted); margin-block: 12px; }
 .project-links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 8px; }
 /* Scale the original image column too, so smaller images keep the text close. */
@@ -284,6 +288,7 @@ img { display: block; max-width: 100%; }
   .home-page .project-row { padding-block: 18px; }
   .project-number { font-size: 2.3rem; }
   .project-content h3 { font-size: 1.5rem; }
+  .project-category { margin-left: 0; }
   .project-content .eyebrow { font-size: .6rem; letter-spacing: .08em; }
   .project-content > p:not(.eyebrow) { font-size: .87rem; }
   .project-with-image { grid-template-columns: 1fr; gap: 14px; }
