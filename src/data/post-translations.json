@@ -1,21 +1,21 @@
 {
   "whats-next-attention-agency": {
-    "title": "From addictive design to attention training in the AI era",
+    "title": "From the Hook Model to attention training: reclaiming attention in the AI era",
     "excerpt": "AI is moving beyond recommendations toward long-term memory and proactive assistance. As products get to know us better, we need to retain the ability to set goals, plan our time, and step away.",
     "sourceName": "What's Next S9E33"
   },
   "hejiayan-liang-wenfeng": {
-    "title": "Liang Wenfeng’s path: five ideas worth remembering",
-    "excerpt": "Five takeaways from a long-form profile: self-directed learning, the transfer of quantitative skills, and DeepSeek’s approach to open source and AGI.",
+    "title": "Liang Wenfeng’s journey and outlook: five key insights",
+    "excerpt": "Distills a long-form profile into five insights on self-directed learning, the transfer of skills from quantitative investing, and DeepSeek’s open-source strategy and approach to AGI.",
     "sourceName": "He Jiayan"
   },
   "sv101-token-economy": {
-    "title": "The token economy: from compute spending to successful tasks",
-    "excerpt": "Agent competition is shifting toward verifiable value per token. Model routing, skills, and multi-agent systems are changing the economics of getting work done.",
+    "title": "The token economy: from compute spending to cost per successful task",
+    "excerpt": "Agent competition is shifting from maximizing token use to producing verifiable value per token. Model routing, skills, and multi-agent systems are reshaping the cost of completing tasks.",
     "sourceName": "Silicon Valley 101 · E249"
   },
   "Loss_Function": {
-    "title": "PyTorch loss functions: from mathematics to practice",
+    "title": "PyTorch loss functions: from mathematical foundations to engineering practice",
     "excerpt": "A comparison of regression, classification, ranking, and distribution losses, covering mathematical definitions, numerical stability, and practical PyTorch usage."
   },
   "扩散模型理论体系": {

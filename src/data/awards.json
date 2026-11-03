@@ -7,7 +7,7 @@
     "level": "national",
     "translations": {
       "en": {
-        "title": "ROBOCON China University Robot Competition · Volleyball",
+        "title": "ROBOCON China University Robot Competition · “King of Beach Volleyball”",
         "description": "National First Prize/Elite Award — Third Place/Judges’ Special Award"
       },
       "zh-CN": {
@@ -41,7 +41,7 @@
     "level": "national",
     "translations": {
       "en": {
-        "title": "19th Challenge Cup · AI+ Challenge",
+        "title": "19th Challenge Cup National College Students’ Extracurricular Academic Science and Technology Works Competition · Artificial Intelligence+ Challenge",
         "description": "National Second Prize"
       },
       "zh-CN": {
@@ -58,7 +58,7 @@
     "level": "national",
     "translations": {
       "en": {
-        "title": "China Undergraduate Mathematical Contest in Modeling (CUMCM)",
+        "title": "Contemporary Undergraduate Mathematical Contest in Modeling (CUMCM)",
         "description": "National Second Prize"
       },
       "zh-CN": {
@@ -75,7 +75,7 @@
     "level": "national",
     "translations": {
       "en": {
-        "title": "39th China Adolescents Science and Technology Innovation Contest",
+        "title": "39th China Adolescents Science and Technology Innovation Contest (CASTIC)",
         "description": "National Special Award"
       },
       "zh-CN": {
@@ -92,7 +92,7 @@
     "level": "national",
     "translations": {
       "en": {
-        "title": "CIC Wukong Cup Quantum Computing Competition · Quantum Innovation",
+        "title": "CIC Wukong Cup Quantum Computing Competition · Quantum Innovation Track",
         "description": "National First Prize"
       },
       "zh-CN": {
@@ -126,7 +126,7 @@
     "level": "national",
     "translations": {
       "en": {
-        "title": "4th CCF Quantum Computing Programming Challenge · University Division",
+        "title": "4th CCF Quantum Computing Programming Challenge · University Track",
         "description": "National Third Prize"
       },
       "zh-CN": {

@@ -144,7 +144,7 @@ img { display: block; max-width: 100%; }
 .site-shell[lang='en'] .honor-row { grid-template-columns: 82px minmax(0, 1fr); }
 .site-shell[lang='en'] .honor-prizes { grid-column: 2; justify-content: start; flex-wrap: wrap; white-space: normal; gap: 2px 20px; }
 .site-shell[lang='en'] .honor-prizes span { max-width: 100%; }
-.site-shell[lang='zh-CN'] h1, .site-shell[lang='zh-CN'] h2 { letter-spacing: .01em; line-height: 1.35; }
+.site-shell[lang='zh-CN'] :where(.home-page, .page-intro, .section-heading, .empty-state, .not-found) :is(h1, h2) { letter-spacing: .01em; line-height: 1.35; }
 .site-shell[lang='zh-CN'] .eyebrow { letter-spacing: .08em; font-synthesis: weight; }
 .site-shell[lang='zh-CN'] .hero-headline { letter-spacing: .02em; line-height: 1.55; max-width: 17em; }
 .site-footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; border-top: 1px solid var(--line); padding-block: 24px; color: var(--muted); font-size: .75rem; }

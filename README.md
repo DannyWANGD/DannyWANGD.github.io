@@ -154,6 +154,7 @@ archived: false
 - 项目翻译可配置 `title`、`subtitle`、`description`、`tags`、`imageAlt`、`imageCaption`、`contribution`、`result`。多链接文案使用 `linkLabels` 数组，顺序对应原来的 `links`；项目 URL、图片、PDF 页码与 `slug` 继续只在基础字段维护。
 - 博客列表英文标题与摘要维护于 `src/data/post-translations.json`，以文章 `slug` 为键；中文列表读取原始 Markdown 元数据。不要手工修改自动生成的 `post-index.json`，也不需要翻译 Markdown 正文。
 - 切换时同步更新页面标题、描述与 HTML 语言，首页英文标题为 `Ding Wang · Robotics & Embodied AI`；链接与锚点始终保持一致。
+- 翻译优先采用可核对的机构和赛事名称：双创班参考[北理工英文官网](https://english.bit.edu.cn/2024-01/04/c_953382.htm)，特立书院参考[学院官方介绍](https://xuteli.bit.edu.cn/english/COLLEGELIFE/Introductionc/34842ac17d9444b89e5779497dc96593.htm)，国赛名称参考[CUMCM 官网](https://en.mcm.edu.cn/html_en/section/b77a1402496e05863c96de6120931806.html)，美赛奖项参考[COMAP 官方说明](https://contest.comap.com/undergraduate/contests/mcm/faq.php)，挑战杯名称参考[承办高校介绍](https://www.nju.edu.cn/en/info/1057/21291.htm)。翻译保留原文中的奖项等级、赛道、项目角色、数量与技术功能范围。
 
 ## 部署与维护
 

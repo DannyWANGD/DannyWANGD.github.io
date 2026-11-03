@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "QECNN",
-    "description": "A quantum machine learning project implementing hybrid quantum-classical neural networks for MNIST classification",
+    "description": "A quantum machine learning project implementing hybrid quantum–classical neural networks for MNIST image classification.",
     "link": "https://github.com/DannyWANGD/Quantum_learning",
     "image": "/images/projects/QECNN.png",
     "imageScale": 0.6666666667,
@@ -15,7 +15,7 @@
     "translations": {
       "en": {
         "title": "QECNN",
-        "description": "A quantum machine learning project implementing hybrid quantum-classical neural networks for MNIST classification",
+        "description": "A quantum machine learning project implementing hybrid quantum–classical neural networks for MNIST image classification.",
         "imageAlt": "QECNN hybrid quantum–classical learning framework: preprocessing, parameterized quantum circuits, classical post-processing, and joint training.",
         "tags": [
           "Quantum computing",
@@ -25,7 +25,7 @@
       },
       "zh-CN": {
         "title": "QECNN",
-        "description": "面向 MNIST 图像分类的量子机器学习项目，实现量子与经典神经网络相结合的混合学习框架。",
+        "description": "面向 MNIST 图像分类的量子机器学习项目，采用量子—经典混合神经网络。",
         "imageAlt": "QECNN 量子—经典混合学习框架：数据预处理、参数化量子电路、经典后处理网络与混合训练流程",
         "tags": [
           "量子计算",
@@ -75,7 +75,7 @@
       },
       "zh-CN": {
         "title": "PaperBrain",
-        "description": "以 Obsidian 为中心的科研助手，将 arXiv 与 Hugging Face 论文整理为筛选摘要、深度阅读笔记和研究简报。结合 Python 分析流程与 Obsidian 控制台，支持配置、任务运行和结果浏览。",
+        "description": "以 Obsidian 为中心的科研助手，将 arXiv 与 Hugging Face 论文整理为筛选后的论文摘要、深度阅读笔记和研究简报。结合 Python 分析流程与 Obsidian 控制台，支持配置、任务运行和结果浏览。",
         "imageAlt": "PaperBrain 项目标识：左半为折纸大脑，右半为连接的神经网络与电路，象征论文阅读与知识连接。",
         "tags": [
           "科研工具",
@@ -471,8 +471,8 @@
     "translations": {
       "en": {
         "title": "NIPT timing and risk modeling",
-        "subtitle": "Grouped fitting and risk penalties for testing-time selection",
-        "description": "Analyzes the relationships among gestational age, BMI, and Y-chromosome concentration using testing data. Studies testing-time selection through grouped fitting, clustering, and risk-penalized objectives, with differential evolution and XGBoost residual correction, and extends the analysis to aneuploidy classification and sensitivity.",
+        "subtitle": "Grouped fitting and risk penalties for selecting NIPT testing weeks",
+        "description": "Analyzes the relationships among gestational age, BMI, and Y-chromosome concentration using testing data. Studies which gestational weeks to select for NIPT through grouped fitting, clustering, and risk-penalized objectives, with differential evolution and XGBoost residual correction. Also includes aneuploidy classification and sensitivity analysis.",
         "imageAlt": "Original NIPT modeling workflow: preprocessing, grouped fitting, risk objectives, XGBoost residual correction, and aneuploidy classification.",
         "imageCaption": "Original Figure 1 · Grouped modeling and risk optimization",
         "tags": [
