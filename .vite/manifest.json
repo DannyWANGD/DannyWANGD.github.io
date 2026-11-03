@@ -1,23 +1,23 @@
 {
-  "_BlogPostCard-BWgr-HAV.js": {
-    "file": "assets/BlogPostCard-BWgr-HAV.js",
+  "_BlogPostCard-BdS8DtK1.js": {
+    "file": "assets/BlogPostCard-BdS8DtK1.js",
     "name": "BlogPostCard",
     "imports": [
       "index.html",
       "_dateFormat-CFWwmALy.js",
-      "_content-DK6xS0Ui.js"
+      "_content-DBr6fXMu.js"
     ]
   },
-  "_ProjectCard-CaXrM6q-.js": {
-    "file": "assets/ProjectCard-CaXrM6q-.js",
+  "_ProjectCard-CqTMvWbm.js": {
+    "file": "assets/ProjectCard-CqTMvWbm.js",
     "name": "ProjectCard",
     "imports": [
       "index.html",
-      "_content-DK6xS0Ui.js"
+      "_content-DBr6fXMu.js"
     ]
   },
-  "_content-DK6xS0Ui.js": {
-    "file": "assets/content-DK6xS0Ui.js",
+  "_content-DBr6fXMu.js": {
+    "file": "assets/content-DBr6fXMu.js",
     "name": "content",
     "imports": [
       "index.html"
@@ -111,7 +111,7 @@
     "src": "_syntax-highlighting-ZgkIHsf0.css"
   },
   "index.html": {
-    "file": "assets/index-BwmChEk3.js",
+    "file": "assets/index-S_NXsq9R.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -365,7 +365,7 @@
     "src": "node_modules/katex/dist/fonts/KaTeX_Typewriter-Regular.woff2"
   },
   "src/components/MarkdownBody.tsx": {
-    "file": "assets/MarkdownBody-C1objCsP.js",
+    "file": "assets/MarkdownBody-BtdYmEVK.js",
     "name": "MarkdownBody",
     "src": "src/components/MarkdownBody.tsx",
     "isDynamicEntry": true,
@@ -376,26 +376,26 @@
     ]
   },
   "src/pages/Blog.tsx": {
-    "file": "assets/Blog-BBDIpF2J.js",
+    "file": "assets/Blog-DDITdPUI.js",
     "name": "Blog",
     "src": "src/pages/Blog.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_BlogPostCard-BWgr-HAV.js",
-      "_content-DK6xS0Ui.js",
+      "_BlogPostCard-BdS8DtK1.js",
+      "_content-DBr6fXMu.js",
       "_dateFormat-CFWwmALy.js"
     ]
   },
   "src/pages/BlogPost.tsx": {
-    "file": "assets/BlogPost-CB3gztx-.js",
+    "file": "assets/BlogPost-OIlkJImP.js",
     "name": "BlogPost",
     "src": "src/pages/BlogPost.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
       "_dateFormat-CFWwmALy.js",
-      "_content-DK6xS0Ui.js",
+      "_content-DBr6fXMu.js",
       "src/pages/NotFound.tsx"
     ],
     "dynamicImports": [
@@ -408,20 +408,20 @@
     ]
   },
   "src/pages/Home.tsx": {
-    "file": "assets/Home-DJ7Vjt1O.js",
+    "file": "assets/Home-KCbl9uBU.js",
     "name": "Home",
     "src": "src/pages/Home.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_ProjectCard-CaXrM6q-.js",
-      "_BlogPostCard-BWgr-HAV.js",
-      "_content-DK6xS0Ui.js",
+      "_ProjectCard-CqTMvWbm.js",
+      "_BlogPostCard-BdS8DtK1.js",
+      "_content-DBr6fXMu.js",
       "_dateFormat-CFWwmALy.js"
     ]
   },
   "src/pages/Life.tsx": {
-    "file": "assets/Life-D9fUtF6S.js",
+    "file": "assets/Life-CUzJddD_.js",
     "name": "Life",
     "src": "src/pages/Life.tsx",
     "isDynamicEntry": true,
@@ -431,7 +431,7 @@
     ]
   },
   "src/pages/LifePost.tsx": {
-    "file": "assets/LifePost-CdM8XQlb.js",
+    "file": "assets/LifePost-NLZGn_n1.js",
     "name": "LifePost",
     "src": "src/pages/LifePost.tsx",
     "isDynamicEntry": true,
@@ -442,7 +442,7 @@
     ]
   },
   "src/pages/NotFound.tsx": {
-    "file": "assets/NotFound-BcbjuFHk.js",
+    "file": "assets/NotFound-BFag1cY_.js",
     "name": "NotFound",
     "src": "src/pages/NotFound.tsx",
     "isDynamicEntry": true,
@@ -451,14 +451,14 @@
     ]
   },
   "src/pages/Publications.tsx": {
-    "file": "assets/Publications-Da2iFvC0.js",
+    "file": "assets/Publications-b7hju5M0.js",
     "name": "Publications",
     "src": "src/pages/Publications.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_ProjectCard-CaXrM6q-.js",
-      "_content-DK6xS0Ui.js"
+      "_ProjectCard-CqTMvWbm.js",
+      "_content-DBr6fXMu.js"
     ]
   },
   "src/posts/Loss_Function.md?raw": {
