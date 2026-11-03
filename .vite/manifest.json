@@ -1,30 +1,30 @@
 {
-  "_BlogPostCard-k0epgpD1.js": {
-    "file": "assets/BlogPostCard-k0epgpD1.js",
+  "_BlogPostCard-BqCoKz4n.js": {
+    "file": "assets/BlogPostCard-BqCoKz4n.js",
     "name": "BlogPostCard",
     "imports": [
       "index.html",
-      "_dateFormat-Cq4bjPYH.js",
-      "_arrow-up-right-DmpVh0lF.js"
+      "_dateFormat-CFWwmALy.js",
+      "_content-DsGWfzkU.js"
     ]
   },
-  "_ProjectCard-BprwrVwy.js": {
-    "file": "assets/ProjectCard-BprwrVwy.js",
+  "_ProjectCard-DvL3cr9k.js": {
+    "file": "assets/ProjectCard-DvL3cr9k.js",
     "name": "ProjectCard",
     "imports": [
       "index.html",
-      "_arrow-up-right-DmpVh0lF.js"
+      "_content-DsGWfzkU.js"
     ]
   },
-  "_arrow-up-right-DmpVh0lF.js": {
-    "file": "assets/arrow-up-right-DmpVh0lF.js",
-    "name": "arrow-up-right",
+  "_content-DsGWfzkU.js": {
+    "file": "assets/content-DsGWfzkU.js",
+    "name": "content",
     "imports": [
       "index.html"
     ]
   },
-  "_dateFormat-Cq4bjPYH.js": {
-    "file": "assets/dateFormat-Cq4bjPYH.js",
+  "_dateFormat-CFWwmALy.js": {
+    "file": "assets/dateFormat-CFWwmALy.js",
     "name": "dateFormat"
   },
   "_math-typesetting-A2raK-dX.js": {
@@ -111,7 +111,7 @@
     "src": "_syntax-highlighting-ZgkIHsf0.css"
   },
   "index.html": {
-    "file": "assets/index-Cg-FHMsy.js",
+    "file": "assets/index-lImjbrrW.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -125,7 +125,7 @@
       "src/pages/NotFound.tsx"
     ],
     "css": [
-      "assets/index-gO3QjKU2.css"
+      "assets/index-14gvONZZ.css"
     ]
   },
   "node_modules/katex/dist/fonts/KaTeX_AMS-Regular.ttf": {
@@ -365,7 +365,7 @@
     "src": "node_modules/katex/dist/fonts/KaTeX_Typewriter-Regular.woff2"
   },
   "src/components/MarkdownBody.tsx": {
-    "file": "assets/MarkdownBody-Cnm9Ixtz.js",
+    "file": "assets/MarkdownBody-B5x_zVwW.js",
     "name": "MarkdownBody",
     "src": "src/components/MarkdownBody.tsx",
     "isDynamicEntry": true,
@@ -376,26 +376,26 @@
     ]
   },
   "src/pages/Blog.tsx": {
-    "file": "assets/Blog-CUCtmmir.js",
+    "file": "assets/Blog-DrqSBj1d.js",
     "name": "Blog",
     "src": "src/pages/Blog.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_BlogPostCard-k0epgpD1.js",
-      "_dateFormat-Cq4bjPYH.js",
-      "_arrow-up-right-DmpVh0lF.js"
+      "_BlogPostCard-BqCoKz4n.js",
+      "_content-DsGWfzkU.js",
+      "_dateFormat-CFWwmALy.js"
     ]
   },
   "src/pages/BlogPost.tsx": {
-    "file": "assets/BlogPost-BBK-pLbk.js",
+    "file": "assets/BlogPost-O7m8ZBB_.js",
     "name": "BlogPost",
     "src": "src/pages/BlogPost.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_dateFormat-Cq4bjPYH.js",
-      "_arrow-up-right-DmpVh0lF.js",
+      "_dateFormat-CFWwmALy.js",
+      "_content-DsGWfzkU.js",
       "src/pages/NotFound.tsx"
     ],
     "dynamicImports": [
@@ -408,39 +408,41 @@
     ]
   },
   "src/pages/Home.tsx": {
-    "file": "assets/Home-CwHRSgXp.js",
+    "file": "assets/Home-Wfmi92pr.js",
     "name": "Home",
     "src": "src/pages/Home.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_ProjectCard-BprwrVwy.js",
-      "_BlogPostCard-k0epgpD1.js",
-      "_arrow-up-right-DmpVh0lF.js",
-      "_dateFormat-Cq4bjPYH.js"
+      "_ProjectCard-DvL3cr9k.js",
+      "_BlogPostCard-BqCoKz4n.js",
+      "_content-DsGWfzkU.js",
+      "_dateFormat-CFWwmALy.js"
     ]
   },
   "src/pages/Life.tsx": {
-    "file": "assets/Life-PHngcNzJ.js",
+    "file": "assets/Life-CYvkqbwA.js",
     "name": "Life",
     "src": "src/pages/Life.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "index.html"
+      "index.html",
+      "_dateFormat-CFWwmALy.js"
     ]
   },
   "src/pages/LifePost.tsx": {
-    "file": "assets/LifePost-B14_EFNJ.js",
+    "file": "assets/LifePost-C8Iapf2M.js",
     "name": "LifePost",
     "src": "src/pages/LifePost.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "src/pages/NotFound.tsx"
+      "src/pages/NotFound.tsx",
+      "_dateFormat-CFWwmALy.js"
     ]
   },
   "src/pages/NotFound.tsx": {
-    "file": "assets/NotFound-CutEIu6T.js",
+    "file": "assets/NotFound-D0wBh4rc.js",
     "name": "NotFound",
     "src": "src/pages/NotFound.tsx",
     "isDynamicEntry": true,
@@ -449,14 +451,14 @@
     ]
   },
   "src/pages/Publications.tsx": {
-    "file": "assets/Publications-DWMcfO40.js",
+    "file": "assets/Publications-D0WfM-9G.js",
     "name": "Publications",
     "src": "src/pages/Publications.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_ProjectCard-BprwrVwy.js",
-      "_arrow-up-right-DmpVh0lF.js"
+      "_ProjectCard-DvL3cr9k.js",
+      "_content-DsGWfzkU.js"
     ]
   },
   "src/posts/Loss_Function.md?raw": {

@@ -1,0 +1,1 @@
+const o=(e,n="en")=>{if(!e)return"";const m=new Date(`${e.length===7?`${e}-01`:e}T00:00:00Z`);return Number.isNaN(m.getTime())?e:new Intl.DateTimeFormat(n,{year:"numeric",month:"short",...e.length>7?{day:"numeric"}:{},timeZone:"UTC"}).format(m)};export{o as f};
