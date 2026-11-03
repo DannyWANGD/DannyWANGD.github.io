@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
+import useLanguage from '../hooks/useLanguage';
 
 interface Heading { id: string; text: string; level: number; }
 export default function TableOfContents({ content }: { content: string }) {
+  const { t } = useLanguage();
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState('');
   const mobileDetails = useRef<HTMLDetailsElement>(null);
@@ -29,5 +31,5 @@ export default function TableOfContents({ content }: { content: string }) {
     setActiveId(id);
   };
   const items = <ol>{headings.map(heading => <li key={heading.id} style={{ paddingLeft: `${(heading.level - 2) * 12}px` }}><a href={`#${encodeURIComponent(heading.id)}`} aria-current={activeId === heading.id ? 'location' : undefined} onClick={event => { event.preventDefault(); navigate(heading.id); }}>{heading.text}</a></li>)}</ol>;
-  return <><nav className="toc-desktop" aria-label="Article contents"><p className="eyebrow">On this page / 目录</p>{items}</nav><details className="toc-mobile" ref={mobileDetails}><summary>On this page / 文章目录</summary><nav aria-label="Mobile article contents">{items}</nav></details></>;
+  return <><nav className="toc-desktop" aria-label={t.blog.articleContents}><p className="eyebrow">{t.blog.contents}</p>{items}</nav><details className="toc-mobile" ref={mobileDetails}><summary>{t.blog.contents}</summary><nav aria-label={t.blog.mobileContents}>{items}</nav></details></>;
 }

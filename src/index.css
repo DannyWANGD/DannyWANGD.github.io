@@ -34,8 +34,12 @@ img { display: block; max-width: 100%; }
 .home-main { padding-block: 36px 64px; }
 .site-header { position: sticky; top: 0; z-index: 50; background: rgb(250 249 246 / 96%); border-bottom: 1px solid var(--line); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 76px; gap: 24px; }
-.brand { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-family: var(--font-heading); font-size: 1.18rem; letter-spacing: -.02em; }
+.brand { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-family: var(--font-heading); font-size: 1.18rem; letter-spacing: -.02em; white-space: nowrap; flex-shrink: 0; }
 .brand-image { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.header-actions { display: flex; align-items: center; gap: 28px; }
+.language-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-width: 66px; min-height: 44px; padding: 7px 10px; background: transparent; color: var(--accent); border: 1px solid var(--line); border-radius: 4px; font-size: .78rem; white-space: nowrap; }
+.language-toggle:hover { background: var(--soft); border-color: var(--accent); }
+.language-toggle span { min-width: 2em; text-align: center; }
 .desktop-nav { display: flex; align-items: center; gap: 32px; }
 .nav-link { display: flex; align-items: center; min-height: 44px; font-size: .84rem; color: var(--muted); }
 .nav-link.active { color: var(--accent); text-decoration: underline; text-underline-offset: 8px; text-decoration-thickness: 1px; }
@@ -136,6 +140,13 @@ img { display: block; max-width: 100%; }
 .honor-row time { font-size: .8rem; font-variant-numeric: tabular-nums; color: var(--muted); }
 .honor-row h3 { font-size: .94rem; line-height: 1.75; font-weight: 500; overflow-wrap: anywhere; }
 .honor-prizes { display: flex; flex-wrap: nowrap; justify-content: end; gap: 14px; white-space: nowrap; font-size: .94rem; line-height: 1.75; color: var(--accent); }
+/* English award names need room without enlarging the shared text size. */
+.site-shell[lang='en'] .honor-row { grid-template-columns: 82px minmax(0, 1fr); }
+.site-shell[lang='en'] .honor-prizes { grid-column: 2; justify-content: start; flex-wrap: wrap; white-space: normal; gap: 2px 20px; }
+.site-shell[lang='en'] .honor-prizes span { max-width: 100%; }
+.site-shell[lang='zh-CN'] h1, .site-shell[lang='zh-CN'] h2 { letter-spacing: .01em; line-height: 1.35; }
+.site-shell[lang='zh-CN'] .eyebrow { letter-spacing: .08em; font-synthesis: weight; }
+.site-shell[lang='zh-CN'] .hero-headline { letter-spacing: .02em; line-height: 1.55; max-width: 17em; }
 .site-footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; border-top: 1px solid var(--line); padding-block: 24px; color: var(--muted); font-size: .75rem; }
 .footer-dot { padding-inline: 8px; }
 .footer-links { display: flex; gap: 24px; }
@@ -248,6 +259,8 @@ img { display: block; max-width: 100%; }
   .site-main { padding-block: 32px 64px; }
   .home-main { padding-block: 24px 40px; }
   .header-inner { min-height: 68px; }
+  .header-actions { gap: 6px; }
+  .language-toggle { min-width: 62px; padding-inline: 8px; }
   .desktop-nav { display: none; }
   .mobile-nav { display: block; }
   .menu-toggle { display: inline-flex; }
@@ -292,6 +305,7 @@ img { display: block; max-width: 100%; }
   .writing-grid, .education-list { grid-template-columns: 1fr; }
   .honors-section .section-heading { flex-wrap: wrap; }
   .honor-row { grid-template-columns: 60px minmax(0, 1fr); gap: 4px 14px; padding: 12px 0; }
+  .site-shell[lang='en'] .honor-row { grid-template-columns: 60px minmax(0, 1fr); }
   .honor-row h3 { font-size: .87rem; }
   .honor-prizes { grid-column: 2; justify-content: start; font-size: .87rem; gap: 2px 12px; }
   .writing-item { padding-block: 24px; }
@@ -322,5 +336,6 @@ img { display: block; max-width: 100%; }
 }
 @media (max-width: 379px) {
   .honor-prizes { grid-column: 1 / -1; }
+  .site-shell[lang='en'] .honor-prizes { grid-column: 1 / -1; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
+import useLanguage from '../hooks/useLanguage';
 
-export default function NotFound({ message = 'This page could not be found.' }: { message?: string }) {
-  return <section className="not-found"><p className="eyebrow">404 / A little off the path</p><h1>Page not found.</h1><p>{message}</p><div className="hero-actions"><Link className="button-primary" to="/">Back home</Link><Link className="button-quiet" to="/blog">Browse blog →</Link></div></section>;
+export default function NotFound({ message }: { message?: string }) {
+  const { t } = useLanguage();
+  return <section className="not-found"><p className="eyebrow">{t.notFound.eyebrow}</p><h1>{t.notFound.title}</h1><p>{message || t.notFound.message}</p><div className="hero-actions"><Link className="button-primary" to="/">{t.common.backHome}</Link><Link className="button-quiet" to="/blog">{t.notFound.browse} →</Link></div></section>;
 }

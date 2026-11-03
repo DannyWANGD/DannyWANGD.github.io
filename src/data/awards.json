@@ -4,55 +4,135 @@
     "title": "ROBOCON 全国大学生机器人大赛（沙排之王）",
     "date": "2026-07",
     "description": "国家级一等奖/精英奖季军/评委特别奖",
-    "level": "national"
+    "level": "national",
+    "translations": {
+      "en": {
+        "title": "ROBOCON China University Robot Competition · Volleyball",
+        "description": "National First Prize/Elite Award — Third Place/Judges’ Special Award"
+      },
+      "zh-CN": {
+        "title": "ROBOCON 全国大学生机器人大赛（沙排之王）",
+        "description": "国家级一等奖/精英奖季军/评委特别奖"
+      }
+    }
   },
   {
     "id": 2,
     "title": "美国大学生数学建模竞赛(MCM/ICM)",
     "date": "2026-05",
     "description": "M 奖",
-    "level": "international"
+    "level": "international",
+    "translations": {
+      "en": {
+        "title": "Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling (MCM/ICM)",
+        "description": "Meritorious Winner (M Award)"
+      },
+      "zh-CN": {
+        "title": "美国大学生数学建模竞赛(MCM/ICM)",
+        "description": "M 奖"
+      }
+    }
   },
   {
     "id": 3,
     "title": "第十九届“挑战杯”全国大学生课外学术科技作品竞赛“人工智能+”挑战赛",
     "date": "2025-10",
     "description": "国家级二等奖",
-    "level": "national"
+    "level": "national",
+    "translations": {
+      "en": {
+        "title": "19th Challenge Cup · AI+ Challenge",
+        "description": "National Second Prize"
+      },
+      "zh-CN": {
+        "title": "第十九届“挑战杯”全国大学生课外学术科技作品竞赛“人工智能+”挑战赛",
+        "description": "国家级二等奖"
+      }
+    }
   },
   {
     "id": 4,
     "title": "全国大学生数学建模大赛",
     "date": "2025-10",
     "description": "国家级二等奖",
-    "level": "national"
+    "level": "national",
+    "translations": {
+      "en": {
+        "title": "China Undergraduate Mathematical Contest in Modeling (CUMCM)",
+        "description": "National Second Prize"
+      },
+      "zh-CN": {
+        "title": "全国大学生数学建模大赛",
+        "description": "国家级二等奖"
+      }
+    }
   },
   {
     "id": 5,
     "title": "第 39 届全国青少年科技创新大赛",
     "date": "2025-08",
     "description": "国家级专项奖",
-    "level": "national"
+    "level": "national",
+    "translations": {
+      "en": {
+        "title": "39th China Adolescents Science and Technology Innovation Contest",
+        "description": "National Special Award"
+      },
+      "zh-CN": {
+        "title": "第 39 届全国青少年科技创新大赛",
+        "description": "国家级专项奖"
+      }
+    }
   },
   {
     "id": 6,
     "title": "CIC“悟空杯”量子计算大赛量子创新赛道",
     "date": "2025-06",
     "description": "国家级一等奖",
-    "level": "national"
+    "level": "national",
+    "translations": {
+      "en": {
+        "title": "CIC Wukong Cup Quantum Computing Competition · Quantum Innovation",
+        "description": "National First Prize"
+      },
+      "zh-CN": {
+        "title": "CIC“悟空杯”量子计算大赛量子创新赛道",
+        "description": "国家级一等奖"
+      }
+    }
   },
   {
     "id": 7,
     "title": "美国大学生数学建模竞赛(MCM/ICM)",
     "date": "2025-05",
     "description": "H 奖",
-    "level": "international"
+    "level": "international",
+    "translations": {
+      "en": {
+        "title": "Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling (MCM/ICM)",
+        "description": "Honorable Mention (H Award)"
+      },
+      "zh-CN": {
+        "title": "美国大学生数学建模竞赛(MCM/ICM)",
+        "description": "H 奖"
+      }
+    }
   },
   {
     "id": 8,
     "title": "第四届 CCF 量子计算编程挑战赛高校赛道",
     "date": "2025-04",
     "description": "国家级三等奖",
-    "level": "national"
+    "level": "national",
+    "translations": {
+      "en": {
+        "title": "4th CCF Quantum Computing Programming Challenge · University Division",
+        "description": "National Third Prize"
+      },
+      "zh-CN": {
+        "title": "第四届 CCF 量子计算编程挑战赛高校赛道",
+        "description": "国家级三等奖"
+      }
+    }
   }
 ]

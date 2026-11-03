@@ -2,13 +2,15 @@ import { useState } from 'react';
 import type { CSSProperties } from 'react';
 import { ArrowUpRight, Check, Copy } from 'lucide-react';
 import profile from '../data/profile.json';
+import useLanguage from '../hooks/useLanguage';
 
 function ContactIcon({ name }: { name: string }) {
   return <span className="contact-icon" aria-hidden="true" style={{ '--icon-url': `url('/icons/${name}.svg')` } as CSSProperties} />;
 }
 
 export default function ContactLinks() {
-  const [feedback, setFeedback] = useState('');
+  const { t } = useLanguage();
+  const [feedback, setFeedback] = useState<'copied' | 'failed' | ''>('');
   const [busy, setBusy] = useState(false);
 
   const copyWeChat = async () => {
@@ -39,7 +41,7 @@ export default function ContactLinks() {
         if (previousFocus instanceof HTMLElement) previousFocus.focus({ preventScroll: true });
       }
     } finally {
-      setFeedback(copied ? '微信号已复制，请在微信中搜索添加。' : '复制失败，请允许浏览器访问剪贴板后重试。');
+      setFeedback(copied ? 'copied' : 'failed');
       setBusy(false);
     }
   };
@@ -47,28 +49,28 @@ export default function ContactLinks() {
   return (
     <section className="contact-section" id="contact" aria-labelledby="contact-title">
       <div className="contact-heading">
-        <h2 id="contact-title">Let’s connect.</h2>
-        <p>Research, projects, or a conversation.</p>
+        <h2 id="contact-title">{t.contact.title}</h2>
+        <p>{t.contact.description}</p>
       </div>
       <div className="contact-links">
         <div className="contact-wechat">
-          <button type="button" className="contact-link" onClick={copyWeChat} disabled={busy} aria-describedby="wechat-feedback" aria-label="复制微信号">
+          <button type="button" className="contact-link" onClick={copyWeChat} disabled={busy} aria-describedby="wechat-feedback" aria-label={t.contact.copy}>
             <ContactIcon name="wechat" />
-            <span>微信<span className="contact-caption">点击复制微信号</span></span>
-            {feedback.startsWith('微信号已复制') ? <Check size={16} aria-hidden="true" /> : <Copy size={16} aria-hidden="true" />}
+            <span>{t.contact.wechat}<span className="contact-caption">{t.contact.copy}</span></span>
+            {feedback === 'copied' ? <Check size={16} aria-hidden="true" /> : <Copy size={16} aria-hidden="true" />}
           </button>
         </div>
-        <a className="contact-link" href={`mailto:${profile.email}`} aria-label={`Email ${profile.email}`}>
-          <ContactIcon name="mail" /><span>Email<span className="contact-caption">{profile.email}</span></span><ArrowUpRight size={16} aria-hidden="true" />
+        <a className="contact-link" href={`mailto:${profile.email}`} aria-label={`${t.common.email} ${profile.email}`}>
+          <ContactIcon name="mail" /><span>{t.common.email}<span className="contact-caption">{profile.email}</span></span><ArrowUpRight size={16} aria-hidden="true" />
         </a>
-        <a className="contact-link" href={profile.social.xiaohongshu} target="_blank" rel="noopener noreferrer" aria-label="小红书主页（新窗口）">
-          <ContactIcon name="xiaohongshu" /><span>小红书<span className="contact-caption">访问我的主页</span></span><ArrowUpRight size={16} aria-hidden="true" />
+        <a className="contact-link" href={profile.social.xiaohongshu} target="_blank" rel="noopener noreferrer" aria-label={t.contact.xiaohongshuLabel}>
+          <ContactIcon name="xiaohongshu" /><span>{t.contact.xiaohongshu}<span className="contact-caption">{t.contact.visit}</span></span><ArrowUpRight size={16} aria-hidden="true" />
         </a>
-        <a className="contact-link" href={profile.social.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)">
+        <a className="contact-link" href={profile.social.github} target="_blank" rel="noopener noreferrer" aria-label={t.contact.githubLabel}>
           <ContactIcon name="github" /><span>GitHub<span className="contact-caption">DannyWANGD</span></span><ArrowUpRight size={16} aria-hidden="true" />
         </a>
       </div>
-      <p id="wechat-feedback" className="contact-feedback" role="status">{feedback}</p>
+      <p id="wechat-feedback" className="contact-feedback" role="status">{feedback && t.contact[feedback]}</p>
     </section>
   );
 }

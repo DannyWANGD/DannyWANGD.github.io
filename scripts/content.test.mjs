@@ -62,3 +62,31 @@ test('Each engineering PDF has one project, a real cover, and valid source-page 
     await access(resolve('public', project.image.slice(1)));
   }
 });
+
+test('Both interface languages cover every project, award, and published blog summary', async () => {
+  const projects = JSON.parse(await readFile('src/data/projects.json', 'utf8'));
+  const awards = JSON.parse(await readFile('src/data/awards.json', 'utf8'));
+  const summaries = JSON.parse(await readFile('src/data/post-translations.json', 'utf8'));
+  for (const language of ['en', 'zh-CN']) {
+    for (const project of projects) {
+      const text = project.translations?.[language];
+      assert.ok(text, `Missing ${language} project ${project.id}`);
+      for (const field of ['title', 'description', 'imageAlt', ...(project.subtitle ? ['subtitle'] : []), ...(project.imageCaption ? ['imageCaption'] : [])]) {
+        assert.ok(text[field]?.trim(), `Missing ${language} ${field} for project ${project.id}`);
+        if (language === 'en') assert.doesNotMatch(text[field], /\p{Script=Han}/u);
+      }
+      assert.equal(text.tags.length, project.tags.length);
+      if (project.links) assert.equal(text.linkLabels.length, project.links.length);
+      // Translations must not change destinations, assets, report pages, or stable anchors.
+      for (const field of ['id', 'slug', 'link', 'links', 'image', 'report']) assert.ok(!(field in text));
+    }
+    for (const award of awards) {
+      assert.ok(award.translations?.[language]?.title?.trim());
+      assert.ok(award.translations?.[language]?.description?.trim());
+    }
+  }
+  for (const post of await loadPosts()) {
+    assert.ok(summaries[post.slug]?.title?.trim(), `Missing English blog title: ${post.slug}`);
+    assert.ok(summaries[post.slug]?.excerpt?.trim(), `Missing English blog summary: ${post.slug}`);
+  }
+});

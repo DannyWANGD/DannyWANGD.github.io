@@ -47,11 +47,11 @@ npm run preview
 
 第二项 PaperBrain 将 Python 后端与 Obsidian 插件合并展示，并保留各自的仓库链接；封面 `/images/projects/PaperBrain.png` 采用 [PaperBrain 仓库自带的项目品牌图](https://github.com/DannyWANGD/PaperBrain/blob/main/paperbrain_arch.png)。两项插图均使用 `imageScale: 0.6666666667`，保持尺寸与左对齐一致。
 
-第三项 ROBOCON 2026 排球机器人对应 [volleyball_1](https://github.com/DannyWANGD/volleyball_1)，介绍前车板的嵌入式控制功能；封面 `/images/projects/ROBOCON-2026.jpg` 为本人提供的赛事图片，完整保留原图，沿用 2/3 图片比例与左对齐。
+第三项 ROBOCON 2026 排球机器人对应 [volleyball_1](https://github.com/DannyWANGD/volleyball_1)，介绍前车板的嵌入式控制功能；封面 `/images/projects/ROBOCON-2026.jpg` 为本人提供的机器人实物照片，保留原摄影署名，沿用 2/3 图片比例与左对齐。
 
-第四项 Focus Lamp 对应 [Focus_Lamp](https://github.com/DannyWANGD/Focus_Lamp)，展示基于 Human Computer Lab 的 LeLamp 平台扩展的专注辅助交互原型。封面 `/images/projects/Focus-Lamp.png` 完整采用[仓库中的 LeLamp 模型图](https://github.com/DannyWANGD/Focus_Lamp/blob/main/assets/images/1_lamp_3d.png)，保留原图内容，并提供 LeLamp 平台入口；原项目许可副本保存在 `public/images/projects/LeLamp-LICENSE.txt`。项目展示于 Research & Projects 第四项，首页继续按前三项精选展示。
+第四项 Focus Lamp 对应 [Focus_Lamp](https://github.com/DannyWANGD/Focus_Lamp)，展示基于 Human Computer Lab 的 LeLamp 平台扩展的专注辅助交互原型。封面 `/images/projects/Focus-Lamp.png` 使用本人提供的黄色台灯封面，完整显示并保留 Human Computer Lab 署名；原项目许可副本保存在 `public/images/projects/LeLamp-LICENSE.txt`。项目展示于 Research & Projects 第四项，首页继续按前三项精选展示。
 
-例如，在数组中添加下面的对象，并将示例文字和路径替换为真实信息：
+例如，下面展示基础字段；实际新增时建议复制一个已有完整条目，修改唯一 `id`、文字和路径，并按“中英文切换”一节补齐 `translations`：
 
 ```json
 {
@@ -78,7 +78,7 @@ PDF 保留在 `public/pdf/`，封面放入 `public/images/projects/reports/`。�
 - 7 张 WebP 封面取自报告原图，仅裁去页面正文并等比例留白；同步课件使用原创 SVG 方法示意，波形不代表实验数据。原图出处已写入各条目的图注和 `figurePage`。
 - 构建时同时生成页面索引和包含报告 PDF 的站点地图；内容检查会验证 PDF 与项目一一对应、封面存在以及跳转页码合法。
 
-新增报告时，先放入 PDF 与封面，再在 `projects.json` 添加以下格式的条目，替换文件名、页数及文字：
+新增报告时，先放入 PDF 与封面，再在 `projects.json` 添加以下格式的基础字段，替换文件名、页数及文字，并参照现有报告补齐 `translations`：
 
 ```json
 {
@@ -145,6 +145,15 @@ archived: false
 - 微信号只保存在配置中，不直接展示；点击微信按钮后复制。优先使用 Clipboard API，兼容模式使用临时隐藏选区；失败时给出重试提示。
 - 联系图标位于 `public/icons/`，来源和许可记录见该目录的 `README.md`。
 - 全站中文使用本机宋体（SimSun）；macOS 使用宋体风格的 Songti SC 回退。博客正文英文使用 Times New Roman，行内代码与代码块使用 Cascadia Code / Consolas 等宽字体。字体规则位于 `src/index.css` 与 `tailwind.config.js`，未分发商业字体文件。
+
+## 中英文切换
+
+- 右上角的“中文 / EN”按钮一键切换，电脑与手机均可直接使用；默认英文，选择保存在浏览器的 `site-language` 中，刷新与跨页面访问时保持。浏览器禁用本地存储时，本次访问仍可切换。
+- 导航、首页、完整简介、研究兴趣、教育经历、奖项、项目、报告索引、博客列表、搜索与状态提示均提供中英文。博客文章标题、摘要、正文、公式、代码与正文目录条目保留原文，文章周围的导航和阅读提示随界面切换；原始 PDF 与图片保持原样。
+- 界面短句位于 `src/i18n/messages.ts`；个人资料、奖项与项目的双语文字分别保存在 `profile.json`、`awards.json`、`projects.json` 的 `translations.en` 与 `translations["zh-CN"]` 中。新增或修改内容时，同时更新两个语言版本。
+- 项目翻译可配置 `title`、`subtitle`、`description`、`tags`、`imageAlt`、`imageCaption`、`contribution`、`result`。多链接文案使用 `linkLabels` 数组，顺序对应原来的 `links`；项目 URL、图片、PDF 页码与 `slug` 继续只在基础字段维护。
+- 博客列表英文标题与摘要维护于 `src/data/post-translations.json`，以文章 `slug` 为键；中文列表读取原始 Markdown 元数据。不要手工修改自动生成的 `post-index.json`，也不需要翻译 Markdown 正文。
+- 切换时同步更新页面标题、描述与 HTML 语言，首页英文标题为 `Ding Wang · Robotics & Embodied AI`；链接与锚点始终保持一致。
 
 ## 部署与维护
 

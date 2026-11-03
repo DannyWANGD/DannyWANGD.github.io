@@ -1,0 +1,25 @@
+{
+  "whats-next-attention-agency": {
+    "title": "From addictive design to attention training in the AI era",
+    "excerpt": "AI is moving beyond recommendations toward long-term memory and proactive assistance. As products get to know us better, we need to retain the ability to set goals, plan our time, and step away.",
+    "sourceName": "What's Next S9E33"
+  },
+  "hejiayan-liang-wenfeng": {
+    "title": "Liang Wenfeng’s path: five ideas worth remembering",
+    "excerpt": "Five takeaways from a long-form profile: self-directed learning, the transfer of quantitative skills, and DeepSeek’s approach to open source and AGI.",
+    "sourceName": "He Jiayan"
+  },
+  "sv101-token-economy": {
+    "title": "The token economy: from compute spending to successful tasks",
+    "excerpt": "Agent competition is shifting toward verifiable value per token. Model routing, skills, and multi-agent systems are changing the economics of getting work done.",
+    "sourceName": "Silicon Valley 101 · E249"
+  },
+  "Loss_Function": {
+    "title": "PyTorch loss functions: from mathematics to practice",
+    "excerpt": "A comparison of regression, classification, ranking, and distribution losses, covering mathematical definitions, numerical stability, and practical PyTorch usage."
+  },
+  "扩散模型理论体系": {
+    "title": "The theory of diffusion models",
+    "excerpt": "Connects DDPM, score matching, and stochastic differential equations to flow matching through their core ideas and derivations."
+  }
+}
