@@ -1,5 +1,25 @@
 [
   {
+    "slug": "self-help-and-values",
+    "title": "自我提升与价值观的偷渡",
+    "date": "2026-11-10",
+    "updated": "2026-11-10",
+    "description": "从忒修斯之船到写作的阅读量，辨认自我提升建议里藏着的成功标准，以及它怎样改变我们做事的理由。",
+    "category": "Deep Reading",
+    "collection": "deep-reading",
+    "tags": [
+      "Self-Help",
+      "Values",
+      "Motivation",
+      "Decision-Making"
+    ],
+    "sourceName": "More To That",
+    "sourceUrl": "https://moretothat.com/self-help-and-values/",
+    "sourceType": "Article",
+    "excerpt": "从忒修斯之船到写作的阅读量，辨认自我提升建议里藏着的成功标准，以及它怎样改变我们做事的理由。",
+    "readTime": 10
+  },
+  {
     "slug": "whats-next-attention-agency",
     "title": "从上瘾模型到专注力训练：在 AI 时代重新掌握注意力",
     "date": "2026-08-26",
