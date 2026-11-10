@@ -1,23 +1,23 @@
 {
-  "_BlogPostCard-D4q6rP2F.js": {
-    "file": "assets/BlogPostCard-D4q6rP2F.js",
+  "_BlogPostCard-DGHE8CRb.js": {
+    "file": "assets/BlogPostCard-DGHE8CRb.js",
     "name": "BlogPostCard",
     "imports": [
       "index.html",
       "_dateFormat-CFWwmALy.js",
-      "_content-T560kVG0.js"
+      "_content-CXVTZKO4.js"
     ]
   },
-  "_ProjectCard-B0Cvkz7k.js": {
-    "file": "assets/ProjectCard-B0Cvkz7k.js",
+  "_ProjectCard-DZTnI3Ka.js": {
+    "file": "assets/ProjectCard-DZTnI3Ka.js",
     "name": "ProjectCard",
     "imports": [
       "index.html",
-      "_content-T560kVG0.js"
+      "_content-CXVTZKO4.js"
     ]
   },
-  "_content-T560kVG0.js": {
-    "file": "assets/content-T560kVG0.js",
+  "_content-CXVTZKO4.js": {
+    "file": "assets/content-CXVTZKO4.js",
     "name": "content",
     "imports": [
       "index.html"
@@ -111,7 +111,7 @@
     "src": "_syntax-highlighting-ZgkIHsf0.css"
   },
   "index.html": {
-    "file": "assets/index-58M-4cZZ.js",
+    "file": "assets/index-ZLzTPewP.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -365,7 +365,7 @@
     "src": "node_modules/katex/dist/fonts/KaTeX_Typewriter-Regular.woff2"
   },
   "src/components/MarkdownBody.tsx": {
-    "file": "assets/MarkdownBody-B6dw97jZ.js",
+    "file": "assets/MarkdownBody-BXX6SZ7c.js",
     "name": "MarkdownBody",
     "src": "src/components/MarkdownBody.tsx",
     "isDynamicEntry": true,
@@ -376,29 +376,30 @@
     ]
   },
   "src/pages/Blog.tsx": {
-    "file": "assets/Blog-hCrYB3Ex.js",
+    "file": "assets/Blog-ESFok1Ej.js",
     "name": "Blog",
     "src": "src/pages/Blog.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_BlogPostCard-D4q6rP2F.js",
-      "_content-T560kVG0.js",
+      "_BlogPostCard-DGHE8CRb.js",
+      "_content-CXVTZKO4.js",
       "_dateFormat-CFWwmALy.js"
     ]
   },
   "src/pages/BlogPost.tsx": {
-    "file": "assets/BlogPost-Dtd5UjEB.js",
+    "file": "assets/BlogPost-CaFIKwX7.js",
     "name": "BlogPost",
     "src": "src/pages/BlogPost.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
       "_dateFormat-CFWwmALy.js",
-      "_content-T560kVG0.js",
+      "_content-CXVTZKO4.js",
       "src/pages/NotFound.tsx"
     ],
     "dynamicImports": [
+      "src/posts/self-help-and-values.md?raw",
       "src/posts/whats-next-attention-agency.md?raw",
       "src/posts/hejiayan-liang-wenfeng.md?raw",
       "src/posts/sv101-token-economy.md?raw",
@@ -408,20 +409,20 @@
     ]
   },
   "src/pages/Home.tsx": {
-    "file": "assets/Home-BLx9bdKq.js",
+    "file": "assets/Home-BRExy1-e.js",
     "name": "Home",
     "src": "src/pages/Home.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_ProjectCard-B0Cvkz7k.js",
-      "_BlogPostCard-D4q6rP2F.js",
-      "_content-T560kVG0.js",
+      "_ProjectCard-DZTnI3Ka.js",
+      "_BlogPostCard-DGHE8CRb.js",
+      "_content-CXVTZKO4.js",
       "_dateFormat-CFWwmALy.js"
     ]
   },
   "src/pages/Life.tsx": {
-    "file": "assets/Life-Co-6jgJV.js",
+    "file": "assets/Life-CMKhjvmB.js",
     "name": "Life",
     "src": "src/pages/Life.tsx",
     "isDynamicEntry": true,
@@ -431,7 +432,7 @@
     ]
   },
   "src/pages/LifePost.tsx": {
-    "file": "assets/LifePost-CAO7VmsI.js",
+    "file": "assets/LifePost-q-YX3Yji.js",
     "name": "LifePost",
     "src": "src/pages/LifePost.tsx",
     "isDynamicEntry": true,
@@ -442,7 +443,7 @@
     ]
   },
   "src/pages/NotFound.tsx": {
-    "file": "assets/NotFound-DgBqiDTW.js",
+    "file": "assets/NotFound-iih4KFaO.js",
     "name": "NotFound",
     "src": "src/pages/NotFound.tsx",
     "isDynamicEntry": true,
@@ -451,14 +452,14 @@
     ]
   },
   "src/pages/Publications.tsx": {
-    "file": "assets/Publications-ktRsIMO0.js",
+    "file": "assets/Publications-HkWYq9s5.js",
     "name": "Publications",
     "src": "src/pages/Publications.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_ProjectCard-B0Cvkz7k.js",
-      "_content-T560kVG0.js"
+      "_ProjectCard-DZTnI3Ka.js",
+      "_content-CXVTZKO4.js"
     ]
   },
   "src/posts/Loss_Function.md?raw": {
@@ -471,6 +472,12 @@
     "file": "assets/hejiayan-liang-wenfeng-C470hX_t.js",
     "name": "hejiayan-liang-wenfeng",
     "src": "src/posts/hejiayan-liang-wenfeng.md?raw",
+    "isDynamicEntry": true
+  },
+  "src/posts/self-help-and-values.md?raw": {
+    "file": "assets/self-help-and-values-DNDTxY1g.js",
+    "name": "self-help-and-values",
+    "src": "src/posts/self-help-and-values.md?raw",
     "isDynamicEntry": true
   },
   "src/posts/sv101-token-economy.md?raw": {
