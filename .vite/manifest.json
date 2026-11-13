@@ -1,23 +1,23 @@
 {
-  "_BlogPostCard-DRUsWosW.js": {
-    "file": "assets/BlogPostCard-DRUsWosW.js",
+  "_BlogPostCard-BIJl4j2e.js": {
+    "file": "assets/BlogPostCard-BIJl4j2e.js",
     "name": "BlogPostCard",
     "imports": [
       "index.html",
       "_dateFormat-CFWwmALy.js",
-      "_content-C7VpIz3A.js"
+      "_content-BwupHWkn.js"
     ]
   },
-  "_ProjectCard-Dhmvbf0q.js": {
-    "file": "assets/ProjectCard-Dhmvbf0q.js",
+  "_ProjectCard-rKb7xhVE.js": {
+    "file": "assets/ProjectCard-rKb7xhVE.js",
     "name": "ProjectCard",
     "imports": [
       "index.html",
-      "_content-C7VpIz3A.js"
+      "_content-BwupHWkn.js"
     ]
   },
-  "_content-C7VpIz3A.js": {
-    "file": "assets/content-C7VpIz3A.js",
+  "_content-BwupHWkn.js": {
+    "file": "assets/content-BwupHWkn.js",
     "name": "content",
     "imports": [
       "index.html"
@@ -115,7 +115,7 @@
     "src": "_syntax-highlighting-ZgkIHsf0.css"
   },
   "index.html": {
-    "file": "assets/index-DTG-87yC.js",
+    "file": "assets/index-DuXPBtUU.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -369,7 +369,7 @@
     "src": "node_modules/katex/dist/fonts/KaTeX_Typewriter-Regular.woff2"
   },
   "src/components/MarkdownBody.tsx": {
-    "file": "assets/MarkdownBody-BiuKqCKn.js",
+    "file": "assets/MarkdownBody-CHJlCoPe.js",
     "name": "MarkdownBody",
     "src": "src/components/MarkdownBody.tsx",
     "isDynamicEntry": true,
@@ -380,21 +380,21 @@
     ]
   },
   "src/data/post-search-index.json": {
-    "file": "assets/post-search-index-BLNpg7CN.js",
+    "file": "assets/post-search-index-C9Tk8PKG.js",
     "name": "post-search-index",
     "src": "src/data/post-search-index.json",
     "isDynamicEntry": true
   },
   "src/pages/Blog.tsx": {
-    "file": "assets/Blog-Bv4r_Jpc.js",
+    "file": "assets/Blog-DujS6HkT.js",
     "name": "Blog",
     "src": "src/pages/Blog.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_BlogPostCard-DRUsWosW.js",
+      "_BlogPostCard-BIJl4j2e.js",
       "_post-content-82LyQ8VQ.js",
-      "_content-C7VpIz3A.js",
+      "_content-BwupHWkn.js",
       "_dateFormat-CFWwmALy.js"
     ],
     "dynamicImports": [
@@ -402,7 +402,7 @@
     ]
   },
   "src/pages/BlogPost.tsx": {
-    "file": "assets/BlogPost-Nr1hw0DP.js",
+    "file": "assets/BlogPost-DPNhyJP2.js",
     "name": "BlogPost",
     "src": "src/pages/BlogPost.tsx",
     "isDynamicEntry": true,
@@ -410,7 +410,7 @@
       "index.html",
       "_post-content-82LyQ8VQ.js",
       "_dateFormat-CFWwmALy.js",
-      "_content-C7VpIz3A.js",
+      "_content-BwupHWkn.js",
       "src/pages/NotFound.tsx"
     ],
     "dynamicImports": [
@@ -425,20 +425,20 @@
     ]
   },
   "src/pages/Home.tsx": {
-    "file": "assets/Home-DVwor0UV.js",
+    "file": "assets/Home-CpZ2JQ-E.js",
     "name": "Home",
     "src": "src/pages/Home.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_ProjectCard-Dhmvbf0q.js",
-      "_BlogPostCard-DRUsWosW.js",
-      "_content-C7VpIz3A.js",
+      "_ProjectCard-rKb7xhVE.js",
+      "_BlogPostCard-BIJl4j2e.js",
+      "_content-BwupHWkn.js",
       "_dateFormat-CFWwmALy.js"
     ]
   },
   "src/pages/Life.tsx": {
-    "file": "assets/Life-DdQ4kgcM.js",
+    "file": "assets/Life-Dc8qhvxR.js",
     "name": "Life",
     "src": "src/pages/Life.tsx",
     "isDynamicEntry": true,
@@ -448,7 +448,7 @@
     ]
   },
   "src/pages/LifePost.tsx": {
-    "file": "assets/LifePost-DxYQTAN6.js",
+    "file": "assets/LifePost-BJH1pW3W.js",
     "name": "LifePost",
     "src": "src/pages/LifePost.tsx",
     "isDynamicEntry": true,
@@ -459,7 +459,7 @@
     ]
   },
   "src/pages/NotFound.tsx": {
-    "file": "assets/NotFound-BI6HWQe-.js",
+    "file": "assets/NotFound-DN2hrz3a.js",
     "name": "NotFound",
     "src": "src/pages/NotFound.tsx",
     "isDynamicEntry": true,
@@ -468,14 +468,14 @@
     ]
   },
   "src/pages/Publications.tsx": {
-    "file": "assets/Publications-CZQPHWul.js",
+    "file": "assets/Publications-OTEe_Z9a.js",
     "name": "Publications",
     "src": "src/pages/Publications.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_ProjectCard-Dhmvbf0q.js",
-      "_content-C7VpIz3A.js"
+      "_ProjectCard-rKb7xhVE.js",
+      "_content-BwupHWkn.js"
     ]
   },
   "src/posts/Loss_Function.md?raw": {
@@ -491,7 +491,7 @@
     "isDynamicEntry": true
   },
   "src/posts/modern-control-theory.md?raw": {
-    "file": "assets/modern-control-theory-CYW0V4FF.js",
+    "file": "assets/modern-control-theory-D_qBGBrJ.js",
     "name": "modern-control-theory",
     "src": "src/posts/modern-control-theory.md?raw",
     "isDynamicEntry": true

@@ -618,5 +618,5 @@ The homogeneous augmented matrix is the one in Section 5. Its poles are the regu
 
 ## Course sources
 
-These notes follow Zhongqi Sun's *Fundamental Principles and Applications of Control Science*, School of Automation, Beijing Institute of Technology, Chapters 1–6 (2026). The six lecture decks cover introduction and state-space modeling, stability, controllability and observability with realization, state and output feedback, state observers, and linear quadratic regulation. The worked calculations use the notation defined here, and the figures in the body are original diagrams or computed trajectories. The inverted-pendulum cover is a generated illustration.
+These notes follow Zhongqi Sun's *Fundamental Principles and Applications of Control Science*, School of Automation, Beijing Institute of Technology, Chapters 1–6 (2026). The six lecture decks cover introduction and state-space modeling, stability, controllability and observability with realization, state and output feedback, state observers, and linear quadratic regulation. The worked calculations use the notation defined here, and the figures in the body are original diagrams or computed trajectories. The generated cover depicts state trajectories converging toward the minimum of the LQR cost-to-go surface.
 `;export{e as default};
