@@ -1,23 +1,23 @@
 {
-  "_BlogPostCard-4SxoDGSV.js": {
-    "file": "assets/BlogPostCard-4SxoDGSV.js",
+  "_BlogPostCard-DRUsWosW.js": {
+    "file": "assets/BlogPostCard-DRUsWosW.js",
     "name": "BlogPostCard",
     "imports": [
       "index.html",
       "_dateFormat-CFWwmALy.js",
-      "_content-C5zoxcG1.js"
+      "_content-C7VpIz3A.js"
     ]
   },
-  "_ProjectCard-Cd1cLvZm.js": {
-    "file": "assets/ProjectCard-Cd1cLvZm.js",
+  "_ProjectCard-Dhmvbf0q.js": {
+    "file": "assets/ProjectCard-Dhmvbf0q.js",
     "name": "ProjectCard",
     "imports": [
       "index.html",
-      "_content-C5zoxcG1.js"
+      "_content-C7VpIz3A.js"
     ]
   },
-  "_content-C5zoxcG1.js": {
-    "file": "assets/content-C5zoxcG1.js",
+  "_content-C7VpIz3A.js": {
+    "file": "assets/content-C7VpIz3A.js",
     "name": "content",
     "imports": [
       "index.html"
@@ -99,8 +99,8 @@
     "file": "assets/math-typesetting-BmnaB44z.css",
     "src": "_math-typesetting-BmnaB44z.css"
   },
-  "_post-content-C1TucA88.js": {
-    "file": "assets/post-content-C1TucA88.js",
+  "_post-content-82LyQ8VQ.js": {
+    "file": "assets/post-content-82LyQ8VQ.js",
     "name": "post-content"
   },
   "_syntax-highlighting-TFQRyKZ7.js": {
@@ -115,7 +115,7 @@
     "src": "_syntax-highlighting-ZgkIHsf0.css"
   },
   "index.html": {
-    "file": "assets/index-CTFIqRLo.js",
+    "file": "assets/index-DTG-87yC.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -369,7 +369,7 @@
     "src": "node_modules/katex/dist/fonts/KaTeX_Typewriter-Regular.woff2"
   },
   "src/components/MarkdownBody.tsx": {
-    "file": "assets/MarkdownBody-CJ5hB808.js",
+    "file": "assets/MarkdownBody-BiuKqCKn.js",
     "name": "MarkdownBody",
     "src": "src/components/MarkdownBody.tsx",
     "isDynamicEntry": true,
@@ -380,21 +380,21 @@
     ]
   },
   "src/data/post-search-index.json": {
-    "file": "assets/post-search-index-By4_-Q4E.js",
+    "file": "assets/post-search-index-BLNpg7CN.js",
     "name": "post-search-index",
     "src": "src/data/post-search-index.json",
     "isDynamicEntry": true
   },
   "src/pages/Blog.tsx": {
-    "file": "assets/Blog-MOrkEbLe.js",
+    "file": "assets/Blog-Bv4r_Jpc.js",
     "name": "Blog",
     "src": "src/pages/Blog.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_BlogPostCard-4SxoDGSV.js",
-      "_post-content-C1TucA88.js",
-      "_content-C5zoxcG1.js",
+      "_BlogPostCard-DRUsWosW.js",
+      "_post-content-82LyQ8VQ.js",
+      "_content-C7VpIz3A.js",
       "_dateFormat-CFWwmALy.js"
     ],
     "dynamicImports": [
@@ -402,18 +402,19 @@
     ]
   },
   "src/pages/BlogPost.tsx": {
-    "file": "assets/BlogPost-gbzDR-8T.js",
+    "file": "assets/BlogPost-Nr1hw0DP.js",
     "name": "BlogPost",
     "src": "src/pages/BlogPost.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_post-content-C1TucA88.js",
+      "_post-content-82LyQ8VQ.js",
       "_dateFormat-CFWwmALy.js",
-      "_content-C5zoxcG1.js",
+      "_content-C7VpIz3A.js",
       "src/pages/NotFound.tsx"
     ],
     "dynamicImports": [
+      "src/posts/modern-control-theory.md?raw",
       "src/posts/self-help-and-values.md?raw",
       "src/posts/whats-next-attention-agency.md?raw",
       "src/posts/hejiayan-liang-wenfeng.md?raw",
@@ -424,20 +425,20 @@
     ]
   },
   "src/pages/Home.tsx": {
-    "file": "assets/Home-B4jnqE13.js",
+    "file": "assets/Home-DVwor0UV.js",
     "name": "Home",
     "src": "src/pages/Home.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_ProjectCard-Cd1cLvZm.js",
-      "_BlogPostCard-4SxoDGSV.js",
-      "_content-C5zoxcG1.js",
+      "_ProjectCard-Dhmvbf0q.js",
+      "_BlogPostCard-DRUsWosW.js",
+      "_content-C7VpIz3A.js",
       "_dateFormat-CFWwmALy.js"
     ]
   },
   "src/pages/Life.tsx": {
-    "file": "assets/Life-CVJZ8kAc.js",
+    "file": "assets/Life-DdQ4kgcM.js",
     "name": "Life",
     "src": "src/pages/Life.tsx",
     "isDynamicEntry": true,
@@ -447,7 +448,7 @@
     ]
   },
   "src/pages/LifePost.tsx": {
-    "file": "assets/LifePost-BvHFSzaN.js",
+    "file": "assets/LifePost-DxYQTAN6.js",
     "name": "LifePost",
     "src": "src/pages/LifePost.tsx",
     "isDynamicEntry": true,
@@ -458,7 +459,7 @@
     ]
   },
   "src/pages/NotFound.tsx": {
-    "file": "assets/NotFound-DtjKnAkg.js",
+    "file": "assets/NotFound-BI6HWQe-.js",
     "name": "NotFound",
     "src": "src/pages/NotFound.tsx",
     "isDynamicEntry": true,
@@ -467,14 +468,14 @@
     ]
   },
   "src/pages/Publications.tsx": {
-    "file": "assets/Publications-BtxwaNSy.js",
+    "file": "assets/Publications-CZQPHWul.js",
     "name": "Publications",
     "src": "src/pages/Publications.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_ProjectCard-Cd1cLvZm.js",
-      "_content-C5zoxcG1.js"
+      "_ProjectCard-Dhmvbf0q.js",
+      "_content-C7VpIz3A.js"
     ]
   },
   "src/posts/Loss_Function.md?raw": {
@@ -487,6 +488,12 @@
     "file": "assets/hejiayan-liang-wenfeng-JeAMl3FB.js",
     "name": "hejiayan-liang-wenfeng",
     "src": "src/posts/hejiayan-liang-wenfeng.md?raw",
+    "isDynamicEntry": true
+  },
+  "src/posts/modern-control-theory.md?raw": {
+    "file": "assets/modern-control-theory-CYW0V4FF.js",
+    "name": "modern-control-theory",
+    "src": "src/posts/modern-control-theory.md?raw",
     "isDynamicEntry": true
   },
   "src/posts/self-help-and-values.md?raw": {
