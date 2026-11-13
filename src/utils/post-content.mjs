@@ -18,7 +18,7 @@ function parseValue(value) {
 export function parseMarkdownPost(raw, slug) {
   const normalized = raw.replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n');
   const match = normalized.match(frontmatter);
-  const metadata = { title: '', date: '', updated: '', description: '', cover: '', category: '', collection: 'research', tags: [], draft: false, archived: false, sourceName: '', sourceUrl: '', sourceType: '' };
+  const metadata = { title: '', date: '', updated: '', description: '', cover: '', category: '', collection: 'research', tags: [], draft: false, archived: false, sourceName: '', sourceUrl: '', sourceType: '', language: undefined };
   for (const line of (match?.[1] || '').split('\n')) {
     const separator = line.indexOf(':');
     if (separator < 0) continue;
@@ -28,6 +28,7 @@ export function parseMarkdownPost(raw, slug) {
   metadata.title ||= decodeURIComponent(slug).replace(/[-_]+/g, ' ');
   metadata.updated ||= metadata.date;
   metadata.tags = Array.isArray(metadata.tags) ? metadata.tags : [];
+  if (metadata.language !== 'en' && metadata.language !== 'zh-CN') metadata.language = undefined;
   let content = normalized.replace(frontmatter, '').trim();
   const titleLine = content.match(/^#\s+(.+)\n+/);
   if (titleLine?.[1].replace(/[*_`]/g, '').trim() === metadata.title) content = content.slice(titleLine[0].length);

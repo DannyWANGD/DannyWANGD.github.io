@@ -1,5 +1,6 @@
 // Generated: published posts only.
 export default {
+  "modern-control-theory": () => import("../posts/modern-control-theory.md?raw"),
   "self-help-and-values": () => import("../posts/self-help-and-values.md?raw"),
   "whats-next-attention-agency": () => import("../posts/whats-next-attention-agency.md?raw"),
   "hejiayan-liang-wenfeng": () => import("../posts/hejiayan-liang-wenfeng.md?raw"),

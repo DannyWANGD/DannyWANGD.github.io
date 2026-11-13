@@ -13,6 +13,7 @@ export default function Article({ post, children }: { post: ParsedMarkdownPost; 
   const [progress, setProgress] = useState(0);
   const article = useRef<HTMLElement>(null);
   const { metadata, content, readTime } = post;
+  const contentLanguage = metadata.language || 'zh-CN';
   useEffect(() => {
     const update = () => {
       if (!article.current) return;
@@ -26,7 +27,7 @@ export default function Article({ post, children }: { post: ParsedMarkdownPost; 
   return <div className="article-page">
     <div className="reading-progress" aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
     <Link className="text-link article-back" to="/blog"><ArrowLeft size={16} aria-hidden="true" /> {t.common.allPosts}</Link>
-    <article className="article" lang="zh-CN" ref={article}>
+    <article className="article" lang={contentLanguage} ref={article}>
       <header className="article-header">
         <div className="article-heading">
           <p className="eyebrow" lang={language}>{metadata.collection === 'deep-reading' ? t.blog.deep : translateTerm(metadata.category, language) || t.blog.researchNote}</p>
@@ -42,7 +43,7 @@ export default function Article({ post, children }: { post: ParsedMarkdownPost; 
         {metadata.cover && <SiteImage className="article-cover" src={metadata.cover} alt="" />}
       </header>
       <div className="article-layout">
-        <TableOfContents content={content} />
+        <TableOfContents content={content} contentLanguage={contentLanguage} />
         <div className="article-flow">
           {children}
           <footer className="article-footer">

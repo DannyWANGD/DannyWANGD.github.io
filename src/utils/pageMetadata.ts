@@ -17,7 +17,11 @@ export function getPageMetadata(pathname: string, language: Language = 'en'): Pa
   if (path === '/publications') return { ...defaults, title: `${t.common.projects} · ${name}`, description: t.metadata.projects };
   if (path === '/blog') return { ...defaults, title: `${t.common.blog} · ${name}`, description: t.metadata.blog };
   const post = posts.find(post => path === `/blog/${post.slug}`);
-  if (post) return { ...defaults, title: `${post.title} · ${name}`, description: post.description || post.excerpt, type: 'article', date: post.date, updated: post.updated };
+  if (post) return {
+    ...defaults, title: `${post.title} · ${name}`, description: post.description || post.excerpt,
+    image: post.cover ? new URL(post.cover, site.url).href : defaults.image,
+    type: 'article', date: post.date, updated: post.updated,
+  };
   if (path === '/life') return { ...defaults, title: `${t.common.life} · ${name}`, description: t.life.description, noindex: !life.length };
   const source = (life as LifeEntry[]).find(item => path === `/life/${item.id}`);
   if (source) { const entry = localize(source, language); return { ...defaults, title: `${entry.title} · ${name}`, description: entry.description }; }

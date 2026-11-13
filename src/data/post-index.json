@@ -1,5 +1,28 @@
 [
   {
+    "slug": "modern-control-theory",
+    "title": "Modern Control Theory from State Space to LQR",
+    "date": "2026-11-13",
+    "updated": "2026-11-13",
+    "description": "A continuous-time guide to state-space models, stability, controllability, observers, and optimal feedback, with worked examples from a moving cart to LQG.",
+    "cover": "/images/blog/modern-control-theory.webp",
+    "category": "Control Theory",
+    "collection": "research",
+    "tags": [
+      "Control Theory",
+      "State Space",
+      "State Estimation",
+      "Optimal Control",
+      "LQR"
+    ],
+    "sourceName": "",
+    "sourceUrl": "",
+    "sourceType": "",
+    "language": "en",
+    "excerpt": "A continuous-time guide to state-space models, stability, controllability, observers, and optimal feedback, with worked examples from a moving cart to LQG.",
+    "readTime": 27
+  },
+  {
     "slug": "self-help-and-values",
     "title": "自我提升与价值观的偷渡",
     "date": "2026-11-10",

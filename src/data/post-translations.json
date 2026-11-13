@@ -1,4 +1,8 @@
 {
+  "modern-control-theory": {
+    "title": "Modern Control Theory from State Space to LQR",
+    "excerpt": "A continuous-time guide to state-space models, stability, controllability, observers, and optimal feedback, with worked examples from a moving cart to LQG."
+  },
   "self-help-and-values": {
     "title": "Self-Help and the Smuggling of Values",
     "excerpt": "From the Ship of Theseus to blog traffic, this reading note asks how advice can bring its own definition of success and change why we do the work.",

@@ -3,7 +3,7 @@ import { ChevronDown } from 'lucide-react';
 import useLanguage from '../hooks/useLanguage';
 
 interface Heading { id: string; text: string; level: number; }
-export default function TableOfContents({ content }: { content: string }) {
+export default function TableOfContents({ content, contentLanguage }: { content: string; contentLanguage: string }) {
   const { language, t } = useLanguage();
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState('');
@@ -53,7 +53,7 @@ export default function TableOfContents({ content }: { content: string }) {
     history.replaceState(history.state, '', `${location.pathname}${location.search}#${encodeURIComponent(id)}`);
     setActiveId(id);
   };
-  const items = <ol lang="zh-CN">
+  const items = <ol lang={contentLanguage}>
     {headings.map(heading => (
       <li key={heading.id} data-level={heading.level}>
         <a href={`#${encodeURIComponent(heading.id)}`} aria-current={activeId === heading.id ? 'location' : undefined} onClick={event => { event.preventDefault(); navigate(heading.id); }}>{heading.text}</a>

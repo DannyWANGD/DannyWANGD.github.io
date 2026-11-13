@@ -8,6 +8,7 @@ export interface PostMetadata {
   collection: 'research' | 'deep-reading';
   description: string;
   cover: string;
+  language?: 'en' | 'zh-CN';
   sourceName: string;
   sourceUrl: string;
   sourceType: string;
