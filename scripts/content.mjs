@@ -1,6 +1,6 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { parseMarkdownPost } from '../src/utils/post-content.mjs';
+import { normalizeSearchText, parseMarkdownPost } from '../src/utils/post-content.mjs';
 
 export async function loadPosts() {
   const names = (await readdir(resolve('src/posts'))).filter(name => name.endsWith('.md'));
@@ -25,12 +25,15 @@ export async function generateContentIndex() {
     delete summary.archived;
     return summary;
   });
-  const target = resolve('src/data/post-index.json');
-  const text = `${JSON.stringify(data, null, 2)}\n`;
-  const previous = await readFile(target, 'utf8').catch(() => '');
-  if (previous !== text) await writeFile(target, text);
+  const search = Object.fromEntries(posts.map(({ slug, plainText }) => [slug, normalizeSearchText(plainText)]));
   const loaders = `// Generated: published posts only.\nexport default {\n${posts.map(post => `  ${JSON.stringify(post.slug)}: () => import(${JSON.stringify(`../posts/${post.slug}.md?raw`)}),`).join('\n')}\n};\n`;
-  const loaderPath = resolve('src/data/post-loaders.ts');
-  if (await readFile(loaderPath, 'utf8').catch(() => '') !== loaders) await writeFile(loaderPath, loaders);
+  for (const [filename, text] of [
+    ['post-index.json', `${JSON.stringify(data, null, 2)}\n`],
+    ['post-search-index.json', `${JSON.stringify(search, null, 2)}\n`],
+    ['post-loaders.ts', loaders],
+  ]) {
+    const target = resolve('src/data', filename);
+    if (await readFile(target, 'utf8').catch(() => '') !== text) await writeFile(target, text);
+  }
   return posts;
 }

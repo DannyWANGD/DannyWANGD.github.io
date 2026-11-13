@@ -7,6 +7,7 @@ export interface PostMetadata {
   category: string;
   collection: 'research' | 'deep-reading';
   description: string;
+  cover: string;
   sourceName: string;
   sourceUrl: string;
   sourceType: string;
@@ -14,6 +15,6 @@ export interface PostMetadata {
   draft: boolean;
   archived: boolean;
 }
-export interface ParsedMarkdownPost { metadata: PostMetadata; content: string; excerpt: string; readTime: number; }
+export interface ParsedMarkdownPost { metadata: PostMetadata; content: string; plainText: string; excerpt: string; readTime: number; }
 export interface PostSummary extends Omit<PostMetadata, 'draft' | 'archived'> { slug: string; excerpt: string; readTime: number; }
 export const parseMarkdownPost: (raw: string, slug: string) => ParsedMarkdownPost = parse;

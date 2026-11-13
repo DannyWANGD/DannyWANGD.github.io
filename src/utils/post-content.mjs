@@ -1,6 +1,14 @@
 // Shared by the browser, metadata index generator and static HTML build.
 const frontmatter = /^---\n([\s\S]*?)\n---\n?/;
 
+export function normalizeSearchText(value) {
+  return value.normalize('NFKD').toLowerCase()
+    .replace(/\p{M}/gu, '')
+    .replace(/\p{Script=Han}(?=[a-z0-9])|[a-z0-9](?=\p{Script=Han})/gu, '$& ')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .trim();
+}
+
 function parseValue(value) {
   if (value === 'true') return true;
   if (value === 'false') return false;
@@ -10,7 +18,7 @@ function parseValue(value) {
 export function parseMarkdownPost(raw, slug) {
   const normalized = raw.replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n');
   const match = normalized.match(frontmatter);
-  const metadata = { title: '', date: '', updated: '', description: '', category: '', collection: 'research', tags: [], draft: false, archived: false, sourceName: '', sourceUrl: '', sourceType: '' };
+  const metadata = { title: '', date: '', updated: '', description: '', cover: '', category: '', collection: 'research', tags: [], draft: false, archived: false, sourceName: '', sourceUrl: '', sourceType: '' };
   for (const line of (match?.[1] || '').split('\n')) {
     const separator = line.indexOf(':');
     if (separator < 0) continue;
@@ -30,7 +38,7 @@ export function parseMarkdownPost(raw, slug) {
     return `\uE000${protectedCode.length - 1}\uE001`;
   });
   const labels = { abstract: '核心判断', info: '信息', note: '补充说明', summary: '摘要', tip: '提示', warning: '注意' };
-  content = content.replace(/^>\s*\[!(\w+)\][+-]?[^\S\n]*(.*)$/gm, (_, type, title) => `> **${title.trim() || labels[type.toLowerCase()] || type}**`)
+  content = content.replace(/^>\s*\[!(\w+)\][+-]?[^\S\n]*(.*)$/gm, (_, type, title) => `> **${title.trim() || labels[type.toLowerCase()] || type}**\n>`)
     .replace(/!\[\[([^\]|]+?)(?:\|[^\]]*?)?\]\]/g, (_, name) => `![研究笔记配图](/pictures/${encodeURIComponent(name.trim())})`)
     .replace(/==([^=\n]+?)==/g, '<mark>$1</mark>')
     .replace(/\$\$([\s\S]+?)\$\$/g, (_, math) => `\n\n$$\n${math.trim()}\n$$\n\n`);
@@ -39,5 +47,5 @@ export function parseMarkdownPost(raw, slug) {
   const cjk = (plain.match(/[\u3400-\u9fff]/g) || []).length;
   const words = plain.replace(/[\u3400-\u9fff]/g, ' ').split(/\s+/).filter(Boolean).length;
   const excerpt = metadata.description || plain.slice(0, 160);
-  return { metadata, content, excerpt, readTime: Math.max(1, Math.ceil(cjk / 420 + words / 220)) };
+  return { metadata, content, plainText: plain, excerpt, readTime: Math.max(1, Math.ceil(cjk / 420 + words / 220)) };
 }

@@ -5,6 +5,7 @@
     "date": "2026-11-10",
     "updated": "2026-11-10",
     "description": "从忒修斯之船到写作的阅读量，辨认自我提升建议里藏着的成功标准，以及它怎样改变我们做事的理由。",
+    "cover": "/images/blog/self-help-and-values.webp",
     "category": "Deep Reading",
     "collection": "deep-reading",
     "tags": [
@@ -25,6 +26,7 @@
     "date": "2026-08-26",
     "updated": "2026-08-26",
     "description": "AI 正在从内容推荐走向长期记忆与主动服务。面对越来越懂你的产品，真正需要保留的是定义目标、安排时间和退出系统的能力。",
+    "cover": "/images/blog/attention-agency.webp",
     "category": "Deep Reading",
     "collection": "deep-reading",
     "tags": [
@@ -45,6 +47,7 @@
     "date": "2026-08-23",
     "updated": "2026-08-23",
     "description": "从自主学习、量化能力迁移到 DeepSeek 的开源与 AGI 路线：用五个判断压缩一篇三万字人物长文。",
+    "cover": "/images/blog/liang-wenfeng.webp",
     "category": "Deep Reading",
     "collection": "deep-reading",
     "tags": [
@@ -65,6 +68,7 @@
     "date": "2026-08-19",
     "updated": "2026-08-19",
     "description": "Agent 竞争正在从尽可能多烧 Token，转向让每个 Token 产生可验证价值：模型路由、Skills 与多 Agent 如何改变成本结构。",
+    "cover": "/images/blog/token-economy.webp",
     "category": "Deep Reading",
     "collection": "deep-reading",
     "tags": [
@@ -85,6 +89,7 @@
     "date": "2026-02-25",
     "updated": "2026-02-25",
     "description": "比较回归、分类、排序和分布损失的数学定义、数值稳定性及 PyTorch 使用方式。",
+    "cover": "/images/blog/pytorch-loss-functions.webp",
     "category": "Deep Learning",
     "collection": "research",
     "tags": [
@@ -105,6 +110,7 @@
     "date": "",
     "updated": "",
     "description": "从 DDPM、Score Matching 与 SDE 出发，梳理扩散模型与 Flow Matching 的联系及关键推导。",
+    "cover": "/images/blog/diffusion-models.webp",
     "category": "Generative Models",
     "collection": "research",
     "tags": [

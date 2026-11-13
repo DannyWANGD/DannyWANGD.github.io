@@ -6,6 +6,7 @@ tags: ["PyTorch", "Loss Function", "Mathematics", "Best Practices"]
 updated: "2026-02-25"
 collection: "research"
 description: "比较回归、分类、排序和分布损失的数学定义、数值稳定性及 PyTorch 使用方式。"
+cover: "/images/blog/pytorch-loss-functions.webp"
 draft: false
 archived: false
 ---

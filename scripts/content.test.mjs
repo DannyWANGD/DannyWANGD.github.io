@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { open, readFile, readdir, access } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { parseMarkdownPost } from '../src/utils/post-content.mjs';
+import { normalizeSearchText, parseMarkdownPost } from '../src/utils/post-content.mjs';
 import { loadPosts } from './content.mjs';
 
 test('CRLF metadata, boolean flags, colon in title, CJK tags and unknown dates', () => {
@@ -18,9 +18,9 @@ test('CRLF metadata, boolean flags, colon in title, CJK tags and unknown dates',
 
 test('Obsidian formatting is normalized while fenced and inline code stay literal', () => {
   const code = '```python\n# fake heading\nprint("==literal== $$x$$ ![[literal.png]]")\n```';
-  const raw = `---\ntitle: "Sample"\n---\n# Sample\n\n> [!note] 说明\n\n==高亮==\n\n![[figure.png|800]]\n\n$$x^2$$\n\n${code}\n\n\`==code==\``;
+  const raw = `---\ntitle: "Sample"\n---\n# Sample\n\n> [!note] 说明\n> 注释正文\n\n==高亮==\n\n![[figure.png|800]]\n\n$$x^2$$\n\n${code}\n\n\`==code==\``;
   const parsed = parseMarkdownPost(raw, 'sample');
-  assert.ok(parsed.content.includes('> **说明**'));
+  assert.ok(parsed.content.includes('> **说明**\n>\n> 注释正文'));
   assert.ok(parsed.content.includes('<mark>高亮</mark>'));
   assert.ok(parsed.content.includes('/pictures/figure.png'));
   assert.ok(parsed.content.includes('$$\nx^2\n$$'));
@@ -35,6 +35,13 @@ test('Public content has no archived Hello World and dates are never invented', 
   assert.ok(!posts.some(post => post.slug === 'hello-world'));
   assert.ok(posts.every(post => !post.metadata.draft && !post.metadata.archived));
   assert.equal(parseMarkdownPost('## No date supplied', 'undated').metadata.date, '');
+});
+
+test('Blog search normalizes mixed scripts and can index article text outside the excerpt', () => {
+  const post = parseMarkdownPost('---\ndescription: "训练笔记"\n---\n## nn.HuberLoss\n用 PyTorch 对比 Huber 损失。', 'example');
+  assert.equal(normalizeSearchText('ＰｙＴｏｒｃｈ—损失，L1损失'), 'pytorch 损失 l1 损失');
+  assert.equal(post.excerpt, '训练笔记');
+  assert.match(normalizeSearchText(post.plainText), /huberloss/);
 });
 
 test('Each engineering PDF has one project, a real cover, and valid source-page links', async () => {
@@ -88,5 +95,6 @@ test('Both interface languages cover every project, award, and published blog su
   for (const post of await loadPosts()) {
     assert.ok(summaries[post.slug]?.title?.trim(), `Missing English blog title: ${post.slug}`);
     assert.ok(summaries[post.slug]?.excerpt?.trim(), `Missing English blog summary: ${post.slug}`);
+    if (post.metadata.cover) await access(resolve('public', post.metadata.cover.slice(1)));
   }
 });

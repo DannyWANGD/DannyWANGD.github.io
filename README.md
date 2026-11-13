@@ -115,6 +115,7 @@ title: "文章标题"
 date: "2026-10-31"
 updated: "2026-10-31"
 description: "简洁说明文章的内容与价值。"
+cover: "/images/blog/example.webp"
 category: "Robotics"
 collection: "research"
 tags: ["Robotics", "Learning"]
@@ -128,6 +129,7 @@ archived: false
 ```
 
 - `collection` 使用 `research` 或 `deep-reading`。
+- 文章封面放在 `public/images/blog/`，通过可选的 `cover` 指定路径。推荐用横幅构图，把主体留在画面中央，便于适应列表和正文页的裁切。
 - 页面已展示文章标题，正文从 H2（`##`）开始；目录自动读取实际渲染的 H2–H4，无需手写目录。
 - `draft: true` 或 `archived: true` 的文章不进入公开列表、文章加载清单、RSS、站点地图及预渲染页面。不要在仓库中提交不能公开的材料。
 - 发布日期未知时可暂留空，页面不会显示虚构日期；`updated` 未填写时沿用发布日期。
@@ -147,7 +149,7 @@ archived: false
 - 首页联系栏通过 `profile.json` 的 `email`、`details.wechat`、`social.xiaohongshu`、`social.github` 配置。邮箱打开邮件客户端，小红书和 GitHub 打开对应主页。
 - 微信号只保存在配置中，不直接展示；点击微信按钮后复制。优先使用 Clipboard API，兼容模式使用临时隐藏选区；失败时给出重试提示。
 - 联系图标位于 `public/icons/`，来源和许可记录见该目录的 `README.md`。
-- 全站中文使用本机宋体（SimSun）；macOS 使用宋体风格的 Songti SC 回退。博客正文英文使用 Times New Roman，行内代码与代码块使用 Cascadia Code / Consolas 等宽字体。字体规则位于 `src/index.css` 与 `tailwind.config.js`，未分发商业字体文件。
+- 全站中文默认使用本机宋体（SimSun），macOS 可回退到 Songti SC。博客列表、文章标题与正文小标题使用粗体 Georgia 和本机华文中宋，缺少华文中宋时回退到宋体。博客正文英文使用 Times New Roman，行内代码与代码块使用 Cascadia Code / Consolas 等宽字体。字体规则位于 `src/index.css` 与 `tailwind.config.js`，未分发商业字体文件。
 
 ## 中英文切换
 
@@ -156,6 +158,7 @@ archived: false
 - 界面短句位于 `src/i18n/messages.ts`；个人资料、奖项与项目的双语文字分别保存在 `profile.json`、`awards.json`、`projects.json` 的 `translations.en` 与 `translations["zh-CN"]` 中。新增或修改内容时，同时更新两个语言版本。
 - 项目翻译可配置 `title`、`subtitle`、`description`、`category`、`tags`、`imageAlt`、`imageCaption`、`contribution`、`result`。多链接文案使用 `linkLabels` 数组，顺序对应原来的 `links`；项目 URL、图片、PDF 页码与 `slug` 继续只在基础字段维护。
 - 博客列表英文标题与摘要维护于 `src/data/post-translations.json`，以文章 `slug` 为键；中文列表读取原始 Markdown 元数据。不要手工修改自动生成的 `post-index.json`，也不需要翻译 Markdown 正文。
+- 博客搜索支持中英文标题、摘要、标签、来源和公开文章正文。正文搜索索引由文章自动生成，首次搜索时加载。
 - 切换时同步更新页面标题、描述与 HTML 语言，首页英文标题为 `Ding Wang · Robotics & Embodied AI`；链接与锚点始终保持一致。
 - 翻译优先采用可核对的机构和赛事名称：双创班参考[北理工英文官网](https://english.bit.edu.cn/2024-01/04/c_953382.htm)，特立书院参考[学院官方介绍](https://xuteli.bit.edu.cn/english/COLLEGELIFE/Introductionc/34842ac17d9444b89e5779497dc96593.htm)，国赛名称参考[CUMCM 官网](https://en.mcm.edu.cn/html_en/section/b77a1402496e05863c96de6120931806.html)，美赛奖项参考[COMAP 官方说明](https://contest.comap.com/undergraduate/contests/mcm/faq.php)，挑战杯名称参考[承办高校介绍](https://www.nju.edu.cn/en/info/1057/21291.htm)。翻译保留原文中的奖项等级、赛道、项目角色、数量与技术功能范围。
 

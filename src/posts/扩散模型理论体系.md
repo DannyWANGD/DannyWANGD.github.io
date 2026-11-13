@@ -6,6 +6,7 @@ tags: ["Diffusion", "Score Matching", "SDE", "Flow Matching"]
 updated: ""
 collection: "research"
 description: "从 DDPM、Score Matching 与 SDE 出发，梳理扩散模型与 Flow Matching 的联系及关键推导。"
+cover: "/images/blog/diffusion-models.webp"
 draft: false
 archived: false
 ---
