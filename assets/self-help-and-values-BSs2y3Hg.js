@@ -5,6 +5,7 @@ category: "Deep Reading"
 collection: "deep-reading"
 description: "从忒修斯之船到写作的阅读量，辨认自我提升建议里藏着的成功标准，以及它怎样改变我们做事的理由。"
 sourceName: "More To That"
+cover: "/images/blog/self-help-and-values.webp"
 sourceUrl: "https://moretothat.com/self-help-and-values/"
 sourceType: "Article"
 tags: ["Self-Help", "Values", "Motivation", "Decision-Making"]

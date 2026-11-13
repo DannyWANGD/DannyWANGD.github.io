@@ -5,6 +5,7 @@ category: "Deep Reading"
 collection: "deep-reading"
 description: "Agent 竞争正在从尽可能多烧 Token，转向让每个 Token 产生可验证价值：模型路由、Skills 与多 Agent 如何改变成本结构。"
 sourceName: "硅谷101 E249"
+cover: "/images/blog/token-economy.webp"
 sourceUrl: "https://sv101.fireside.fm/262"
 sourceType: "Podcast"
 tags: ["Agents", "Token Economics", "Skills", "Local Models"]

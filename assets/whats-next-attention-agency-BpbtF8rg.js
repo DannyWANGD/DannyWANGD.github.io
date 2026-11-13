@@ -5,6 +5,7 @@ category: "Deep Reading"
 collection: "deep-reading"
 description: "AI 正在从内容推荐走向长期记忆与主动服务。面对越来越懂你的产品，真正需要保留的是定义目标、安排时间和退出系统的能力。"
 sourceName: "What's Next S9E33"
+cover: "/images/blog/attention-agency.webp"
 sourceUrl: "https://youtu.be/uTBwTOoBDBA"
 sourceType: "Podcast"
 tags: ["Attention", "Behavior Design", "AI Memory", "Learning"]

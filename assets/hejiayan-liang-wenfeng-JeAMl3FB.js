@@ -5,6 +5,7 @@ category: "Deep Reading"
 collection: "deep-reading"
 description: "从自主学习、量化能力迁移到 DeepSeek 的开源与 AGI 路线：用五个判断压缩一篇三万字人物长文。"
 sourceName: "何加盐"
+cover: "/images/blog/liang-wenfeng.webp"
 sourceUrl: "https://mp.weixin.qq.com/s/B1Xw2rAdwJydLe0FULIu2A"
 sourceType: "Article"
 tags: ["DeepSeek", "梁文锋", "AGI", "Technology Strategy"]
